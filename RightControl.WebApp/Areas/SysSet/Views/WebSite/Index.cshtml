@@ -33,9 +33,39 @@
                             </div>
                         </div>
                         <div class="layui-form-item">
+                            <label class="layui-form-label">网站标题</label>
+                            <div class="layui-input-block">
+                                @Html.TextBoxFor(x => x.SiteTitle, new { @class = "layui-input" })
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
                             <label class="layui-form-label">网站域名</label>
                             <div class="layui-input-block">
                                 @Html.TextBoxFor(x => x.SiteDomain, null, new Dictionary<string, object> { { "class", "layui-input" }, { "lay-verify", "url" } })
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">QQ</label>
+                            <div class="layui-input-block">
+                                @Html.TextBoxFor(x => x.QQ, new { @class = "layui-input" })
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">邮箱</label>
+                            <div class="layui-input-block">
+                                @Html.TextBoxFor(x => x.Mail, null, new Dictionary<string, object> { { "class", "layui-input" }, { "lay-verify", "email" } })
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">地址</label>
+                            <div class="layui-input-block">
+                                @Html.TextBoxFor(x => x.Address, new { @class = "layui-input" })
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">码云</label>
+                            <div class="layui-input-block">
+                                @Html.TextBoxFor(x => x.Gitee, null, new Dictionary<string, object> { { "class", "layui-input" }, { "lay-verify", "url" } })
                             </div>
                         </div>
                         <div class="layui-form-item">

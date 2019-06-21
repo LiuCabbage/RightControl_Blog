@@ -54,7 +54,12 @@ namespace RightControl.WebApp.Areas.Admin.Controllers
             return new WebSiteModel
             {
                 SiteName = Configs.GetValue("SiteName"),
+                SiteTitle = Configs.GetValue("SiteTitle"),
                 SiteDomain = Configs.GetValue("SiteDomain"),
+                QQ = Configs.GetValue("QQ"),
+                Mail = Configs.GetValue("Mail"),
+                Address = Configs.GetValue("Address"),
+                Gitee = Configs.GetValue("Gitee"),
                 CacheTime = Configs.GetValue("CacheTime"),
                 MaxFileUpload = Configs.GetValue("MaxFileUpload"),
                 UploadFileType = Configs.GetValue("UploadFileType"),

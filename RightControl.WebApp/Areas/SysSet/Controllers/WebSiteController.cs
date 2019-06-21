@@ -18,11 +18,16 @@ namespace RightControl.WebApp.Areas.SysSet.Controllers
             try
             {
                 Configs.SetValue("SiteName", model.SiteName);
+                Configs.SetValue("SiteTitle", model.SiteTitle);
                 Configs.SetValue("SiteDomain", model.SiteDomain);
+                Configs.SetValue("QQ", model.QQ);
+                Configs.SetValue("Mail", model.Mail);
+                Configs.SetValue("Address", model.Address);
+                Configs.SetValue("Gitee", model.Gitee);
                 Configs.SetValue("MetaKey", model.MetaKey);
                 Configs.SetValue("MetaDescribe", model.MetaDescribe);
                 Configs.SetValue("MaxFileUpload", model.MaxFileUpload);
-                Configs.SetValue("CacheTime", model.HomeTitle);
+                Configs.SetValue("HomeTitle", model.HomeTitle);
                 Configs.SetValue("CacheTime", model.CacheTime);
                 Configs.SetValue("CopyRight", model.CopyRight);
                 Configs.SetValue("UploadFileType", model.UploadFileType);
