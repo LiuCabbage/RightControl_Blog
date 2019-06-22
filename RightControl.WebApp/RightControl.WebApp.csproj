@@ -535,7 +535,6 @@
     <Folder Include="Areas\SysSet\Models\" />
     <Folder Include="Areas\SysSet\Views\Shared\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RightControl.Common\RightControl.Common.csproj">
