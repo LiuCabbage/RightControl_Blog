@@ -4,13 +4,13 @@ Navicat MySQL Data Transfer
 Source Server         : mysql
 Source Server Version : 50717
 Source Host           : localhost:3306
-Source Database       : rightcontrol
+Source Database       : rightcontrol_blog
 
 Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2019-06-20 10:26:33
+Date: 2019-06-22 17:19:36
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -65,7 +65,7 @@ CREATE TABLE `t_log` (
   `IPAddressName` varchar(100) DEFAULT NULL COMMENT 'IP所在地',
   `Status` bit(1) DEFAULT NULL COMMENT '状态',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COMMENT='日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8 COMMENT='日志表';
 
 -- ----------------------------
 -- Records of t_log
@@ -73,6 +73,10 @@ CREATE TABLE `t_log` (
 INSERT INTO `t_log` VALUES ('1', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-15 22:56:18', '192.168.1.2', '本地局域网', '');
 INSERT INTO `t_log` VALUES ('2', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-15 23:11:59', '192.168.1.2', '本地局域网', '');
 INSERT INTO `t_log` VALUES ('3', 'Exit', 'admin', '超级管理员', null, '安全退出系统', '2019-06-15 23:12:04', '192.168.1.2', '本地局域网', '');
+INSERT INTO `t_log` VALUES ('28', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-20 22:20:28', '192.168.1.2', '本地局域网', '');
+INSERT INTO `t_log` VALUES ('29', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-21 22:42:00', '192.168.1.2', '本地局域网', '');
+INSERT INTO `t_log` VALUES ('30', 'Exit', 'admin', '超级管理员', null, '安全退出系统', '2019-06-21 23:11:39', '192.168.1.2', '本地局域网', '');
+INSERT INTO `t_log` VALUES ('31', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-21 23:11:58', '192.168.1.2', '本地局域网', '');
 
 -- ----------------------------
 -- Table structure for t_menu
@@ -249,6 +253,6 @@ CREATE TABLE `t_user` (
 -- ----------------------------
 -- Records of t_user
 -- ----------------------------
-INSERT INTO `t_user` VALUES ('1', 'admin', '超级管理员', 'e10adc3949ba59abbe56e057f20f883e', '1', '', '2019-02-28 16:18:52', '2019-06-20 09:53:05', '0', '1', '1', '11111111111', '123456@qq.com', '最高权限', '/Upload/img/502.jpg');
+INSERT INTO `t_user` VALUES ('1', 'admin', '超级管理员', 'e10adc3949ba59abbe56e057f20f883e', '1', '', '2019-02-28 16:18:52', '2019-06-22 00:05:39', '0', '1', '1', '11111111111', '123456@qq.com', '最高权限', '/Upload/img/502.jpg');
 INSERT INTO `t_user` VALUES ('2', 'test', '普通管理员', 'e10adc3949ba59abbe56e057f20f883e', '2', '', '2019-02-28 16:21:31', '2019-02-28 16:21:34', '0', '0', '1', '178899573', '123456@qq.com', '普通权限', '');
 INSERT INTO `t_user` VALUES ('3', 'user', '用户', 'e10adc3949ba59abbe56e057f20f883e', '3', '', '2019-02-28 16:22:15', '2019-02-28 16:22:19', '0', '0', '1', '178899573', '123456@qq.com', '低级权限', null);
