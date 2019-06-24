@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2019-06-24 15:18:05
+Date: 2019-06-24 18:31:00
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -109,6 +109,26 @@ INSERT INTO `t_article_type` VALUES ('1', '原创');
 INSERT INTO `t_article_type` VALUES ('2', '转载');
 
 -- ----------------------------
+-- Table structure for t_comment
+-- ----------------------------
+DROP TABLE IF EXISTS `t_comment`;
+CREATE TABLE `t_comment` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `SendId` int(11) DEFAULT NULL COMMENT '人员ID',
+  `AcceptId` int(11) DEFAULT NULL COMMENT '目标人员ID',
+  `Content` varchar(500) CHARACTER SET utf8 DEFAULT NULL COMMENT '内容',
+  `State` int(11) DEFAULT NULL COMMENT '状态',
+  `ParentId` int(11) DEFAULT NULL COMMENT '父ID',
+  `ArticleId` int(11) DEFAULT NULL COMMENT '文章ID',
+  `CreateOn` datetime DEFAULT NULL COMMENT '创建日期',
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of t_comment
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for t_diarys
 -- ----------------------------
 DROP TABLE IF EXISTS `t_diarys`;
@@ -121,6 +141,26 @@ CREATE TABLE `t_diarys` (
 
 -- ----------------------------
 -- Records of t_diarys
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for t_feedback
+-- ----------------------------
+DROP TABLE IF EXISTS `t_feedback`;
+CREATE TABLE `t_feedback` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `SendId` int(11) DEFAULT NULL COMMENT '人员ID',
+  `AcceptId` int(11) DEFAULT NULL COMMENT '目标人员ID',
+  `Content` varchar(500) CHARACTER SET utf8 DEFAULT NULL COMMENT '内容',
+  `ParentId` int(11) DEFAULT NULL COMMENT '父ID',
+  `City` varchar(50) CHARACTER SET utf8 DEFAULT NULL COMMENT '城市',
+  `Equip` varchar(50) CHARACTER SET utf8 DEFAULT NULL COMMENT '设备',
+  `CreateOn` datetime DEFAULT NULL COMMENT '创建日期',
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of t_feedback
 -- ----------------------------
 
 -- ----------------------------
@@ -157,7 +197,7 @@ CREATE TABLE `t_log` (
   `IPAddressName` varchar(100) DEFAULT NULL COMMENT 'IP所在地',
   `Status` bit(1) DEFAULT NULL COMMENT '状态',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8 COMMENT='日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8 COMMENT='日志表';
 
 -- ----------------------------
 -- Records of t_log
@@ -165,6 +205,7 @@ CREATE TABLE `t_log` (
 INSERT INTO `t_log` VALUES ('1', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-15 22:56:18', '192.168.1.2', '本地局域网', '');
 INSERT INTO `t_log` VALUES ('2', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-15 23:11:59', '192.168.1.2', '本地局域网', '');
 INSERT INTO `t_log` VALUES ('3', 'Exit', 'admin', '超级管理员', null, '安全退出系统', '2019-06-15 23:12:04', '192.168.1.2', '本地局域网', '');
+INSERT INTO `t_log` VALUES ('37', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-24 15:46:02', '192.168.1.148', '本地局域网', '');
 
 -- ----------------------------
 -- Table structure for t_menu
@@ -310,6 +351,26 @@ INSERT INTO `t_menu_role_action` VALUES ('16', '0', '0');
 INSERT INTO `t_menu_role_action` VALUES ('16', '1', '0');
 
 -- ----------------------------
+-- Table structure for t_qq_user
+-- ----------------------------
+DROP TABLE IF EXISTS `t_qq_user`;
+CREATE TABLE `t_qq_user` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `OpenId` varchar(100) CHARACTER SET utf8 DEFAULT NULL COMMENT 'OpenId',
+  `NickName` varchar(50) CHARACTER SET utf8 DEFAULT NULL COMMENT '昵称',
+  `Gender` tinyint(4) DEFAULT NULL COMMENT '性别（0：女，1：男）',
+  `HeadShot` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '头像',
+  `Email` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '邮箱',
+  `LastLogin` datetime DEFAULT NULL COMMENT '最后一次登录时间',
+  `CreateOn` datetime DEFAULT NULL COMMENT '创建日期',
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of t_qq_user
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for t_role
 -- ----------------------------
 DROP TABLE IF EXISTS `t_role`;
@@ -348,11 +409,11 @@ CREATE TABLE `t_user` (
   `UpdateOn` datetime DEFAULT NULL COMMENT '修改时间',
   `CreateBy` int(4) DEFAULT NULL COMMENT '创建者',
   `UpdateBy` int(4) DEFAULT NULL COMMENT '修改者',
-  `Gender` tinyint(4) DEFAULT NULL COMMENT '性别（0：男，1：女）',
+  `Gender` tinyint(4) DEFAULT NULL COMMENT '性别（0：女，1：男）',
   `Phone` varchar(11) DEFAULT NULL COMMENT '手机',
   `Email` varchar(30) DEFAULT NULL COMMENT '邮箱',
   `Remark` varchar(50) DEFAULT NULL COMMENT '备注',
-  `HeadShot` varchar(50) DEFAULT NULL COMMENT '头像',
+  `HeadShot` varchar(200) DEFAULT NULL COMMENT '头像',
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='用户表';
 

@@ -1,7 +1,7 @@
 ﻿using RightControl.IRepository;
 using RightControl.Model;
 
-namespace RightControl.Repository.SysSet
+namespace RightControl.Repository
 {
     public class LogRepository :BaseRepository<LogModel>, ILogRepository
     {

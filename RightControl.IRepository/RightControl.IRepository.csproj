@@ -41,6 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Blog\IArticleClassRepository.cs" />
+    <Compile Include="Blog\IArticleRepository.cs" />
+    <Compile Include="Blog\IArticleTypeRepository.cs" />
+    <Compile Include="Blog\IDiarysRepository.cs" />
+    <Compile Include="Blog\ILinksRepository.cs" />
     <Compile Include="IBaseRepository.cs" />
     <Compile Include="Permissions\IActionRepository.cs" />
     <Compile Include="Permissions\IMenuActionRepository.cs" />

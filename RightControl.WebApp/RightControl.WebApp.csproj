@@ -404,6 +404,8 @@
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Blog\BlogAreaRegistration.cs" />
+    <Compile Include="Areas\Blog\Controllers\ArticleClassController.cs" />
     <Compile Include="Areas\Permissions\Controllers\ActionController.cs" />
     <Compile Include="Areas\Permissions\Controllers\MenuActionController.cs" />
     <Compile Include="Areas\Permissions\Controllers\MenuController.cs" />
@@ -510,6 +512,8 @@
     <Content Include="Content\layui\font\iconfont.eot" />
     <Content Include="Content\layui\font\iconfont.ttf" />
     <Content Include="Content\layui\font\iconfont.woff" />
+    <Content Include="Areas\Blog\Views\web.config" />
+    <Content Include="Areas\Blog\Views\ArticleClass\Index.cshtml" />
     <None Include="packages.config" />
     <Content Include="Areas\Admin\plugins\layui\font\iconfont.eot" />
     <Content Include="Areas\Admin\plugins\layui\font\iconfont.ttf" />
@@ -529,6 +533,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Base\" />
+    <Folder Include="Areas\Blog\Models\" />
+    <Folder Include="Areas\Blog\Views\Shared\" />
     <Folder Include="Areas\Permissions\Models\" />
     <Folder Include="Areas\Permissions\Views\MenuAction\" />
     <Folder Include="Areas\Permissions\Views\MenuRoleAction\" />
