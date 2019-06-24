@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using RightControl.WebApp.Models;
 
 namespace RightControl.WebApp.Controllers
 {
@@ -11,7 +12,8 @@ namespace RightControl.WebApp.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            WebSiteInfo model = new WebSiteInfo();
+            return View(model.GetWebSiteInfo());
         }
     }
 }

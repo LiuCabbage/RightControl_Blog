@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2019-06-22 17:19:36
+Date: 2019-06-24 15:18:05
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -50,6 +50,98 @@ INSERT INTO `t_action` VALUES ('7', 'BatchDel', '批量删除', '1', 'icon-shanc
 INSERT INTO `t_action` VALUES ('8', 'menu_action', '菜单权限', '0', 'icon-setting-permissions', 'menu_action', null, '0', '', '2019-06-17 17:00:29', '0001-01-01 00:00:00', '1', '0', null);
 
 -- ----------------------------
+-- Table structure for t_article
+-- ----------------------------
+DROP TABLE IF EXISTS `t_article`;
+CREATE TABLE `t_article` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `Title` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '文章标题',
+  `ZhaiYao` varchar(500) CHARACTER SET utf8 DEFAULT NULL COMMENT '摘要',
+  `Content` text CHARACTER SET utf8 COMMENT '内容',
+  `TypeId` int(11) DEFAULT NULL,
+  `ClassId` int(11) DEFAULT NULL,
+  `Ding` int(11) DEFAULT NULL,
+  `ReadNum` int(11) DEFAULT NULL,
+  `CommentNum` int(11) DEFAULT NULL,
+  `Visible` int(11) DEFAULT NULL,
+  `CreateOn` datetime DEFAULT NULL,
+  `UpdateOn` datetime DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of t_article
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for t_article_class
+-- ----------------------------
+DROP TABLE IF EXISTS `t_article_class`;
+CREATE TABLE `t_article_class` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `Name` varchar(20) CHARACTER SET utf8 DEFAULT NULL COMMENT '文章分类',
+  `OrderNo` int(11) DEFAULT NULL COMMENT '排序ID',
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of t_article_class
+-- ----------------------------
+INSERT INTO `t_article_class` VALUES ('1', 'ASP.NET MVC', '0');
+INSERT INTO `t_article_class` VALUES ('2', 'SQLServer', '0');
+INSERT INTO `t_article_class` VALUES ('3', 'MySQL', '0');
+INSERT INTO `t_article_class` VALUES ('4', 'IIS', '0');
+
+-- ----------------------------
+-- Table structure for t_article_type
+-- ----------------------------
+DROP TABLE IF EXISTS `t_article_type`;
+CREATE TABLE `t_article_type` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `Name` varchar(20) CHARACTER SET utf8 DEFAULT NULL COMMENT '文章类型',
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of t_article_type
+-- ----------------------------
+INSERT INTO `t_article_type` VALUES ('1', '原创');
+INSERT INTO `t_article_type` VALUES ('2', '转载');
+
+-- ----------------------------
+-- Table structure for t_diarys
+-- ----------------------------
+DROP TABLE IF EXISTS `t_diarys`;
+CREATE TABLE `t_diarys` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `Content` text CHARACTER SET utf8 COMMENT '日记内容',
+  `CreateOn` datetime DEFAULT NULL COMMENT '创建日期',
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of t_diarys
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for t_links
+-- ----------------------------
+DROP TABLE IF EXISTS `t_links`;
+CREATE TABLE `t_links` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `Name` varchar(20) CHARACTER SET utf8 DEFAULT NULL COMMENT '网站名称',
+  `Url` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '网址',
+  `Icon` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '图标',
+  `Describe` varchar(100) CHARACTER SET utf8 DEFAULT NULL COMMENT '描述',
+  `CreateOn` datetime DEFAULT NULL COMMENT '创建日期',
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of t_links
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for t_log
 -- ----------------------------
 DROP TABLE IF EXISTS `t_log`;
@@ -65,7 +157,7 @@ CREATE TABLE `t_log` (
   `IPAddressName` varchar(100) DEFAULT NULL COMMENT 'IP所在地',
   `Status` bit(1) DEFAULT NULL COMMENT '状态',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8 COMMENT='日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8 COMMENT='日志表';
 
 -- ----------------------------
 -- Records of t_log
@@ -73,10 +165,6 @@ CREATE TABLE `t_log` (
 INSERT INTO `t_log` VALUES ('1', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-15 22:56:18', '192.168.1.2', '本地局域网', '');
 INSERT INTO `t_log` VALUES ('2', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-15 23:11:59', '192.168.1.2', '本地局域网', '');
 INSERT INTO `t_log` VALUES ('3', 'Exit', 'admin', '超级管理员', null, '安全退出系统', '2019-06-15 23:12:04', '192.168.1.2', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('28', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-20 22:20:28', '192.168.1.2', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('29', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-21 22:42:00', '192.168.1.2', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('30', 'Exit', 'admin', '超级管理员', null, '安全退出系统', '2019-06-21 23:11:39', '192.168.1.2', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('31', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-21 23:11:58', '192.168.1.2', '本地局域网', '');
 
 -- ----------------------------
 -- Table structure for t_menu
@@ -95,21 +183,27 @@ CREATE TABLE `t_menu` (
   `CreateBy` int(4) DEFAULT NULL COMMENT '创建者',
   `UpdateBy` int(4) DEFAULT NULL COMMENT '编辑者',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='菜单表';
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COMMENT='菜单表';
 
 -- ----------------------------
 -- Records of t_menu
 -- ----------------------------
-INSERT INTO `t_menu` VALUES ('1', '权限管理', null, 'icon-setting-permissions', '0', '0', '', '2019-02-28 15:03:14', '2019-06-17 17:11:25', '0', '1');
+INSERT INTO `t_menu` VALUES ('1', '权限管理', null, 'icon-setting-permissions', '1', '0', '', '2019-02-28 15:03:14', '2019-06-17 17:11:25', '0', '1');
 INSERT INTO `t_menu` VALUES ('2', '菜单管理', '/permissions/menu', 'icon-caidan', '1', '1', '', '2019-02-28 15:03:20', '2019-02-28 15:03:23', '0', '0');
 INSERT INTO `t_menu` VALUES ('3', '角色管理', '/permissions/role', 'icon-jiaoseguanli', '2', '1', '', '2019-02-28 15:03:25', '2019-02-28 15:03:29', '0', '0');
 INSERT INTO `t_menu` VALUES ('4', '用户管理', '/permissions/user', 'icon-yonghu', '3', '1', '', '2019-02-28 15:03:32', '2019-02-28 15:03:35', '0', '0');
 INSERT INTO `t_menu` VALUES ('5', '操作管理', '/permissions/action', 'icon-shezhi', '4', '1', '', '2019-02-28 15:03:39', '2019-02-28 15:03:43', '0', '0');
-INSERT INTO `t_menu` VALUES ('6', '系统设置', null, 'icon-xitong', '0', '0', '', '2019-02-28 15:03:46', '2019-02-28 15:03:48', '0', '0');
+INSERT INTO `t_menu` VALUES ('6', '系统设置', null, 'icon-xitong', '2', '0', '', '2019-02-28 15:03:46', '2019-02-28 15:03:48', '0', '0');
 INSERT INTO `t_menu` VALUES ('7', '网站设置', '/sysset/website', 'icon-ditu', '1', '6', '', '2019-02-28 15:03:51', '2019-02-28 15:03:53', '0', '0');
 INSERT INTO `t_menu` VALUES ('8', '基本资料', '/SysSet/info', 'icon-jibenziliao', '2', '6', '', '2019-02-28 15:03:56', '2019-02-28 15:03:58', '0', '0');
 INSERT INTO `t_menu` VALUES ('9', '修改密码', '/SysSet/password', 'icon-xiugaimima', '3', '6', '', '2019-02-28 15:04:02', '2019-02-28 15:04:05', '0', '0');
 INSERT INTO `t_menu` VALUES ('10', '日志管理', '/SysSet/Log', 'icon-xitongrizhi', '4', '6', '', '2019-02-28 15:04:07', '2019-02-28 15:04:10', '0', '0');
+INSERT INTO `t_menu` VALUES ('11', '博客管理', null, 'icon-zhuye', '0', '0', '', '2019-06-24 14:24:51', '0001-01-01 00:00:00', '1', '0');
+INSERT INTO `t_menu` VALUES ('12', '文章类型', '/', 'icon-jibenziliao', '5', '11', '', '2019-06-24 14:32:31', '0001-01-01 00:00:00', '1', '0');
+INSERT INTO `t_menu` VALUES ('13', '文章分类', '/', 'icon-jibenziliao', '4', '11', '', '2019-06-24 14:51:05', '0001-01-01 00:00:00', '1', '0');
+INSERT INTO `t_menu` VALUES ('14', '友情链接', '/', 'icon-jibenziliao', '3', '11', '', '2019-06-24 14:55:33', '0001-01-01 00:00:00', '1', '0');
+INSERT INTO `t_menu` VALUES ('15', '日记管理', '/', 'icon-jibenziliao', '2', '11', '', '2019-06-24 15:00:40', '0001-01-01 00:00:00', '1', '0');
+INSERT INTO `t_menu` VALUES ('16', '文章管理', '/', 'icon-jibenziliao', '1', '11', '', '2019-06-24 15:02:17', '0001-01-01 00:00:00', '1', '0');
 
 -- ----------------------------
 -- Table structure for t_menu_action
@@ -202,6 +296,18 @@ INSERT INTO `t_menu_role_action` VALUES ('10', '1', '0');
 INSERT INTO `t_menu_role_action` VALUES ('10', '1', '4');
 INSERT INTO `t_menu_role_action` VALUES ('10', '1', '7');
 INSERT INTO `t_menu_role_action` VALUES ('10', '3', '0');
+INSERT INTO `t_menu_role_action` VALUES ('11', '0', '0');
+INSERT INTO `t_menu_role_action` VALUES ('11', '1', '0');
+INSERT INTO `t_menu_role_action` VALUES ('12', '0', '0');
+INSERT INTO `t_menu_role_action` VALUES ('12', '1', '0');
+INSERT INTO `t_menu_role_action` VALUES ('13', '0', '0');
+INSERT INTO `t_menu_role_action` VALUES ('13', '1', '0');
+INSERT INTO `t_menu_role_action` VALUES ('14', '0', '0');
+INSERT INTO `t_menu_role_action` VALUES ('14', '1', '0');
+INSERT INTO `t_menu_role_action` VALUES ('15', '0', '0');
+INSERT INTO `t_menu_role_action` VALUES ('15', '1', '0');
+INSERT INTO `t_menu_role_action` VALUES ('16', '0', '0');
+INSERT INTO `t_menu_role_action` VALUES ('16', '1', '0');
 
 -- ----------------------------
 -- Table structure for t_role

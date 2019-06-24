@@ -422,6 +422,7 @@
     </Compile>
     <Compile Include="Areas\Admin\Models\HtmlHelper.cs" />
     <Compile Include="Areas\Admin\Models\WebSiteModel.cs" />
+    <Compile Include="Models\WebSiteInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -534,7 +535,6 @@
     <Folder Include="Areas\Permissions\Views\Shared\" />
     <Folder Include="Areas\SysSet\Models\" />
     <Folder Include="Areas\SysSet\Views\Shared\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RightControl.Common\RightControl.Common.csproj">
