@@ -2,7 +2,7 @@
 
 namespace RightControl.IRepository
 {
-    public interface IArticleTypeRepository : IBaseRepository<ArticleTypeModel>
+    public interface IFeedbackRepository : IBaseRepository<FeedbackModel>
     {
     }
 }

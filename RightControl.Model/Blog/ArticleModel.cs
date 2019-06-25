@@ -3,7 +3,7 @@
 namespace RightControl.Model
 {
     [Table("t_article")]
-    public class Article : Entity
+    public class ArticleModel : Entity
     {
         /// <summary>
         /// 标题

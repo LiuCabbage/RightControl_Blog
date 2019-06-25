@@ -2,7 +2,7 @@
 
 namespace RightControl.IRepository
 {
-    public interface IArticleClassRepository : IBaseRepository<ArticleClass>
+    public interface IArticleClassRepository : IBaseRepository<ArticleClassModel>
     {
     }
 }

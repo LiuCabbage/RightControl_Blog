@@ -7,7 +7,7 @@ using RightControl.Model;
 using RightControl.IService;
 using RightControl.Common;
 
-namespace RightControl.Service.SysSet
+namespace RightControl.Service
 {
     public class LogService : BaseService<LogModel>, ILogService
     {

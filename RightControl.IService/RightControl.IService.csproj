@@ -41,6 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Blog\IArticleClassService.cs" />
+    <Compile Include="Blog\IArticleService.cs" />
+    <Compile Include="Blog\IArticleTypeService.cs" />
+    <Compile Include="Blog\ICommentService.cs" />
+    <Compile Include="Blog\IDiarysService.cs" />
+    <Compile Include="Blog\IFeedbackService.cs" />
+    <Compile Include="Blog\ILinksService.cs" />
+    <Compile Include="Blog\IQQUserService.cs" />
     <Compile Include="IBaseService.cs" />
     <Compile Include="Permissions\IActionService.cs" />
     <Compile Include="Permissions\IMenuActionService.cs" />

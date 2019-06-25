@@ -42,14 +42,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Blog\Article.cs" />
-    <Compile Include="Blog\ArticleClass.cs" />
-    <Compile Include="Blog\ArticleType.cs" />
-    <Compile Include="Blog\Comment.cs" />
-    <Compile Include="Blog\Diarys.cs" />
-    <Compile Include="Blog\Feedback.cs" />
-    <Compile Include="Blog\Links.cs" />
-    <Compile Include="Blog\QQUser.cs" />
+    <Compile Include="Blog\ArticleModel.cs" />
+    <Compile Include="Blog\ArticleClassModel.cs" />
+    <Compile Include="Blog\ArticleTypeModel.cs" />
+    <Compile Include="Blog\CommentModel.cs" />
+    <Compile Include="Blog\DiarysModel.cs" />
+    <Compile Include="Blog\FeedbackModel.cs" />
+    <Compile Include="Blog\LinksModel.cs" />
+    <Compile Include="Blog\QQUserModel.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="Filter\SearchFilter.cs" />
     <Compile Include="Pager.cs" />

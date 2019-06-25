@@ -42,6 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseService.cs" />
+    <Compile Include="Blog\ArticleClassService.cs" />
+    <Compile Include="Blog\ArticleService.cs" />
+    <Compile Include="Blog\ArticleTypeService.cs" />
+    <Compile Include="Blog\CommentService.cs" />
+    <Compile Include="Blog\DiarysService.cs" />
+    <Compile Include="Blog\FeedbackService.cs" />
+    <Compile Include="Blog\LinksService.cs" />
+    <Compile Include="Blog\QQUserService.cs" />
     <Compile Include="Common\DefaultPaging.cs" />
     <Compile Include="Permissions\ActionService.cs" />
     <Compile Include="Permissions\MenuActionService.cs" />

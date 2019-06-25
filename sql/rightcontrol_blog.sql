@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2019-06-24 18:31:00
+Date: 2019-06-25 17:36:34
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -197,7 +197,7 @@ CREATE TABLE `t_log` (
   `IPAddressName` varchar(100) DEFAULT NULL COMMENT 'IP所在地',
   `Status` bit(1) DEFAULT NULL COMMENT '状态',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8 COMMENT='日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8 COMMENT='日志表';
 
 -- ----------------------------
 -- Records of t_log
@@ -205,7 +205,6 @@ CREATE TABLE `t_log` (
 INSERT INTO `t_log` VALUES ('1', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-15 22:56:18', '192.168.1.2', '本地局域网', '');
 INSERT INTO `t_log` VALUES ('2', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-15 23:11:59', '192.168.1.2', '本地局域网', '');
 INSERT INTO `t_log` VALUES ('3', 'Exit', 'admin', '超级管理员', null, '安全退出系统', '2019-06-15 23:12:04', '192.168.1.2', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('37', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-24 15:46:02', '192.168.1.148', '本地局域网', '');
 
 -- ----------------------------
 -- Table structure for t_menu
@@ -224,7 +223,7 @@ CREATE TABLE `t_menu` (
   `CreateBy` int(4) DEFAULT NULL COMMENT '创建者',
   `UpdateBy` int(4) DEFAULT NULL COMMENT '编辑者',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COMMENT='菜单表';
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COMMENT='菜单表';
 
 -- ----------------------------
 -- Records of t_menu
@@ -240,11 +239,14 @@ INSERT INTO `t_menu` VALUES ('8', '基本资料', '/SysSet/info', 'icon-jibenzil
 INSERT INTO `t_menu` VALUES ('9', '修改密码', '/SysSet/password', 'icon-xiugaimima', '3', '6', '', '2019-02-28 15:04:02', '2019-02-28 15:04:05', '0', '0');
 INSERT INTO `t_menu` VALUES ('10', '日志管理', '/SysSet/Log', 'icon-xitongrizhi', '4', '6', '', '2019-02-28 15:04:07', '2019-02-28 15:04:10', '0', '0');
 INSERT INTO `t_menu` VALUES ('11', '博客管理', null, 'icon-zhuye', '0', '0', '', '2019-06-24 14:24:51', '0001-01-01 00:00:00', '1', '0');
-INSERT INTO `t_menu` VALUES ('12', '文章类型', '/', 'icon-jibenziliao', '5', '11', '', '2019-06-24 14:32:31', '0001-01-01 00:00:00', '1', '0');
-INSERT INTO `t_menu` VALUES ('13', '文章分类', '/', 'icon-jibenziliao', '4', '11', '', '2019-06-24 14:51:05', '0001-01-01 00:00:00', '1', '0');
-INSERT INTO `t_menu` VALUES ('14', '友情链接', '/', 'icon-jibenziliao', '3', '11', '', '2019-06-24 14:55:33', '0001-01-01 00:00:00', '1', '0');
-INSERT INTO `t_menu` VALUES ('15', '日记管理', '/', 'icon-jibenziliao', '2', '11', '', '2019-06-24 15:00:40', '0001-01-01 00:00:00', '1', '0');
-INSERT INTO `t_menu` VALUES ('16', '文章管理', '/', 'icon-jibenziliao', '1', '11', '', '2019-06-24 15:02:17', '0001-01-01 00:00:00', '1', '0');
+INSERT INTO `t_menu` VALUES ('12', '文章类型', '/', 'icon-jibenziliao', '7', '11', '', '2019-06-24 14:32:31', '0001-01-01 00:00:00', '1', '0');
+INSERT INTO `t_menu` VALUES ('13', '文章分类', '/', 'icon-jibenziliao', '6', '11', '', '2019-06-24 14:51:05', '0001-01-01 00:00:00', '1', '0');
+INSERT INTO `t_menu` VALUES ('14', '友情链接', '/', 'icon-jibenziliao', '4', '11', '', '2019-06-24 14:55:33', '0001-01-01 00:00:00', '1', '0');
+INSERT INTO `t_menu` VALUES ('15', '日记管理', '/', 'icon-jibenziliao', '3', '11', '', '2019-06-24 15:00:40', '0001-01-01 00:00:00', '1', '0');
+INSERT INTO `t_menu` VALUES ('16', '文章管理', '/', 'icon-jibenziliao', '0', '11', '', '2019-06-24 15:02:17', '0001-01-01 00:00:00', '1', '0');
+INSERT INTO `t_menu` VALUES ('17', '评论管理', '/', 'icon-jibenziliao', '1', '11', '', '2019-06-25 15:45:24', '0001-01-01 00:00:00', '1', '0');
+INSERT INTO `t_menu` VALUES ('18', '留言管理', '/', 'icon-jibenziliao', '2', '11', '', '2019-06-25 15:45:49', '0001-01-01 00:00:00', '1', '0');
+INSERT INTO `t_menu` VALUES ('19', '用户管理', '/', 'icon-jibenziliao', '5', '11', '', '2019-06-25 15:46:43', '0001-01-01 00:00:00', '1', '0');
 
 -- ----------------------------
 -- Table structure for t_menu_action
@@ -310,6 +312,7 @@ INSERT INTO `t_menu_role_action` VALUES ('3', '1', '4');
 INSERT INTO `t_menu_role_action` VALUES ('3', '1', '6');
 INSERT INTO `t_menu_role_action` VALUES ('3', '3', '0');
 INSERT INTO `t_menu_role_action` VALUES ('3', '3', '3');
+INSERT INTO `t_menu_role_action` VALUES ('4', '0', '0');
 INSERT INTO `t_menu_role_action` VALUES ('4', '1', '0');
 INSERT INTO `t_menu_role_action` VALUES ('4', '1', '1');
 INSERT INTO `t_menu_role_action` VALUES ('4', '1', '2');
@@ -349,6 +352,12 @@ INSERT INTO `t_menu_role_action` VALUES ('15', '0', '0');
 INSERT INTO `t_menu_role_action` VALUES ('15', '1', '0');
 INSERT INTO `t_menu_role_action` VALUES ('16', '0', '0');
 INSERT INTO `t_menu_role_action` VALUES ('16', '1', '0');
+INSERT INTO `t_menu_role_action` VALUES ('17', '0', '0');
+INSERT INTO `t_menu_role_action` VALUES ('17', '1', '0');
+INSERT INTO `t_menu_role_action` VALUES ('18', '0', '0');
+INSERT INTO `t_menu_role_action` VALUES ('18', '1', '0');
+INSERT INTO `t_menu_role_action` VALUES ('19', '0', '0');
+INSERT INTO `t_menu_role_action` VALUES ('19', '1', '0');
 
 -- ----------------------------
 -- Table structure for t_qq_user

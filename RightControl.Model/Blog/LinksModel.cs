@@ -3,7 +3,7 @@
 namespace RightControl.Model
 {
     [Table("t_links")]
-    public class Links : Entity
+    public class LinksModel : Entity
     {
         /// <summary>
         /// 网站名称

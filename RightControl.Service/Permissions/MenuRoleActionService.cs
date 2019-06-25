@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace RightControl.Service
 {
-    public class MenuRoleActionService :BaseService<MenuRoleActionModel>, IMenuRoleActionService
+    public class MenuRoleActionService : BaseService<MenuRoleActionModel>, IMenuRoleActionService
     {
         public IMenuRoleActionRepository repository { get; set; }
         /// <summary>
@@ -23,9 +23,15 @@ namespace RightControl.Service
             return repository.GetByWhere(sql, new { RoleId = roleId, MenuId = menuId });
         }
 
+        /// <summary>
+        /// 这里这个方法没意义，仅仅实现接口
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <param name="pageInfo"></param>
+        /// <returns></returns>
         public dynamic GetListByFilter(MenuRoleActionModel filter, PageInfo pageInfo)
         {
-            return GetListByFilter(filter, pageInfo);
+            return GetListByFilter(filter, pageInfo, "");
         }
     }
 }

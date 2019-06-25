@@ -52,6 +52,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseRepository.cs" />
+    <Compile Include="Blog\ArticleClassRepository.cs" />
+    <Compile Include="Blog\ArticleRepository.cs" />
+    <Compile Include="Blog\ArticleTypeRepository.cs" />
+    <Compile Include="Blog\CommentRepository.cs" />
+    <Compile Include="Blog\DiarysRepository.cs" />
+    <Compile Include="Blog\FeedbackRepository.cs" />
+    <Compile Include="Blog\LinksRepository.cs" />
+    <Compile Include="Blog\QQUserRepository.cs" />
     <Compile Include="DBHeper\Common.cs" />
     <Compile Include="DBHeper\MySqlHelper.cs" />
     <Compile Include="DBHeper\PageCriteria.cs" />
@@ -87,8 +95,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Blog\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

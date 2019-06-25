@@ -3,7 +3,7 @@
 namespace RightControl.Model
 {
     [Table("t_diarys")]
-    public class Diarys : Entity
+    public class DiarysModel : Entity
     {
         /// <summary>
         /// 日记内容

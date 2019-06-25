@@ -2,8 +2,8 @@
 
 namespace RightControl.Model
 {
-    [Table("t_feedback")]
-    public class Feedback : Entity
+    [Table("t_comment")]
+    public class CommentModel : Entity
     {
         /// <summary>
         /// 人员ID
@@ -18,16 +18,16 @@ namespace RightControl.Model
         /// </summary>
         public string Content { get; set; }
         /// <summary>
+        /// 状态
+        /// </summary>
+        public int State { get; set; }
+        /// <summary>
         /// 父ID
         /// </summary>
         public int ParentId { get; set; }
         /// <summary>
-        /// 城市
+        /// 文章ID
         /// </summary>
-        public string City { get; set; }
-        /// <summary>
-        /// 设备
-        /// </summary>
-        public string Equip { get; set; }
+        public int ArticleId { get; set; }
     }
 }

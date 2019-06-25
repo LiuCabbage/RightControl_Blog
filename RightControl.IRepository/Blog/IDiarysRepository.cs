@@ -2,7 +2,7 @@
 
 namespace RightControl.IRepository
 {
-    public interface IDiarysRepository : IBaseRepository<Diarys>
+    public interface IDiarysRepository : IBaseRepository<DiarysModel>
     {
     }
 }

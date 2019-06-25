@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 namespace RightControl.Model
 {
     [Table("t_qq_user")]
-    public class QQUser : Entity
+    public class QQUserModel : Entity
     {
         /// <summary>
         /// OpenID

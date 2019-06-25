@@ -2,7 +2,7 @@
 
 namespace RightControl.IRepository
 {
-    public interface ILinksRepository : IBaseRepository<Links>
+    public interface ILinksRepository : IBaseRepository<LinksModel>
     {
     }
 }
