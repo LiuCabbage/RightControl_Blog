@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutList.cshtml";
 }
@@ -26,39 +25,25 @@
 			    var table = layui.table,
                     form = layui.form,
                     common = layui.common;
+                var $ = layui.$;
 			    //表格
 			    table.render({
 			        id: 'defaultReload'
                    , elem: '#defaultTable'
                    , height: 'full-112' //高度最大化减去差值
-                    , url: '/Blog/ArticleClass/List' //数据接口
-                   , page: true //开启分页
+                   , url: '/Blog/ArticleClass/List' //数据接口
+                   , page: false //开启分页
                    , cols: [[ //表头
                      { checkbox: true, fixed: true },
-                     { field: 'Id', title: 'Id', width: 80, fixed: 'left' }
-                     , { field: 'ActionCode', title: '操作编码', sort: true }
-                     , { field: 'ActionName', title: '操作名称' }
-                     , { field: 'MenuIcon', title: '操作图标', templet: '<div><i class="iconfont {{d.Icon}}"></i></div>' }
-                     , { field: 'Method', title: '操作方法' }
-                     , { field: 'OrderBy', title: '排序号',width:80 }
-                     , { field: 'Status', title: '状态', templet: '<div>{{showStatus(d.Status)}}</div>', unresize: true, width: 100, align: 'center' }
+                       { field: 'Id', title: 'Id', width: 80, fixed: 'left', sort: true }
+                     , { field: 'Name', title: '文章分类'}
+                     , { field: 'OrderNo', title: '排序号', sort: true }
                      , { field: 'CreateOn', title: '创建时间', sort: true, templet: '<div>{{showDate(d.CreateOn)}}</div>' }
                      , { field: '', title: '操作', toolbar: "#bar" }
                    ]]
 			    });
-			    var $ = layui.$, active = {
-			        reload: function () {
-			            //执行重载
-			            table.reload('defaultReload', {
-			                page: {
-			                    curr: 1 //重新从第 1 页开始
-			                }
-                          , where: urlToJson($("#formSearch").serialize())
-			            });
-			        }
-			    };
 			    //服务器排序
-			    table.on('sort(defaultruv)', function (obj) {
+                table.on('sort(defaultruv)', function (obj) {
 			        //尽管我们的 table 自带排序功能，但并没有请求服务端。
 			        //有些时候，你可能需要根据当前排序的字段，重新向服务端发送请求，如：
 			        table.reload('defaultReload', {
@@ -72,7 +57,7 @@
 			    //add
 			    $('#btnAdd').on('click', function () {
 			        common.openTop({
-			            title: '操作添加', w: '670px', h: '500px', content: '/Permissions/Action/Add/'
+                        title: '文章分类添加', w: '670px', h: '500px', content: '/Blog/ArticleClass/Add/'
 			        });
 			    });
 			    //监听工具条
@@ -81,14 +66,14 @@
 			        if (obj.event === 'detail') {
 			            common.openTop({
 			                detail:true,
-			                title: '操作详情', w: '568px', h: '400px', content: '/Permissions/Action/Detail/' + data.Id, clickOK: function (index) {
+                            title: '文章分类详情', w: '568px', h: '300px', content: '/Blog/ArticleClass/Detail/' + data.Id, clickOK: function (index) {
 			                    common.close(index);
 			                }
 			            });
 			        } else if (obj.event === 'del') {
 			            layer.confirm('确定要删除吗？', function (index) {
 			                $.ajax({
-			                    url: "/Permissions/Action/Delete",
+                                url: "/Blog/ArticleClass/Delete",
 			                    type: "POST",
 			                    data: { "Id": data.Id },
 			                    dataType: "json",
@@ -105,7 +90,7 @@
 			            });
 			        } else if (obj.event === 'edit') {
 			            common.openTop({
-			                title: '操作编辑', w: '670px', h: '500px', content: '/Permissions/Action/Edit/' + data.Id
+                            title: '文章分类编辑', w: '600px', h: '250px', content: '/Blog/ArticleClass/Edit/' + data.Id
 			            });
 			        }
 			    });

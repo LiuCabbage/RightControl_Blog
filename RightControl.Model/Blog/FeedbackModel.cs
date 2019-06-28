@@ -1,10 +1,17 @@
 ﻿using DapperExtensions;
+using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace RightControl.Model
 {
     [Table("t_feedback")]
-    public class FeedbackModel : Entity
+    public class FeedbackModel
     {
+        [DapperExtensions.Key(true)]
+        /// <summary>
+        /// ID
+        /// </summary>
+        public int Id { get; set; }
         /// <summary>
         /// 人员ID
         /// </summary>
@@ -29,5 +36,11 @@ namespace RightControl.Model
         /// 设备
         /// </summary>
         public string Equip { get; set; }
+        /// <summary>
+        /// 创建日期
+        /// </summary>
+        [Display(Name = "创建日期")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd HH:mm:ss}")]
+        public DateTime CreateOn { get; set; }
     }
 }

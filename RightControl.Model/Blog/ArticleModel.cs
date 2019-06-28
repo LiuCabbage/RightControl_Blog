@@ -1,10 +1,17 @@
 ﻿using DapperExtensions;
+using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace RightControl.Model
 {
     [Table("t_article")]
-    public class ArticleModel : Entity
+    public class ArticleModel
     {
+        [DapperExtensions.Key(true)]
+        /// <summary>
+        /// ID
+        /// </summary>
+        public int Id { get; set; }
         /// <summary>
         /// 标题
         /// </summary>
@@ -41,5 +48,17 @@ namespace RightControl.Model
         /// 是否可见：0可见，1不可见
         /// </summary>
         public int Visible { get; set; }
+        /// <summary>
+        /// 创建日期
+        /// </summary>
+        [Display(Name = "创建日期")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd HH:mm:ss}")]
+        public DateTime CreateOn { get; set; }
+        /// <summary>
+        /// 修改日期
+        /// </summary>
+        [Display(Name = "修改日期")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd HH:mm:ss}")]
+        public DateTime UpdateOn { get; set; }
     }
 }

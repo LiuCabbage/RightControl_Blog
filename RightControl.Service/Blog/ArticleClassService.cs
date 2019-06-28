@@ -12,7 +12,7 @@ namespace RightControl.Service
     {
         public dynamic GetListByFilter(ArticleClassModel filter, PageInfo pageInfo)
         {
-            return GetListByFilter(filter, pageInfo, "");
+            return GetListByFilter(filter, pageInfo, null);
         }
     }
 }

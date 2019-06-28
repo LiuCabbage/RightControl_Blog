@@ -15,6 +15,7 @@ namespace RightControl.WebApp.Areas.Blog.Controllers
         // GET: Blog/ArticleClass
         public override ActionResult Index(int? id)
         {
+            base.Index(id);
             return View();
         }
         /// <summary>
@@ -28,6 +29,26 @@ namespace RightControl.WebApp.Areas.Blog.Controllers
         {
             var result = articleClassService.GetListByFilter(filter, pageInfo);
             return Json(result, JsonRequestBehavior.AllowGet);
+        }
+        public ActionResult Add()
+        {
+            return View();
+        }
+        public ActionResult Detail(int Id)
+        {
+            var model = articleClassService.ReadModel(Id);
+            return View(model);
+        }
+        public ActionResult Edit(int Id)
+        {
+            var model = articleClassService.ReadModel(Id);
+            return View(model);
+        }
+        [HttpPost]
+        public ActionResult Edit(ArticleClassModel model)
+        {
+            var result = articleClassService.UpdateModel(model) ? SuccessTip() : ErrorTip();
+            return Json(result);
         }
 
     }

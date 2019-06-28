@@ -514,6 +514,8 @@
     <Content Include="Content\layui\font\iconfont.woff" />
     <Content Include="Areas\Blog\Views\web.config" />
     <Content Include="Areas\Blog\Views\ArticleClass\Index.cshtml" />
+    <Content Include="Areas\Blog\Views\ArticleClass\Detail.cshtml" />
+    <Content Include="Areas\Blog\Views\ArticleClass\Edit.cshtml" />
     <None Include="packages.config" />
     <Content Include="Areas\Admin\plugins\layui\font\iconfont.eot" />
     <Content Include="Areas\Admin\plugins\layui\font\iconfont.ttf" />

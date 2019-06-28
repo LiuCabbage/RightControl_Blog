@@ -5,8 +5,13 @@ using System.ComponentModel.DataAnnotations;
 namespace RightControl.Model
 {
     [Table("t_qq_user")]
-    public class QQUserModel : Entity
+    public class QQUserModel
     {
+        [DapperExtensions.Key(true)]
+        /// <summary>
+        /// ID
+        /// </summary>
+        public int Id { get; set; }
         /// <summary>
         /// OpenID
         /// </summary>
@@ -33,5 +38,11 @@ namespace RightControl.Model
         [Display(Name = "最后一次登录时间")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd HH:mm:ss}")]
         public DateTime LastLogin { get; set; }
+        /// <summary>
+        /// 创建日期
+        /// </summary>
+        [Display(Name = "创建日期")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd HH:mm:ss}")]
+        public DateTime CreateOn { get; set; }
     }
 }
