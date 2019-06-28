@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2019-06-25 18:32:46
+Date: 2019-06-28 18:32:58
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -88,10 +88,10 @@ CREATE TABLE `t_article_class` (
 -- ----------------------------
 -- Records of t_article_class
 -- ----------------------------
-INSERT INTO `t_article_class` VALUES ('1', 'ASP.NET MVC', '0', '2019-06-25 18:31:13');
-INSERT INTO `t_article_class` VALUES ('2', 'SQLServer', '0', '2019-06-25 18:31:16');
-INSERT INTO `t_article_class` VALUES ('3', 'MySQL', '0', '2019-06-25 18:31:19');
-INSERT INTO `t_article_class` VALUES ('4', 'IIS', '0', '2019-06-25 18:31:21');
+INSERT INTO `t_article_class` VALUES ('1', 'ASP.NET MVC', '1', '2019-06-25 18:31:13');
+INSERT INTO `t_article_class` VALUES ('2', 'SQLServer', '2', '2019-06-25 18:31:16');
+INSERT INTO `t_article_class` VALUES ('3', 'MySQL', '3', '2019-06-25 18:31:19');
+INSERT INTO `t_article_class` VALUES ('4', 'IIS', '4', '2019-06-25 18:31:21');
 
 -- ----------------------------
 -- Table structure for t_article_type
@@ -199,7 +199,7 @@ CREATE TABLE `t_log` (
   `IPAddressName` varchar(100) DEFAULT NULL COMMENT 'IP所在地',
   `Status` bit(1) DEFAULT NULL COMMENT '状态',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8 COMMENT='日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8 COMMENT='日志表';
 
 -- ----------------------------
 -- Records of t_log
@@ -207,6 +207,9 @@ CREATE TABLE `t_log` (
 INSERT INTO `t_log` VALUES ('1', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-15 22:56:18', '192.168.1.2', '本地局域网', '');
 INSERT INTO `t_log` VALUES ('2', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-15 23:11:59', '192.168.1.2', '本地局域网', '');
 INSERT INTO `t_log` VALUES ('3', 'Exit', 'admin', '超级管理员', null, '安全退出系统', '2019-06-15 23:12:04', '192.168.1.2', '本地局域网', '');
+INSERT INTO `t_log` VALUES ('49', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-26 09:31:20', '192.168.1.148', '本地局域网', '');
+INSERT INTO `t_log` VALUES ('50', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-28 16:48:30', '192.168.1.148', '本地局域网', '');
+INSERT INTO `t_log` VALUES ('51', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-28 17:48:57', '192.168.1.148', '本地局域网', '');
 
 -- ----------------------------
 -- Table structure for t_menu
@@ -225,7 +228,7 @@ CREATE TABLE `t_menu` (
   `CreateBy` int(4) DEFAULT NULL COMMENT '创建者',
   `UpdateBy` int(4) DEFAULT NULL COMMENT '编辑者',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COMMENT='菜单表';
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COMMENT='菜单表';
 
 -- ----------------------------
 -- Records of t_menu
