@@ -45,11 +45,11 @@
                    , cols: [[ //表头
                      { checkbox: true, fixed: true },
                      { field: 'Id', title: 'Id', width: 80, fixed: 'left' }
-                     , { field: 'ActionCode', title: '操作编码', sort: true }
-                     , { field: 'ActionName', title: '操作名称' }
-                     , { field: 'MenuIcon', title: '操作图标', templet: '<div><i class="iconfont {{d.Icon}}"></i></div>' }
-                     , { field: 'Method', title: '操作方法' }
-                     , { field: 'OrderBy', title: '排序号',width:80 }
+                       , { field: 'ActionCode', title: '操作编码', width: 120, sort: true }
+                       , { field: 'ActionName', title: '操作名称', width: 120, }
+                     , { field: 'MenuIcon', title: '操作图标',width: 80, templet: '<div><i class="iconfont {{d.Icon}}"></i></div>' }
+                       , { field: 'Method', title: '操作方法', width: 120, }
+                     , { field: 'OrderBy', title: '排序号',width: 80 }
                      , { field: 'Status', title: '状态', templet: '<div>{{showStatus(d.Status)}}</div>', unresize: true, width: 100, align: 'center' }
                      , { field: 'CreateOn', title: '创建时间', sort: true, templet: '<div>{{showDate(d.CreateOn)}}</div>' }
                      , { field: '', title: '操作', toolbar: "#bar" }

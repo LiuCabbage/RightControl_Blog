@@ -43,12 +43,12 @@
                 , cols: [[ //表头
        //{ checkbox: true },
        { field: 'Id', title: 'Id', width: 80,type: 'numbers'}
-       , { field: 'MenuName', title: '菜单名称' }
-       , { field: 'MenuUrl', title: '菜单路径' }
-       , { field: 'MenuIcon', title: '菜单图标', templet: '<div><i class="iconfont {{d.MenuIcon}}"></i></div>' }
+       , { field: 'MenuName', title: '菜单名称',width: 130 }
+       , { field: 'MenuUrl', title: '菜单路径', width: 150 }
+       , { field: 'MenuIcon', title: '菜单图标', width: 80, templet: '<div><i class="iconfont {{d.MenuIcon}}"></i></div>' }
        , { field: 'CreateOn', title: '创建时间', templet: '<div>{{showDate(d.CreateOn)}}</div>' }
-        , { field: 'Status', title: '状态', templet: '<div>{{showStatus(d.Status)}}</div>', unresize: true, width: 100, align: 'center' }
-       , { field: 'OrderNo', title: '排序号' }
+       , { field: 'Status', title: '状态', templet: '<div>{{showStatus(d.Status)}}</div>', unresize: true, width: 100, align: 'center' }
+       , { field: 'OrderNo', title: '排序号',width: 80 }
        , { field: '', title: '操作', toolbar: "#bar" }
                 ]]
             });

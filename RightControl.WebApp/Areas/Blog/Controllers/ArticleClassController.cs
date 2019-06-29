@@ -34,6 +34,13 @@ namespace RightControl.WebApp.Areas.Blog.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult Add(ArticleClassModel model)
+        {
+            model.CreateOn = DateTime.Now;
+            var result = articleClassService.CreateModel(model) ? SuccessTip() : ErrorTip();
+            return Json(result);
+        }
         public ActionResult Detail(int Id)
         {
             var model = articleClassService.ReadModel(Id);
@@ -50,6 +57,12 @@ namespace RightControl.WebApp.Areas.Blog.Controllers
             var result = articleClassService.UpdateModel(model) ? SuccessTip() : ErrorTip();
             return Json(result);
         }
-
+        [HttpPost]
+        public ActionResult Delete(int Id)
+        {
+            //这里删除文章分类，没有删除类别下的文章，后面改
+            var result = articleClassService.DeleteModel(Id) ? SuccessTip() : ErrorTip();
+            return Json(result);
+        }
     }
 }
