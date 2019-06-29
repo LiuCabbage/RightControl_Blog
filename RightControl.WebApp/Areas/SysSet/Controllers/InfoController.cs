@@ -46,14 +46,14 @@ namespace RightControl.WebApp.Areas.SysSet.Controllers
                 if (file == null || string.IsNullOrEmpty(file.FileName) || file.ContentLength == 0 || filecombin.Length < 2)
                 {
                     _uploadFile.code = -1;
-                    _uploadFile.src = "";
+                    _uploadFile.data = new { src = "" };
                     _uploadFile.msg = "上传出错!请检查文件名或文件内容";
                     return Json(_uploadFile);
                 }
-                //定义本地路径位置
-                string local = "\\Upload\\img";
+
                 string filePathName = string.Empty;
-                string localPath = Path.Combine(HttpRuntime.AppDomainAppPath, local);
+                //定义本地路径位置
+                string localPath = Server.MapPath("~/Upload/img/");
 
                 string tmpName = Server.MapPath("~/Upload/img/");
                 var tmp = file.FileName;
@@ -72,7 +72,7 @@ namespace RightControl.WebApp.Areas.SysSet.Controllers
                 file.SaveAs(Path.Combine(tmpName, filePathName));   //保存图片（文件夹）  
 
                 _uploadFile.code = 0;
-                _uploadFile.src = Path.Combine("/Upload/img/", filePathName); //name = Path.GetFileNameWithoutExtension(file.FileName),   // 获取文件名不含后缀名  
+                _uploadFile.data = new { src = Path.Combine("/Upload/img/", filePathName) };  //name = Path.GetFileNameWithoutExtension(file.FileName),   // 获取文件名不含后缀名  
                 _uploadFile.msg = "上传成功";
                 return Json(_uploadFile);
             }

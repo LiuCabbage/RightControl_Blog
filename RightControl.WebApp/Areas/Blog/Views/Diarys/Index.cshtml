@@ -31,15 +31,12 @@
 			        id: 'defaultReload'
                    , elem: '#defaultTable'
                    , height: 'full-112' //高度最大化减去差值
-                    , url: '/Blog/Links/List' //数据接口
-                    , page: true //开启分页
+                   , url: '/Blog/Diarys/List' //数据接口
+                   , page: true //开启分页
                    , cols: [[ //表头
                      { checkbox: true, fixed: true },
                        { field: 'Id', title: 'Id', width: 80, fixed: 'left', sort: true }
-                     , { field: 'Name', title: '网站名称' }
-                     , { field: 'Url', title: '网址' }
-                     , { field: 'Icon', title: '图标' }
-                     , { field: 'Describe', title: '描述' }
+                     , { field: 'Content', title: '日记' }
                      , { field: 'CreateOn', title: '创建时间', sort: true, templet: '<div>{{showDate(d.CreateOn)}}</div>' }
                      , { field: '', title: '操作', toolbar: "#bar" }
                    ]]
@@ -59,7 +56,7 @@
 			    //add
 			    $('#btnAdd').on('click', function () {
 			        common.openTop({
-                        title: '友情链接添加', w: '600px', h: '350px', content: '/Blog/Links/Add/'
+                        title: '日记添加', w: '700px', h: '450px', content: '/Blog/Diarys/Add/'
 			        });
 			    });
 			    //监听工具条
@@ -68,14 +65,14 @@
 			        if (obj.event === 'detail') {
 			            common.openTop({
 			                detail:true,
-                            title: '友情链接详情', w: '568px', h: '380px', content: '/Blog/Links/Detail/' + data.Id, clickOK: function (index) {
+                            title: '日记详情', w: '568px', h: '380px', content: '/Blog/Diarys/Detail/' + data.Id, clickOK: function (index) {
 			                    common.close(index);
 			                }
 			            });
 			        } else if (obj.event === 'del') {
 			            layer.confirm('确定要删除吗？', function (index) {
 			                $.ajax({
-                                url: "/Blog/Links/Delete",
+                                url: "/Blog/Diarys/Delete",
 			                    type: "POST",
 			                    data: { "Id": data.Id },
 			                    dataType: "json",
@@ -92,12 +89,11 @@
 			            });
 			        } else if (obj.event === 'edit') {
 			            common.openTop({
-                            title: '友情链接编辑', w: '600px', h: '350px', content: '/Blog/Links/Edit/' + data.Id
+                            title: '日记编辑', w: '700px', h: '450px', content: '/Blog/Diarys/Edit/' + data.Id
 			            });
 			        }
 			    });
 			});
 </script>
-
 
 

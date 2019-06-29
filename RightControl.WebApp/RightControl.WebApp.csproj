@@ -407,6 +407,7 @@
     <Compile Include="Areas\Blog\BlogAreaRegistration.cs" />
     <Compile Include="Areas\Blog\Controllers\ArticleClassController.cs" />
     <Compile Include="Areas\Blog\Controllers\ArticleTypeController.cs" />
+    <Compile Include="Areas\Blog\Controllers\DiarysController.cs" />
     <Compile Include="Areas\Blog\Controllers\LinksController.cs" />
     <Compile Include="Areas\Permissions\Controllers\ActionController.cs" />
     <Compile Include="Areas\Permissions\Controllers\MenuActionController.cs" />
@@ -527,6 +528,10 @@
     <Content Include="Areas\Blog\Views\Links\Add.cshtml" />
     <Content Include="Areas\Blog\Views\Links\Detail.cshtml" />
     <Content Include="Areas\Blog\Views\Links\Edit.cshtml" />
+    <Content Include="Areas\Blog\Views\Diarys\Index.cshtml" />
+    <Content Include="Areas\Blog\Views\Diarys\Detail.cshtml" />
+    <Content Include="Areas\Blog\Views\Diarys\Edit.cshtml" />
+    <Content Include="Areas\Blog\Views\Diarys\Add.cshtml" />
     <None Include="packages.config" />
     <Content Include="Areas\Admin\plugins\layui\font\iconfont.eot" />
     <Content Include="Areas\Admin\plugins\layui\font\iconfont.ttf" />
