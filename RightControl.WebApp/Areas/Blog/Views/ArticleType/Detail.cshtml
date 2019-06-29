@@ -1,0 +1,26 @@
+﻿@model RightControl.Model.ArticleTypeModel
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutDetail.cshtml";
+}
+
+<div class="layui-col-md12">
+    <table class="layui-table" lay-skin="line">
+        <tbody>
+            <tr>
+                <td>ID：</td>
+                <td>@Model.Id</td>
+            </tr>
+            <tr>
+                <td>文章分类：</td>
+                <td>@Model.Name</td>
+            </tr>
+            <tr>
+                <td>创建时间：</td>
+                <td>@Model.CreateOn</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+

@@ -12,7 +12,7 @@ namespace RightControl.Service
     {
         public dynamic GetListByFilter(ArticleTypeModel filter, PageInfo pageInfo)
         {
-            throw new NotImplementedException();
+            return GetListByFilter(filter, pageInfo, null);
         }
     }
 }
