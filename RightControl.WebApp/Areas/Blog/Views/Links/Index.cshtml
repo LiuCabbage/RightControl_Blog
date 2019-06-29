@@ -31,12 +31,15 @@
 			        id: 'defaultReload'
                    , elem: '#defaultTable'
                    , height: 'full-112' //高度最大化减去差值
-                   , url: '/Blog/ArticleType/List' //数据接口
+                   , url: '/Blog/Links/List' //数据接口
                    , page: false //开启分页
                    , cols: [[ //表头
                      { checkbox: true, fixed: true },
                        { field: 'Id', title: 'Id', width: 80, fixed: 'left', sort: true }
-                     , { field: 'Name', title: '文章类型'}
+                     , { field: 'Name', title: '网站名称' }
+                     , { field: 'Url', title: '网址' }
+                     , { field: 'Icon', title: '图标' }
+                     , { field: 'Describe', title: '描述' }
                      , { field: 'CreateOn', title: '创建时间', sort: true, templet: '<div>{{showDate(d.CreateOn)}}</div>' }
                      , { field: '', title: '操作', toolbar: "#bar" }
                    ]]
@@ -56,7 +59,7 @@
 			    //add
 			    $('#btnAdd').on('click', function () {
 			        common.openTop({
-                        title: '文章类型添加', w: '600px', h: '200px', content: '/Blog/ArticleType/Add/'
+                        title: '友情链接添加', w: '600px', h: '200px', content: '/Blog/Links/Add/'
 			        });
 			    });
 			    //监听工具条
@@ -65,14 +68,14 @@
 			        if (obj.event === 'detail') {
 			            common.openTop({
 			                detail:true,
-                            title: '文章类型详情', w: '568px', h: '250px', content: '/Blog/ArticleType/Detail/' + data.Id, clickOK: function (index) {
+                            title: '友情链接详情', w: '568px', h: '250px', content: '/Blog/Links/Detail/' + data.Id, clickOK: function (index) {
 			                    common.close(index);
 			                }
 			            });
 			        } else if (obj.event === 'del') {
 			            layer.confirm('确定要删除吗？', function (index) {
 			                $.ajax({
-                                url: "/Blog/ArticleType/Delete",
+                                url: "/Blog/Links/Delete",
 			                    type: "POST",
 			                    data: { "Id": data.Id },
 			                    dataType: "json",
@@ -89,11 +92,12 @@
 			            });
 			        } else if (obj.event === 'edit') {
 			            common.openTop({
-                            title: '文章类型编辑', w: '600px', h: '200px', content: '/Blog/ArticleType/Edit/' + data.Id
+                            title: '友情链接编辑', w: '600px', h: '200px', content: '/Blog/Links/Edit/' + data.Id
 			            });
 			        }
 			    });
 			});
 </script>
+
 
 

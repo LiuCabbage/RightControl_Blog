@@ -6,19 +6,19 @@ using System.Web.Mvc;
 
 namespace RightControl.WebApp.Areas.Blog.Controllers
 {
-    public class ArticleTypeController : BaseController
+    public class LinksController : BaseController
     {
-        public IArticleTypeService articleTypeService { get; set; }
-        // GET: Blog/ArticleType
+        public ILinksService linksService { get; set; }
+        // GET: Blog/Links
         public override ActionResult Index(int? Id)
         {
             base.Index(Id);
             return View();
         }
         [HttpGet]
-        public JsonResult List(ArticleTypeModel filter, PageInfo pageInfo)
+        public JsonResult List(LinksModel filter, PageInfo pageInfo)
         {
-            var result = articleTypeService.GetListByFilter(filter, pageInfo);
+            var result = linksService.GetListByFilter(filter, pageInfo);
             return Json(result, JsonRequestBehavior.AllowGet);
         }
         public ActionResult Add()
@@ -26,33 +26,32 @@ namespace RightControl.WebApp.Areas.Blog.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Add(ArticleTypeModel model)
+        public ActionResult Add(LinksModel model)
         {
             model.CreateOn = DateTime.Now;
-            var result = articleTypeService.CreateModel(model) ? SuccessTip() : ErrorTip();
+            var result = linksService.CreateModel(model) ? SuccessTip() : ErrorTip();
             return Json(result);
         }
         public ActionResult Detail(int Id)
         {
-            var model = articleTypeService.ReadModel(Id);
+            var model = linksService.ReadModel(Id);
             return View(model);
         }
         public ActionResult Edit(int Id)
         {
-            var model = articleTypeService.ReadModel(Id);
+            var model = linksService.ReadModel(Id);
             return View(model);
         }
         [HttpPost]
-        public ActionResult Edit(ArticleTypeModel model)
+        public ActionResult Edit(LinksModel model)
         {
-            var result = articleTypeService.UpdateModel(model) ? SuccessTip() : ErrorTip();
+            var result = linksService.UpdateModel(model) ? SuccessTip() : ErrorTip();
             return Json(result);
         }
         [HttpPost]
         public ActionResult Delete(int Id)
         {
-            //这里删除文章类型，没有删除类型下的文章，后面改
-            var result = articleTypeService.DeleteModel(Id) ? SuccessTip() : ErrorTip();
+            var result = linksService.DeleteModel(Id) ? SuccessTip() : ErrorTip();
             return Json(result);
         }
     }
