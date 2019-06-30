@@ -409,6 +409,7 @@
     <Compile Include="Areas\Blog\Controllers\ArticleTypeController.cs" />
     <Compile Include="Areas\Blog\Controllers\DiarysController.cs" />
     <Compile Include="Areas\Blog\Controllers\LinksController.cs" />
+    <Compile Include="Areas\Blog\Controllers\QQUserController.cs" />
     <Compile Include="Areas\Permissions\Controllers\ActionController.cs" />
     <Compile Include="Areas\Permissions\Controllers\MenuActionController.cs" />
     <Compile Include="Areas\Permissions\Controllers\MenuController.cs" />
@@ -532,6 +533,8 @@
     <Content Include="Areas\Blog\Views\Diarys\Detail.cshtml" />
     <Content Include="Areas\Blog\Views\Diarys\Edit.cshtml" />
     <Content Include="Areas\Blog\Views\Diarys\Add.cshtml" />
+    <Content Include="Areas\Blog\Views\QQUser\Index.cshtml" />
+    <Content Include="Areas\Blog\Views\QQUser\Detail.cshtml" />
     <None Include="packages.config" />
     <Content Include="Areas\Admin\plugins\layui\font\iconfont.eot" />
     <Content Include="Areas\Admin\plugins\layui\font\iconfont.ttf" />
