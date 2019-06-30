@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2019-06-29 18:35:18
+Date: 2019-06-30 22:23:57
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -141,11 +141,16 @@ CREATE TABLE `t_diarys` (
   `Content` text CHARACTER SET utf8 COMMENT '日记内容',
   `CreateOn` datetime DEFAULT NULL COMMENT '创建日期',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of t_diarys
 -- ----------------------------
+INSERT INTO `t_diarys` VALUES ('1', '<p>今天很开心，我竟然想买厨具做饭了，可以，这个肥仔他有想法了。</p>', '2019-06-29 23:22:21');
+INSERT INTO `t_diarys` VALUES ('2', 'gfdgfds范德萨0.0<img src=\"http://localhost:27948/Areas/Admin/plugins/layui/images/face/17.gif\" alt=\"[白眼]\">', '2019-06-29 23:50:43');
+INSERT INTO `t_diarys` VALUES ('3', '<img src=\"http://localhost:27948/Areas/Admin/plugins/layui/images/face/17.gif\" alt=\"[白眼]\"><img src=\"http://localhost:27948/Areas/Admin/plugins/layui/images/face/44.gif\" alt=\"[阴险]\">范德萨范德萨<img src=\"http://localhost:27948/Areas/Admin/plugins/layui/images/face/31.gif\" alt=\"[汗]\">', '2019-06-30 02:47:16');
+INSERT INTO `t_diarys` VALUES ('4', '范德萨<img src=\"http://localhost:27948/Areas/Admin/plugins/layui/images/face/45.gif\" alt=\"[怒骂]\"><img src=\"http://localhost:27948/Areas/Admin/plugins/layui/images/face/19.gif\" alt=\"[左哼哼]\"><img src=\"http://localhost:27948/Areas/Admin/plugins/layui/images/face/28.gif\" alt=\"[馋嘴]\"><img src=\"http://localhost:27948/Areas/Admin/plugins/layui/images/face/35.gif\" alt=\"[失望]\">', '2019-06-30 02:51:43');
+INSERT INTO `t_diarys` VALUES ('5', '<img src=\"http://localhost:27948/Areas/Admin/plugins/layui/images/face/44.gif\" alt=\"[阴险]\">我太他妈的帮帮了哦<img src=\"http://localhost:27948/Areas/Admin/plugins/layui/images/face/11.gif\" alt=\"[爱你]\">', '2019-06-30 02:55:54');
 
 -- ----------------------------
 -- Table structure for t_feedback
@@ -179,14 +184,15 @@ CREATE TABLE `t_links` (
   `Describe` varchar(100) CHARACTER SET utf8 DEFAULT NULL COMMENT '描述',
   `CreateOn` datetime DEFAULT NULL COMMENT '创建日期',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of t_links
 -- ----------------------------
 INSERT INTO `t_links` VALUES ('1', '百度', 'https://www.baidu.com', 'https://www.baidu.com/favicon.ico', '国内广告搜索引擎', '2019-06-29 18:16:49');
 INSERT INTO `t_links` VALUES ('2', '谷歌', 'http://www.google.com.hk', 'http://www.google.com.hk/favicon.ico', '美国谷歌搜索引擎', '2019-06-29 18:18:02');
-INSERT INTO `t_links` VALUES ('3', '必应', 'https://cn.bing.com', 'https://cn.bing.com', '微软必应搜索引擎', '2019-06-29 18:19:13');
+INSERT INTO `t_links` VALUES ('3', '必应', 'https://cn.bing.com', 'https://cn.bing.com/favicon.ico', '微软必应搜索引擎', '2019-06-29 18:19:13');
+INSERT INTO `t_links` VALUES ('4', 'layui', 'https://www.layui.com', 'https://www.layui.com/favicon.ico', 'layui官网', '2019-06-29 23:03:51');
 
 -- ----------------------------
 -- Table structure for t_log
@@ -204,7 +210,7 @@ CREATE TABLE `t_log` (
   `IPAddressName` varchar(100) DEFAULT NULL COMMENT 'IP所在地',
   `Status` bit(1) DEFAULT NULL COMMENT '状态',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8 COMMENT='日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8 COMMENT='日志表';
 
 -- ----------------------------
 -- Records of t_log
@@ -218,6 +224,15 @@ INSERT INTO `t_log` VALUES ('51', 'Login', 'admin', '超级管理员', '系统�
 INSERT INTO `t_log` VALUES ('52', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-29 09:19:19', '192.168.1.148', '本地局域网', '');
 INSERT INTO `t_log` VALUES ('53', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-29 10:19:32', '192.168.1.148', '本地局域网', '');
 INSERT INTO `t_log` VALUES ('54', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-29 17:33:21', '192.168.1.148', '本地局域网', '');
+INSERT INTO `t_log` VALUES ('55', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-29 22:55:42', '192.168.1.2', '本地局域网', '');
+INSERT INTO `t_log` VALUES ('56', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-29 23:58:12', '192.168.1.2', '本地局域网', '');
+INSERT INTO `t_log` VALUES ('57', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-30 01:00:40', '192.168.1.2', '本地局域网', '');
+INSERT INTO `t_log` VALUES ('58', 'Exit', 'admin', '超级管理员', null, '安全退出系统', '2019-06-30 01:13:56', '192.168.1.2', '本地局域网', '');
+INSERT INTO `t_log` VALUES ('59', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-30 01:14:03', '192.168.1.2', '本地局域网', '');
+INSERT INTO `t_log` VALUES ('60', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-30 01:27:49', '192.168.1.2', '本地局域网', '');
+INSERT INTO `t_log` VALUES ('61', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-30 02:28:27', '192.168.1.2', '本地局域网', '');
+INSERT INTO `t_log` VALUES ('62', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-30 17:02:03', '192.168.1.2', '本地局域网', '');
+INSERT INTO `t_log` VALUES ('63', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-30 19:09:01', '192.168.1.2', '本地局域网', '');
 
 -- ----------------------------
 -- Table structure for t_menu
@@ -255,11 +270,11 @@ INSERT INTO `t_menu` VALUES ('11', '博客管理', null, 'icon-zhuye', '0', '0',
 INSERT INTO `t_menu` VALUES ('12', '文章类型', '/Blog/ArticleType', 'icon-jibenziliao', '7', '11', '', '2019-06-24 14:32:31', '2019-06-29 17:41:30', '1', '1');
 INSERT INTO `t_menu` VALUES ('13', '文章分类', '/Blog/ArticleClass', 'icon-jibenziliao', '6', '11', '', '2019-06-24 14:51:05', '2019-06-25 18:06:46', '1', '1');
 INSERT INTO `t_menu` VALUES ('14', '友情链接', '/Blog/Links', 'icon-jibenziliao', '4', '11', '', '2019-06-24 14:55:33', '2019-06-29 18:12:35', '1', '1');
-INSERT INTO `t_menu` VALUES ('15', '日记管理', '/', 'icon-jibenziliao', '3', '11', '', '2019-06-24 15:00:40', '0001-01-01 00:00:00', '1', '0');
+INSERT INTO `t_menu` VALUES ('15', '日记管理', '/Blog/Diarys', 'icon-jibenziliao', '3', '11', '', '2019-06-24 15:00:40', '2019-06-29 23:19:47', '1', '1');
 INSERT INTO `t_menu` VALUES ('16', '文章管理', '/', 'icon-jibenziliao', '0', '11', '', '2019-06-24 15:02:17', '0001-01-01 00:00:00', '1', '0');
 INSERT INTO `t_menu` VALUES ('17', '评论管理', '/', 'icon-jibenziliao', '1', '11', '', '2019-06-25 15:45:24', '0001-01-01 00:00:00', '1', '0');
 INSERT INTO `t_menu` VALUES ('18', '留言管理', '/', 'icon-jibenziliao', '2', '11', '', '2019-06-25 15:45:49', '0001-01-01 00:00:00', '1', '0');
-INSERT INTO `t_menu` VALUES ('19', '用户管理', '/', 'icon-jibenziliao', '5', '11', '', '2019-06-25 15:46:43', '0001-01-01 00:00:00', '1', '0');
+INSERT INTO `t_menu` VALUES ('19', '用户管理', '/Blog/QQUser', 'icon-jibenziliao', '5', '11', '', '2019-06-25 15:46:43', '2019-06-30 19:52:18', '1', '1');
 
 -- ----------------------------
 -- Table structure for t_menu_action
@@ -306,6 +321,13 @@ INSERT INTO `t_menu_action` VALUES ('14', '1');
 INSERT INTO `t_menu_action` VALUES ('14', '2');
 INSERT INTO `t_menu_action` VALUES ('14', '3');
 INSERT INTO `t_menu_action` VALUES ('14', '4');
+INSERT INTO `t_menu_action` VALUES ('15', '1');
+INSERT INTO `t_menu_action` VALUES ('15', '2');
+INSERT INTO `t_menu_action` VALUES ('15', '3');
+INSERT INTO `t_menu_action` VALUES ('15', '4');
+INSERT INTO `t_menu_action` VALUES ('19', '2');
+INSERT INTO `t_menu_action` VALUES ('19', '3');
+INSERT INTO `t_menu_action` VALUES ('19', '4');
 
 -- ----------------------------
 -- Table structure for t_menu_role_action
@@ -387,6 +409,10 @@ INSERT INTO `t_menu_role_action` VALUES ('14', '1', '3');
 INSERT INTO `t_menu_role_action` VALUES ('14', '1', '4');
 INSERT INTO `t_menu_role_action` VALUES ('15', '0', '0');
 INSERT INTO `t_menu_role_action` VALUES ('15', '1', '0');
+INSERT INTO `t_menu_role_action` VALUES ('15', '1', '1');
+INSERT INTO `t_menu_role_action` VALUES ('15', '1', '2');
+INSERT INTO `t_menu_role_action` VALUES ('15', '1', '3');
+INSERT INTO `t_menu_role_action` VALUES ('15', '1', '4');
 INSERT INTO `t_menu_role_action` VALUES ('16', '0', '0');
 INSERT INTO `t_menu_role_action` VALUES ('16', '1', '0');
 INSERT INTO `t_menu_role_action` VALUES ('17', '0', '0');
@@ -395,6 +421,9 @@ INSERT INTO `t_menu_role_action` VALUES ('18', '0', '0');
 INSERT INTO `t_menu_role_action` VALUES ('18', '1', '0');
 INSERT INTO `t_menu_role_action` VALUES ('19', '0', '0');
 INSERT INTO `t_menu_role_action` VALUES ('19', '1', '0');
+INSERT INTO `t_menu_role_action` VALUES ('19', '1', '2');
+INSERT INTO `t_menu_role_action` VALUES ('19', '1', '3');
+INSERT INTO `t_menu_role_action` VALUES ('19', '1', '4');
 
 -- ----------------------------
 -- Table structure for t_qq_user
@@ -466,6 +495,6 @@ CREATE TABLE `t_user` (
 -- ----------------------------
 -- Records of t_user
 -- ----------------------------
-INSERT INTO `t_user` VALUES ('1', 'admin', '超级管理员', 'e10adc3949ba59abbe56e057f20f883e', '1', '', '2019-02-28 16:18:52', '2019-06-22 00:05:39', '0', '1', '1', '11111111111', '123456@qq.com', '最高权限', '/Upload/img/502.jpg');
+INSERT INTO `t_user` VALUES ('1', 'admin', '超级管理员', 'e10adc3949ba59abbe56e057f20f883e', '1', '', '2019-02-28 16:18:52', '2019-06-30 01:13:52', '0', '1', '1', '11111111111', '123456@qq.com', '最高权限', '/Upload/img/20161019214311_5e2fT_1.jpeg');
 INSERT INTO `t_user` VALUES ('2', 'test', '普通管理员', 'e10adc3949ba59abbe56e057f20f883e', '2', '', '2019-02-28 16:21:31', '2019-02-28 16:21:34', '0', '0', '1', '178899573', '123456@qq.com', '普通权限', '');
 INSERT INTO `t_user` VALUES ('3', 'user', '用户', 'e10adc3949ba59abbe56e057f20f883e', '3', '', '2019-02-28 16:22:15', '2019-02-28 16:22:19', '0', '0', '1', '178899573', '123456@qq.com', '低级权限', null);
