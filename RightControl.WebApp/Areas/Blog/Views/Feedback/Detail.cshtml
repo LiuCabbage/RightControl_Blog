@@ -1,4 +1,4 @@
-﻿@model RightControl.Model.QQUserModel
+﻿@model RightControl.Model.FeedbackModel
 @{
     ViewBag.Title = "Detail";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutDetail.cshtml";
@@ -12,28 +12,28 @@
                 <td>@Model.Id</td>
             </tr>
             <tr>
-                <td>OpenId：</td>
-                <td>@Model.OpenId</td>
+                <td>人员ID：</td>
+                <td>@Model.SendId</td>
             </tr>
             <tr>
-                <td>昵称：</td>
-                <td>@Model.NickName</td>
+                <td>目标人员ID：</td>
+                <td>@Model.AcceptId</td>
             </tr>
             <tr>
-                <td>性别：</td>
-                <td>@(Model.Gender==1?"男":"女")</td>
+                <td>内容：</td>
+                <td>@Model.Content</td>
             </tr>
             <tr>
-                <td>头像：</td>
-                <td>@Model.HeadShot</td>
+                <td>父ID：</td>
+                <td>@Model.ParentId</td>
             </tr>
             <tr>
-                <td>邮箱：</td>
-                <td>@Model.Email</td>
+                <td>城市：</td>
+                <td>@Model.City</td>
             </tr>
             <tr>
-                <td>最后一次登录时间：</td>
-                <td>@Model.LastLogin</td>
+                <td>设备：</td>
+                <td>@Model.Equip</td>
             </tr>
             <tr>
                 <td>创建时间：</td>

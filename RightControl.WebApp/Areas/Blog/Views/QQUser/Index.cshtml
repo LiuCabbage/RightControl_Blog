@@ -4,15 +4,6 @@
 }
 
 <div class="admin-main">
-    <blockquote class="layui-elem-quote p10">
-        <form id="formSearch" class="layui-form" action="">
-            <div class="layui-form-item" style="margin-bottom:0px;">
-                <div style="float:right;">
-                    @Html.TopToolBarHtml(ViewData["ActionFormRightTop"])
-                </div>
-            </div>
-        </form>
-    </blockquote>
     <div class="layui-field-box">
         <table id="defaultTable" lay-filter="defaultruv"></table>
         <script type="text/html" id="bar">
@@ -34,14 +25,16 @@
                     , url: '/Blog/QQUser/List' //数据接口
                     , page: true //开启分页
                    , cols: [[ //表头
-                     { checkbox: true, fixed: true },
+                       { checkbox: true, fixed: true },
                        { field: 'Id', title: 'Id', width: 80, fixed: 'left', sort: true }
-                     , { field: 'Name', title: '网站名称' }
-                     , { field: 'Url', title: '网址' }
-                     , { field: 'Icon', title: '图标' }
-                     , { field: 'Describe', title: '描述' }
-                     , { field: 'CreateOn', title: '创建时间', sort: true, templet: '<div>{{showDate(d.CreateOn)}}</div>' }
-                     , { field: '', title: '操作', toolbar: "#bar" }
+                       , { field: 'OpenId', title: 'OpenId' }
+                       , { field: 'NickName', title: '昵称' }
+                       , { field: 'Gender', title: '性别',width: 80, templet: '<div>{{showGender(d.Gender)}}</div>' }
+                       , { field: 'HeadShot', title: '头像' }
+                       , { field: 'Email', title: '邮箱' }
+                       , { field: 'LastLogin', title: '最后一次登录时间', sort: true, templet: '<div>{{showDate(d.LastLogin)}}</div>' }
+                       , { field: 'CreateOn', title: '创建时间', sort: true, templet: '<div>{{showDate(d.CreateOn)}}</div>' }
+                       , { field: '', title: '操作', toolbar: "#bar" }
                    ]]
 			    });
 			    //服务器排序
@@ -62,7 +55,7 @@
 			        if (obj.event === 'detail') {
 			            common.openTop({
 			                detail:true,
-                            title: 'QQ用户详情', w: '568px', h: '380px', content: '/Blog/QQUser/Detail/' + data.Id, clickOK: function (index) {
+                            title: 'QQ用户详情', w: '568px', h: '450px', content: '/Blog/QQUser/Detail/' + data.Id, clickOK: function (index) {
 			                    common.close(index);
 			                }
 			            });

@@ -45,9 +45,9 @@ namespace RightControl.Model
         /// </summary>
         public int CommentNum { get; set; }
         /// <summary>
-        /// 是否可见：0可见，1不可见
+        /// 状态
         /// </summary>
-        public int Visible { get; set; }
+        public bool? Status { get; set; }
         /// <summary>
         /// 创建日期
         /// </summary>

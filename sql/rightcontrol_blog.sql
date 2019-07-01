@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2019-06-30 22:23:57
+Date: 2019-07-01 18:33:57
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -63,15 +63,16 @@ CREATE TABLE `t_article` (
   `Ding` int(11) DEFAULT NULL,
   `ReadNum` int(11) DEFAULT NULL,
   `CommentNum` int(11) DEFAULT NULL,
-  `Visible` int(11) DEFAULT NULL,
+  `Status` bit(1) DEFAULT NULL,
   `CreateOn` datetime DEFAULT NULL,
   `UpdateOn` datetime DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of t_article
 -- ----------------------------
+INSERT INTO `t_article` VALUES ('1', '如何装逼不被发现', '我想要装逼不被任何人发现', '装逼开始，装逼失败，装逼结束。', '1', '1', '0', '200', '0', '', '2019-07-01 12:02:11', '2019-07-01 12:02:21');
 
 -- ----------------------------
 -- Table structure for t_article_class
@@ -121,16 +122,18 @@ CREATE TABLE `t_comment` (
   `SendId` int(11) DEFAULT NULL COMMENT '人员ID',
   `AcceptId` int(11) DEFAULT NULL COMMENT '目标人员ID',
   `Content` varchar(500) CHARACTER SET utf8 DEFAULT NULL COMMENT '内容',
-  `State` int(11) DEFAULT NULL COMMENT '状态',
+  `Status` bit(1) DEFAULT NULL COMMENT '状态',
   `ParentId` int(11) DEFAULT NULL COMMENT '父ID',
   `ArticleId` int(11) DEFAULT NULL COMMENT '文章ID',
   `CreateOn` datetime DEFAULT NULL COMMENT '创建日期',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of t_comment
 -- ----------------------------
+INSERT INTO `t_comment` VALUES ('1', '1', '1', '哇，装逼好棒', '', null, '1', '2019-07-01 12:03:11');
+INSERT INTO `t_comment` VALUES ('2', '1', '1', '可以教我装逼吗', '', '1', '1', '2019-07-01 12:03:47');
 
 -- ----------------------------
 -- Table structure for t_diarys
@@ -166,11 +169,13 @@ CREATE TABLE `t_feedback` (
   `Equip` varchar(50) CHARACTER SET utf8 DEFAULT NULL COMMENT '设备',
   `CreateOn` datetime DEFAULT NULL COMMENT '创建日期',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of t_feedback
 -- ----------------------------
+INSERT INTO `t_feedback` VALUES ('1', '1', null, '你是个帅逼', null, '江西', '脑残浏览器', '2019-07-01 11:55:22');
+INSERT INTO `t_feedback` VALUES ('2', '1', '1', '我也是个帅比', '1', '江西', '脑残浏览器', '2019-07-01 11:55:59');
 
 -- ----------------------------
 -- Table structure for t_links
@@ -210,7 +215,7 @@ CREATE TABLE `t_log` (
   `IPAddressName` varchar(100) DEFAULT NULL COMMENT 'IP所在地',
   `Status` bit(1) DEFAULT NULL COMMENT '状态',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8 COMMENT='日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8 COMMENT='日志表';
 
 -- ----------------------------
 -- Records of t_log
@@ -233,6 +238,14 @@ INSERT INTO `t_log` VALUES ('60', 'Login', 'admin', '超级管理员', '系统�
 INSERT INTO `t_log` VALUES ('61', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-30 02:28:27', '192.168.1.2', '本地局域网', '');
 INSERT INTO `t_log` VALUES ('62', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-30 17:02:03', '192.168.1.2', '本地局域网', '');
 INSERT INTO `t_log` VALUES ('63', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-30 19:09:01', '192.168.1.2', '本地局域网', '');
+INSERT INTO `t_log` VALUES ('64', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-01 10:11:13', '192.168.1.148', '本地局域网', '');
+INSERT INTO `t_log` VALUES ('65', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-01 11:11:23', '192.168.1.148', '本地局域网', '');
+INSERT INTO `t_log` VALUES ('66', 'Login', 'admin', 'admin', '系统登录', '登录失败，用户名或密码错误。', '2019-07-01 12:22:54', '192.168.1.148', '本地局域网', '');
+INSERT INTO `t_log` VALUES ('67', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-01 12:23:02', '192.168.1.148', '本地局域网', '');
+INSERT INTO `t_log` VALUES ('68', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-01 14:24:24', '192.168.1.148', '本地局域网', '');
+INSERT INTO `t_log` VALUES ('69', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-01 15:28:40', '192.168.1.148', '本地局域网', '');
+INSERT INTO `t_log` VALUES ('70', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-01 16:57:53', '192.168.1.148', '本地局域网', '');
+INSERT INTO `t_log` VALUES ('71', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-01 17:59:19', '192.168.1.148', '本地局域网', '');
 
 -- ----------------------------
 -- Table structure for t_menu
@@ -271,9 +284,9 @@ INSERT INTO `t_menu` VALUES ('12', '文章类型', '/Blog/ArticleType', 'icon-ji
 INSERT INTO `t_menu` VALUES ('13', '文章分类', '/Blog/ArticleClass', 'icon-jibenziliao', '6', '11', '', '2019-06-24 14:51:05', '2019-06-25 18:06:46', '1', '1');
 INSERT INTO `t_menu` VALUES ('14', '友情链接', '/Blog/Links', 'icon-jibenziliao', '4', '11', '', '2019-06-24 14:55:33', '2019-06-29 18:12:35', '1', '1');
 INSERT INTO `t_menu` VALUES ('15', '日记管理', '/Blog/Diarys', 'icon-jibenziliao', '3', '11', '', '2019-06-24 15:00:40', '2019-06-29 23:19:47', '1', '1');
-INSERT INTO `t_menu` VALUES ('16', '文章管理', '/', 'icon-jibenziliao', '0', '11', '', '2019-06-24 15:02:17', '0001-01-01 00:00:00', '1', '0');
-INSERT INTO `t_menu` VALUES ('17', '评论管理', '/', 'icon-jibenziliao', '1', '11', '', '2019-06-25 15:45:24', '0001-01-01 00:00:00', '1', '0');
-INSERT INTO `t_menu` VALUES ('18', '留言管理', '/', 'icon-jibenziliao', '2', '11', '', '2019-06-25 15:45:49', '0001-01-01 00:00:00', '1', '0');
+INSERT INTO `t_menu` VALUES ('16', '文章管理', '/Blog/Article', 'icon-jibenziliao', '0', '11', '', '2019-06-24 15:02:17', '2019-07-01 11:11:49', '1', '1');
+INSERT INTO `t_menu` VALUES ('17', '评论管理', '/Blog/Comment', 'icon-jibenziliao', '1', '11', '', '2019-06-25 15:45:24', '2019-07-01 11:11:08', '1', '1');
+INSERT INTO `t_menu` VALUES ('18', '留言管理', '/Blog/Feedback', 'icon-jibenziliao', '2', '11', '', '2019-06-25 15:45:49', '2019-07-01 11:10:29', '1', '1');
 INSERT INTO `t_menu` VALUES ('19', '用户管理', '/Blog/QQUser', 'icon-jibenziliao', '5', '11', '', '2019-06-25 15:46:43', '2019-06-30 19:52:18', '1', '1');
 
 -- ----------------------------
@@ -325,7 +338,14 @@ INSERT INTO `t_menu_action` VALUES ('15', '1');
 INSERT INTO `t_menu_action` VALUES ('15', '2');
 INSERT INTO `t_menu_action` VALUES ('15', '3');
 INSERT INTO `t_menu_action` VALUES ('15', '4');
-INSERT INTO `t_menu_action` VALUES ('19', '2');
+INSERT INTO `t_menu_action` VALUES ('16', '1');
+INSERT INTO `t_menu_action` VALUES ('16', '2');
+INSERT INTO `t_menu_action` VALUES ('16', '3');
+INSERT INTO `t_menu_action` VALUES ('16', '4');
+INSERT INTO `t_menu_action` VALUES ('17', '3');
+INSERT INTO `t_menu_action` VALUES ('17', '4');
+INSERT INTO `t_menu_action` VALUES ('18', '3');
+INSERT INTO `t_menu_action` VALUES ('18', '4');
 INSERT INTO `t_menu_action` VALUES ('19', '3');
 INSERT INTO `t_menu_action` VALUES ('19', '4');
 
@@ -415,13 +435,20 @@ INSERT INTO `t_menu_role_action` VALUES ('15', '1', '3');
 INSERT INTO `t_menu_role_action` VALUES ('15', '1', '4');
 INSERT INTO `t_menu_role_action` VALUES ('16', '0', '0');
 INSERT INTO `t_menu_role_action` VALUES ('16', '1', '0');
+INSERT INTO `t_menu_role_action` VALUES ('16', '1', '1');
+INSERT INTO `t_menu_role_action` VALUES ('16', '1', '2');
+INSERT INTO `t_menu_role_action` VALUES ('16', '1', '3');
+INSERT INTO `t_menu_role_action` VALUES ('16', '1', '4');
 INSERT INTO `t_menu_role_action` VALUES ('17', '0', '0');
 INSERT INTO `t_menu_role_action` VALUES ('17', '1', '0');
+INSERT INTO `t_menu_role_action` VALUES ('17', '1', '3');
+INSERT INTO `t_menu_role_action` VALUES ('17', '1', '4');
 INSERT INTO `t_menu_role_action` VALUES ('18', '0', '0');
 INSERT INTO `t_menu_role_action` VALUES ('18', '1', '0');
+INSERT INTO `t_menu_role_action` VALUES ('18', '1', '3');
+INSERT INTO `t_menu_role_action` VALUES ('18', '1', '4');
 INSERT INTO `t_menu_role_action` VALUES ('19', '0', '0');
 INSERT INTO `t_menu_role_action` VALUES ('19', '1', '0');
-INSERT INTO `t_menu_role_action` VALUES ('19', '1', '2');
 INSERT INTO `t_menu_role_action` VALUES ('19', '1', '3');
 INSERT INTO `t_menu_role_action` VALUES ('19', '1', '4');
 
@@ -439,11 +466,12 @@ CREATE TABLE `t_qq_user` (
   `LastLogin` datetime DEFAULT NULL COMMENT '最后一次登录时间',
   `CreateOn` datetime DEFAULT NULL COMMENT '创建日期',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of t_qq_user
 -- ----------------------------
+INSERT INTO `t_qq_user` VALUES ('1', 'woyebuzdhidao', '蚯蚓', '1', '/Upload/img/20161019214311_5e2fT_1.jpeg', '178899573@qq.com', '2019-07-01 10:34:30', '2019-07-01 10:34:33');
 
 -- ----------------------------
 -- Table structure for t_role

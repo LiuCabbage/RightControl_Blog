@@ -1,4 +1,4 @@
-﻿@model RightControl.Model.DiarysModel
+﻿@model RightControl.Model.ArticleModel
 @{
     ViewBag.Title = "Detail";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutDetail.cshtml";
@@ -8,15 +8,19 @@
     <table class="layui-table" lay-skin="line">
         <tbody>
             <tr>
-                <td>ID：</td>
-                <td>@Model.Id</td>
+                <td>标题：</td>
+                <td>@Model.Title</td>
             </tr>
             <tr>
-                <td>日记：</td>
+                <td>摘要：</td>
+                <td>@Model.ZhaiYao</td>
+            </tr>
+            <tr>
+                <td>内容：</td>
                 <td><textarea id="Content" name="Content" lay-verify="concact"></textarea></td>
             </tr>
             <tr>
-                <td>创建时间：</td>
+                <td>添加时间：</td>
                 <td>@Model.CreateOn</td>
             </tr>
         </tbody>
@@ -35,7 +39,7 @@
             }
         });
         var index = layedit.build('Content', {
-            tool: [
+            tool:[
                 'strong' //加粗
                 , 'italic' //斜体
                 , 'underline' //下划线
@@ -52,3 +56,4 @@
         }); //建立编辑器
     });
 </script>
+

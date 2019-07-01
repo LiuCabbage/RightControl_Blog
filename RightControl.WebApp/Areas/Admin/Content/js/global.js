@@ -25,6 +25,22 @@ function showStatus(val) {
         return '<i class="layui-icon red" style="font-size:18px;">&#x1006;</i> 停用';
     }
 }
+function showGender(val) {
+    if (val == 1) {
+        return '男';
+    }
+    else {
+        return '女';
+    }
+}
+function showDing(val) {
+    if (val == 1) {
+        return '是';
+    }
+    else {
+        return '否';
+    }
+}
 function ajaxSubmitForm(form, func) {
     var $ = layui.$;
     var action = form.attr("action");

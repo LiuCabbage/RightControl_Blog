@@ -27,7 +27,7 @@ namespace RightControl.Model
         /// <summary>
         /// 状态
         /// </summary>
-        public int State { get; set; }
+        public bool? Status { get; set; }
         /// <summary>
         /// 父ID
         /// </summary>
