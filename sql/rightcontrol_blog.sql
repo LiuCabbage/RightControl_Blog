@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2019-07-01 18:33:57
+Date: 2019-07-02 18:29:22
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -215,7 +215,7 @@ CREATE TABLE `t_log` (
   `IPAddressName` varchar(100) DEFAULT NULL COMMENT 'IP所在地',
   `Status` bit(1) DEFAULT NULL COMMENT '状态',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8 COMMENT='日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=utf8 COMMENT='日志表';
 
 -- ----------------------------
 -- Records of t_log
@@ -246,6 +246,8 @@ INSERT INTO `t_log` VALUES ('68', 'Login', 'admin', '超级管理员', '系统�
 INSERT INTO `t_log` VALUES ('69', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-01 15:28:40', '192.168.1.148', '本地局域网', '');
 INSERT INTO `t_log` VALUES ('70', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-01 16:57:53', '192.168.1.148', '本地局域网', '');
 INSERT INTO `t_log` VALUES ('71', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-01 17:59:19', '192.168.1.148', '本地局域网', '');
+INSERT INTO `t_log` VALUES ('72', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-02 16:27:48', '192.168.1.148', '本地局域网', '');
+INSERT INTO `t_log` VALUES ('73', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-02 17:51:35', '192.168.1.148', '本地局域网', '');
 
 -- ----------------------------
 -- Table structure for t_menu

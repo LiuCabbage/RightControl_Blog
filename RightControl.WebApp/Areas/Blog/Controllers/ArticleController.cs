@@ -9,6 +9,10 @@ namespace RightControl.WebApp.Areas.Blog.Controllers
     public class ArticleController : BaseController
     {
         public IArticleService articleService { get; set; }
+        public IArticleClassService articleClassService { get; set; }
+        public IArticleTypeService articleTypeService { get; set; }
+        public SelectList ArticleClassList { get { return new SelectList(articleClassService.GetArticleClassList(), "Id", "Name"); } }
+        public SelectList ArticleTypeList { get { return new SelectList(articleTypeService.GetArticleTypeList(), "Id", "Name"); } }
         // GET: Blog/Article
         public override ActionResult Index(int? id)
         {
@@ -46,6 +50,8 @@ namespace RightControl.WebApp.Areas.Blog.Controllers
         }
         public ActionResult Add()
         {
+            ViewBag.ClassId = ArticleClassList;
+            ViewBag.TypeId = ArticleTypeList;
             return View();
         }
         [HttpPost]

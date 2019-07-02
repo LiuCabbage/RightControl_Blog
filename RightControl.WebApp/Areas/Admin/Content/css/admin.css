@@ -42,7 +42,7 @@ text-overflow:ellipsis;white-space: nowrap;}
 /*.admin-main {
     margin-bottom:0px;
 }*/
-body{overflow:hidden;}
+/*body{overflow:hidden;}*/
 .layui-input.icon-txt{width:100px;}
 #sltIcon{height:38px;line-height:38px;margin-left:40px;float:left;display:block;/*text-decoration:underline;*/}
 #spnIcon{font-size:24px;line-height: 38px;float:left;margin-left:12px;}

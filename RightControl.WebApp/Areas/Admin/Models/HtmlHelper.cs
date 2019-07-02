@@ -56,6 +56,19 @@ namespace RightControl.WebApp
 
             return new HtmlString(result);
         }
+        public static HtmlString DingRadioHtml(this HtmlHelper helper, bool? value)
+        {
+            var msg = value.Value ? "置顶" : "不置顶";
+            string enabledDing = value.Value ? "checked" : "";
+            string disabledDing = value.Value ? "" : "checked";
+
+            string result = string.Format(@"<input name = ""Ding"" value = ""true"" title = ""置顶"" {0} type = ""radio"" >
+<div class=""layui-unselect layui-form-radio layui-form-radioed""><i class=""layui-anim layui-icon""></i><div>置顶</div></div>
+  <input name = ""Ding"" value=""false"" title=""不置顶"" type=""radio"" {1}>
+<div class=""layui-unselect layui-form-radio""><i class=""layui-anim layui-icon""></i><div>不置顶</div></div>", enabledDing, disabledDing);
+
+            return new HtmlString(result);
+        }
         /// <summary>
         /// 状态下拉框
         /// </summary>

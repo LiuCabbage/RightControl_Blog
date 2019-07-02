@@ -1,4 +1,4 @@
-﻿@{
+﻿    @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutList.cshtml";
 }
@@ -30,7 +30,7 @@
                        , { field: 'SendId', title: '人员ID', width: 80 }
                        , { field: 'AcceptId', title: '目标人员ID', width: 100 }
                        , { field: 'Content', title: '内容' }
-                       , { field: 'State', title: '状态' }
+                       , { field: 'Status', title: '状态', templet: '<div>{{showStatus(d.Status)}}</div>', unresize: true, width: 100, align: 'center' }
                        , { field: 'ParentId', title: '父ID', width: 80 }
                        , { field: 'ArticleId', title: '文章ID', width: 80 }
                        , { field: 'CreateOn', title: '创建时间', sort: true, templet: '<div>{{showDate(d.CreateOn)}}</div>' }
