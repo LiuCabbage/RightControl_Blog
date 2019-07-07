@@ -42,6 +42,7 @@ namespace RightControl.WebApp.Areas.Blog.Controllers
             return View(model);
         }
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Edit(ArticleModel model)
         {
             model.UpdateOn = DateTime.Now;
@@ -55,6 +56,7 @@ namespace RightControl.WebApp.Areas.Blog.Controllers
             return View();
         }
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Add(ArticleModel model)
         {
             model.Ding = 0;

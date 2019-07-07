@@ -545,6 +545,7 @@
     <Content Include="Areas\Blog\Views\Article\Index.cshtml" />
     <Content Include="Areas\Blog\Views\Article\Detail.cshtml" />
     <Content Include="Areas\Blog\Views\Article\Add.cshtml" />
+    <Content Include="Areas\Blog\Views\Article\Edit.cshtml" />
     <None Include="packages.config" />
     <Content Include="Areas\Admin\plugins\layui\font\iconfont.eot" />
     <Content Include="Areas\Admin\plugins\layui\font\iconfont.ttf" />

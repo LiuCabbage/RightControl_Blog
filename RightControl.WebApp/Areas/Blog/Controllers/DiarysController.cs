@@ -26,6 +26,7 @@ namespace RightControl.WebApp.Areas.Blog.Controllers
             return View();
         }
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Add(DiarysModel model)
         {
             model.CreateOn = DateTime.Now;
@@ -42,8 +43,8 @@ namespace RightControl.WebApp.Areas.Blog.Controllers
             var model = diarysService.ReadModel(Id);
             return View(model);
         }
-        [ValidateInput(false)]
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Edit(DiarysModel model)
         {
             var result = diarysService.UpdateModel(model) ? SuccessTip() : ErrorTip();
