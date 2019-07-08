@@ -29,9 +29,19 @@ namespace RightControl.Model
         /// </summary>
         public int TypeId { get; set; }
         /// <summary>
+        /// 文章类型名称
+        /// </summary>
+        [Computed]
+        public string TypeName { get; set; }
+        /// <summary>
         /// 文章分类
         /// </summary>
         public int ClassId { get; set; }
+        /// <summary>
+        /// 文章分类名称
+        /// </summary>
+        [Computed]
+        public string ClassName { get; set; }
         /// <summary>
         /// 是否置顶：0否，1是
         /// </summary>

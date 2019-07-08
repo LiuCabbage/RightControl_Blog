@@ -16,8 +16,36 @@
                 <td>@Model.ZhaiYao</td>
             </tr>
             <tr>
+                <td>阅读数：</td>
+                <td>@Model.ReadNum</td>
+            </tr>
+            <tr>
+                <td>评论数：</td>
+                <td>@Model.CommentNum</td>
+            </tr>
+            <tr>
                 <td>内容：</td>
                 <td><textarea id="Content" name="Content" lay-verify="concact"></textarea></td>
+            </tr>
+            <tr>
+                <td>分类：</td>
+                <td>@Model.ClassName</td>
+            </tr>
+            <tr>
+                <td>类型：</td>
+                <td>@Model.TypeName</td>
+            </tr>
+            <tr>
+                <td>是否置顶：</td>
+                <td>@(Model.Ding == 1 ? "置顶" : "不置顶")</td>
+            </tr>
+            <tr>
+                <td>状态：</td>
+                <td>@(Model.Status == true ? "启用" : "停用")</td>
+            </tr>
+            <tr>
+                <td>修改时间：</td>
+                <td>@Model.UpdateOn</td>
             </tr>
             <tr>
                 <td>添加时间：</td>

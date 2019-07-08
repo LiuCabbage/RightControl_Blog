@@ -16,6 +16,8 @@ namespace RightControl.WebApp.Areas.Blog.Controllers
         // GET: Blog/Article
         public override ActionResult Index(int? id)
         {
+            ViewBag.ClassId = ArticleClassList;
+            ViewBag.TypeId = ArticleTypeList;
             base.Index(id);
             return View();
         }
@@ -33,12 +35,14 @@ namespace RightControl.WebApp.Areas.Blog.Controllers
         }
         public ActionResult Detail(int Id)
         {
-            var model = articleService.ReadModel(Id);
+            var model = articleService.GetDetail(Id);
             return View(model);
         }
         public ActionResult Edit(int Id)
         {
-            var model = articleService.ReadModel(Id);
+            ViewBag.ClassId = ArticleClassList;
+            ViewBag.TypeId = ArticleTypeList;
+            var model = articleService.GetDetail(Id);
             return View(model);
         }
         [HttpPost]

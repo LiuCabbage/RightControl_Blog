@@ -11,6 +11,14 @@
                 <div class="layui-input-inline">
                     <input name="Title" id="Title" lay-verify="" autocomplete="off" class="layui-input">
                 </div>
+                <label class="layui-form-label">分类：</label>
+                <div class="layui-input-inline">
+                    @Html.DropDownList("ClassId", null, "-请选择分类-", new Dictionary<string, object> { { "lay-verify", "required" } })
+                </div>
+                <label class="layui-form-label">类型：</label>
+                <div class="layui-input-inline">
+                    @Html.DropDownList("TypeId", null, "-请选择类型-", new Dictionary<string, object> { { "lay-verify", "required" } })
+                </div>
                 <label class="layui-form-label">状态：</label>
                 <div class="layui-input-inline">
                     @Html.StatusSelectHtml()
@@ -47,7 +55,9 @@
                  { checkbox: true, fixed: true },
                  { field: 'Id', title: 'Id', width: 80, fixed: 'left' }
                    , { field: 'Title', title: '标题' }
-                   , { field: 'Ding', title: '置顶', width: 100, templet: '<div>{{showDing(d.ReadNum)}}</div>' }
+                   , { field: 'ClassName', title: '分类', width: 120 }
+                   , { field: 'TypeName', title: '类型', width: 80 }
+                   , { field: 'Ding', title: '置顶', width: 80, templet: '<div>{{showDing(d.ReadNum)}}</div>' }
                    , { field: 'ReadNum', title: '阅读数', width: 80 }
                    , { field: 'Status', title: '状态', templet: '<div>{{showStatus(d.Status)}}</div>', unresize: true, width: 100, align: 'center' }
                    , { field: 'CreateOn', title: '创建时间', width: 160, sort: true, templet: '<div>{{showDate(d.CreateOn)}}</div>' }
