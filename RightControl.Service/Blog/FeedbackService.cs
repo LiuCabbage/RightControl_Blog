@@ -13,7 +13,12 @@ namespace RightControl.Service
         }
         public dynamic GetListByFilter(FeedbackModel filter, PageInfo pageInfo)
         {
-            return GetListByFilter(filter, pageInfo, null);
+            pageInfo.prefix = "a.";
+            string _where = @"t_feedback a
+                            LEFT OUTER JOIN t_qq_user b on a.SendId=b.Id
+                            LEFT OUTER JOIN t_qq_user c on a.AcceptId=c.Id";
+            pageInfo.returnFields = string.Format("{0}*,b.NickName as SendNickName,c.NickName as AcceptNickName", pageInfo.prefix);
+            return GetPageUnite(baseRepository, pageInfo, _where, filter);
         }
     }
 }

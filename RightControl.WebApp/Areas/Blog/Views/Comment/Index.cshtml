@@ -27,12 +27,12 @@
                    , cols: [[ //表头
                        { checkbox: true, fixed: true },
                        { field: 'Id', title: 'Id', width: 80, fixed: 'left', sort: true }
-                       , { field: 'SendId', title: '人员ID', width: 80 }
-                       , { field: 'AcceptId', title: '目标人员ID', width: 100 }
+                       , { field: 'SendNickName', title: '发送人', width: 100 }
+                       , { field: 'AcceptNickName', title: '接收人', width: 100 }
                        , { field: 'Content', title: '内容' }
                        , { field: 'Status', title: '状态', templet: '<div>{{showStatus(d.Status)}}</div>', unresize: true, width: 100, align: 'center' }
                        , { field: 'ParentId', title: '父ID', width: 80 }
-                       , { field: 'ArticleId', title: '文章ID', width: 80 }
+                       , { field: 'ArticleTitle', title: '文章标题' }
                        , { field: 'CreateOn', title: '创建时间', sort: true, templet: '<div>{{showDate(d.CreateOn)}}</div>' }
                        , { field: '', title: '操作', toolbar: "#bar" }
                    ]]

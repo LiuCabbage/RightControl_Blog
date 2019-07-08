@@ -13,7 +13,13 @@ namespace RightControl.Service
         }
         public dynamic GetListByFilter(CommentModel filter, PageInfo pageInfo)
         {
-            return GetListByFilter(filter, pageInfo, null);
+            pageInfo.prefix = "a.";
+            string _where = @"t_comment a
+                            LEFT OUTER JOIN t_qq_user b on a.SendId=b.Id
+                            LEFT OUTER JOIN t_qq_user c on a.AcceptId=c.Id
+                            left OUTER JOIN t_article d on a.ArticleId=d.Id";
+            pageInfo.returnFields = string.Format("{0}*,b.NickName as SendNickName,c.NickName as AcceptNickName,d.Title as ArticleTitle", pageInfo.prefix);
+            return GetPageUnite(baseRepository, pageInfo, _where, filter);
         }
     }
 }
