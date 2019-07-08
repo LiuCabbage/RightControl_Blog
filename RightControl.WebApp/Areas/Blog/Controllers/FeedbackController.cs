@@ -22,7 +22,7 @@ namespace RightControl.WebApp.Areas.Blog.Controllers
         }
         public ActionResult Detail(int Id)
         {
-            var model = feedbackService.ReadModel(Id);
+            var model = feedbackService.GetDetail(Id);
             return View(model);
         }
         [HttpPost]

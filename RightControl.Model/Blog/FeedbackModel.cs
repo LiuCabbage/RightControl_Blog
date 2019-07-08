@@ -17,9 +17,19 @@ namespace RightControl.Model
         /// </summary>
         public int SendId { get; set; }
         /// <summary>
+        /// 人员昵称
+        /// </summary>
+        [Computed]
+        public string SendNickName { get; set; }
+        /// <summary>
         /// 目标人员ID
         /// </summary>
         public int AcceptId { get; set; }
+        /// <summary>
+        /// 目标人员昵称
+        /// </summary>
+        [Computed]
+        public string AcceptNickName { get; set; }
         /// <summary>
         /// 内容
         /// </summary>
