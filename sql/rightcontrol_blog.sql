@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2019-07-09 15:23:24
+Date: 2019-07-09 18:29:22
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -57,31 +57,32 @@ CREATE TABLE `t_article` (
   `Id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `Title` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '文章标题',
   `ZhaiYao` varchar(500) CHARACTER SET utf8 DEFAULT NULL COMMENT '摘要',
+  `ImgUrl` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '文章封面',
   `Content` text CHARACTER SET utf8 COMMENT '内容',
-  `TypeId` int(11) DEFAULT NULL,
-  `ClassId` int(11) DEFAULT NULL,
-  `Ding` int(11) DEFAULT NULL,
-  `ReadNum` int(11) DEFAULT NULL,
-  `CommentNum` int(11) DEFAULT NULL,
-  `Status` bit(1) DEFAULT NULL,
-  `CreateOn` datetime DEFAULT NULL,
-  `UpdateOn` datetime DEFAULT NULL,
+  `TypeId` int(11) DEFAULT NULL COMMENT '类型ID',
+  `ClassId` int(11) DEFAULT NULL COMMENT '分类ID',
+  `Ding` int(11) DEFAULT NULL COMMENT '是否置顶',
+  `ReadNum` int(11) DEFAULT NULL COMMENT '阅读数',
+  `CommentNum` int(11) DEFAULT NULL COMMENT '评论数',
+  `Status` bit(1) DEFAULT NULL COMMENT '状态',
+  `CreateOn` datetime DEFAULT NULL COMMENT '创建时间',
+  `UpdateOn` datetime DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of t_article
 -- ----------------------------
-INSERT INTO `t_article` VALUES ('1', '测试文章1', '测试文章1', '<p><span>测试文章1</span></p>', '1', '1', '0', '0', '0', '', '2019-07-09 15:10:56', '2019-07-09 15:10:56');
-INSERT INTO `t_article` VALUES ('2', '测试文章2', '测试文章2', '<p><span>测试文章2</span></p>', '1', '1', '0', '0', '0', '', '2019-07-09 15:11:16', '2019-07-09 15:11:16');
-INSERT INTO `t_article` VALUES ('3', '测试文章3', '测试文章3', '<p><span>测试文章3</span></p>', '1', '1', '1', '0', '0', '', '2019-07-09 15:11:35', '2019-07-09 15:11:35');
-INSERT INTO `t_article` VALUES ('4', '测试文章4', '测试文章4', '<p><span>测试文章4</span></p>', '1', '1', '0', '0', '0', '', '2019-07-09 15:11:57', '2019-07-09 15:11:57');
-INSERT INTO `t_article` VALUES ('5', '测试文章5', '测试文章5', '<p><span>测试文章5</span></p>', '1', '1', '0', '0', '0', '', '2019-07-09 15:12:20', '2019-07-09 15:12:20');
-INSERT INTO `t_article` VALUES ('6', '测试文章6', '测试文章6', '<p><span>测试文章6</span></p>', '1', '2', '0', '0', '0', '', '2019-07-09 15:13:09', '2019-07-09 15:13:09');
-INSERT INTO `t_article` VALUES ('7', '测试文章7', '测试文章7', '<p><span>测试文章7</span></p>', '1', '2', '0', '0', '0', '', '2019-07-09 15:13:23', '2019-07-09 15:13:31');
-INSERT INTO `t_article` VALUES ('8', '测试文章8', '测试文章8', '<p><span>测试文章8</span></p>', '1', '3', '0', '0', '0', '', '2019-07-09 15:14:07', '2019-07-09 15:14:07');
-INSERT INTO `t_article` VALUES ('9', '测试文章9', '测试文章9', '<p><span>测试文章9</span></p>', '1', '3', '0', '0', '0', '', '2019-07-09 15:14:22', '2019-07-09 15:14:22');
-INSERT INTO `t_article` VALUES ('10', '测试文章10', '测试文章10', '<p><span>测试文章10</span></p>', '1', '4', '0', '0', '0', '', '2019-07-09 15:14:36', '2019-07-09 15:14:36');
+INSERT INTO `t_article` VALUES ('1', '测试文章1', '测试文章1', '/Upload/img/20161019214311_5e2fT_1.jpeg', '<p><span>测试文章1</span></p>', '1', '1', '0', '5', '0', '', '2019-07-09 15:10:56', '2019-07-09 15:10:56');
+INSERT INTO `t_article` VALUES ('2', '测试文章2', '测试文章2', '/Upload/img/20161019214311_5e2fT_1.jpeg', '<p><span>测试文章2</span></p>', '1', '1', '0', '1', '0', '', '2019-07-09 15:11:16', '2019-07-09 15:11:16');
+INSERT INTO `t_article` VALUES ('3', '测试文章3', '测试文章3', '/Upload/img/20161019214311_5e2fT_1.jpeg', '<p><span>测试文章3</span></p>', '1', '1', '1', '2', '0', '', '2019-07-09 15:11:35', '2019-07-09 15:11:35');
+INSERT INTO `t_article` VALUES ('4', '测试文章4', '测试文章4', '/Upload/img/20161019214311_5e2fT_1.jpeg', '<p><span>测试文章4</span></p>', '1', '1', '0', '4', '0', '', '2019-07-09 15:11:57', '2019-07-09 15:11:57');
+INSERT INTO `t_article` VALUES ('5', '测试文章5', '测试文章5', '/Upload/img/20161019214311_5e2fT_1.jpeg', '<p><span>测试文章5</span></p>', '1', '1', '0', '10', '0', '', '2019-07-09 15:12:20', '2019-07-09 15:12:20');
+INSERT INTO `t_article` VALUES ('6', '测试文章6', '测试文章6', '/Upload/img/20161019214311_5e2fT_1.jpeg', '<p><span>测试文章6</span></p>', '1', '2', '1', '22', '0', '', '2019-07-09 15:13:09', '2019-07-09 15:13:09');
+INSERT INTO `t_article` VALUES ('7', '测试文章7', '测试文章7', '/Upload/img/20161019214311_5e2fT_1.jpeg', '<p><span>测试文章7</span></p>', '1', '2', '1', '9', '0', '', '2019-07-09 15:13:23', '2019-07-09 15:13:31');
+INSERT INTO `t_article` VALUES ('8', '测试文章8', '测试文章8', '/Upload/img/20161019214311_5e2fT_1.jpeg', '<p><span>测试文章8</span></p>', '1', '3', '1', '8', '0', '', '2019-07-09 15:14:07', '2019-07-09 15:14:07');
+INSERT INTO `t_article` VALUES ('9', '测试文章9', '测试文章9', '/Upload/img/20161019214311_5e2fT_1.jpeg', '<p><span>测试文章9</span></p>', '1', '3', '0', '11', '0', '', '2019-07-09 15:14:22', '2019-07-09 15:14:22');
+INSERT INTO `t_article` VALUES ('10', '测试文章10', '测试文章10', '/Upload/img/20161019214311_5e2fT_1.jpeg', '<p><span>测试文章10</span></p>', '1', '4', '0', '30', '0', '', '2019-07-09 15:14:36', '2019-07-09 15:14:36');
 
 -- ----------------------------
 -- Table structure for t_article_class
@@ -237,7 +238,7 @@ CREATE TABLE `t_log` (
   `IPAddressName` varchar(100) DEFAULT NULL COMMENT 'IP所在地',
   `Status` bit(1) DEFAULT NULL COMMENT '状态',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='日志表';
 
 -- ----------------------------
 -- Records of t_log
@@ -245,6 +246,7 @@ CREATE TABLE `t_log` (
 INSERT INTO `t_log` VALUES ('1', 'Login', 'admin', 'admin', '系统登录', '登录失败，验证码错误，请重新输入', '2019-07-09 14:12:10', '192.168.1.148', '本地局域网', '');
 INSERT INTO `t_log` VALUES ('2', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-09 14:12:28', '192.168.1.148', '本地局域网', '');
 INSERT INTO `t_log` VALUES ('3', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-09 15:12:40', '192.168.1.148', '本地局域网', '');
+INSERT INTO `t_log` VALUES ('4', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-09 17:49:14', '192.168.1.148', '本地局域网', '');
 
 -- ----------------------------
 -- Table structure for t_menu

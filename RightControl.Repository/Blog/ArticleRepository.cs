@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using RightControl.IRepository;
 using RightControl.Model;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace RightControl.Repository

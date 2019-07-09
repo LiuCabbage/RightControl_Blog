@@ -425,7 +425,13 @@
     <Compile Include="Areas\SysSet\Controllers\PassWordController.cs" />
     <Compile Include="Areas\SysSet\Controllers\WebSiteController.cs" />
     <Compile Include="Areas\SysSet\SysSetAreaRegistration.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\ArchivesController.cs" />
+    <Compile Include="Controllers\ArticleController.cs" />
+    <Compile Include="Controllers\DiarysController.cs" />
+    <Compile Include="Controllers\FeedbackController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LinksController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -555,6 +561,12 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Feedback\Index.cshtml" />
+    <Content Include="Views\Links\Index.cshtml" />
+    <Content Include="Views\Diarys\Index.cshtml" />
+    <Content Include="Views\Article\Index.cshtml" />
+    <Content Include="Views\Archives\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

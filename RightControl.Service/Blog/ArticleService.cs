@@ -2,6 +2,7 @@
 using RightControl.IService;
 using RightControl.Model;
 using System;
+using System.Collections.Generic;
 
 namespace RightControl.Service
 {
@@ -11,6 +12,22 @@ namespace RightControl.Service
         public ArticleModel GetDetail(int Id)
         {
             return repository.GetDetail(Id);
+        }
+
+        public IEnumerable<ArticleModel> GetDingArticle(int num)
+        {
+            string _where = "WHERE Ding=1 and Status=1";
+            string _orderby = @"ORDER BY ReadNum DESC,CreateOn DESC
+                                LIMIT 0,"+num;
+            return repository.GetByWhere(_where,null,null,_orderby);
+        }
+
+        public IEnumerable<ArticleModel> GetHotArticle(int num)
+        {
+            string _where = "WHERE Status=1";
+            string _orderby = @"ORDER BY ReadNum DESC,CreateOn DESC
+                                LIMIT 0," + num;
+            return repository.GetByWhere(_where, null, null, _orderby);
         }
 
         public dynamic GetListByFilter(ArticleModel filter, PageInfo pageInfo)

@@ -1,4 +1,5 @@
 ﻿@model RightControl.WebApp.WebSiteModel
+@using RightControl.Model;
 @{
     Layout = null;
 }
@@ -26,8 +27,8 @@
     <div id="navgation" class="navgation navgation_close">
         <ul class="point">
             <li><a href="/">首页</a></li>
-            <li><a href="article.html">博客</a></li>
-            <li><a href="message.html">留言</a></li>
+            <li><a href="/Article">博客</a></li>
+            <li><a href="/Feedback">留言</a></li>
         </ul>
         <div class="logo"><a>@Model.SiteName</a></div>
     </div>
@@ -37,7 +38,7 @@
                 <div class="nav wow zoomIn" data-wow-duration="2s">
                     <h1>@Model.SiteName</h1>
                     <p>@Model.SiteTitle</p>
-                    <a class="layui-btn layui-btn-normal" style="margin-top: 20px" href="/">Enter Blog</a>
+                    <a class="layui-btn layui-btn-normal" style="margin-top: 20px" href="/Article">Enter Blog</a>
                 </div>
                 <a class="next wow fadeInUp" data-wow-duration="2s" id="next"></a>
             </div>
@@ -51,84 +52,39 @@
                         <div class="inner wow fadeInDown" data-wow-delay=".2s">
                             <h1>热门文章</h1>
                             <p>
-                                很想给你写封信,告诉你这里的天气.
-                                <br>昨夜的那场电影,还有我的心情.
+                                天下风云出我辈，一入江湖岁月催。<br />
+                                皇图霸业谈笑中，不胜人生一场醉。
                             </p>
                         </div>
                     </div>
                     <div class="layui-row">
-                        <div class="layui-col-xs12 layui-col-sm4 layui-col-md4  wow fadeInUp" style="padding: 0 10px">
-                            <div class="single-news">
-                                <div class="news-head">
-                                    <img src="image/1.jpg">
-                                    <a href="/" class="link"><i class="fa fa-link"></i></a>
-                                </div>
-                                <div class="news-content">
-                                    <h4>
-                                        <a href="/">
-                                            标题
-                                        </a>
-                                    </h4>
-                                    <div class="date">
-                                        2017年2月16日
+                        @foreach (ArticleModel item in ViewBag.HotArtileList)
+                        {
+                            <div class="layui-col-xs12 layui-col-sm4 layui-col-md4  wow fadeInUp" style="padding: 0 10px">
+                                <div class="single-news">
+                                    <div class="news-head">
+                                        <img src="@item.ImgUrl">
+                                        <a href="/Article/Detail/@item.Id" class="link"><i class="fa fa-link"></i></a>
                                     </div>
-                                    <p>
-                                        很想给你写封信,告诉你这里的天气. 昨夜的那场电影,还有我的心情.
-                                    </p>
-                                    <a href="/" class="btn">
-                                        阅读更多
-                                    </a>
+                                    <div class="news-content">
+                                        <h4>
+                                            <a href="/">
+                                                @item.Title
+                                            </a>
+                                        </h4>
+                                        <div class="date">
+                                            @item.CreateOn.ToString("yyyy年MM月dd日")
+                                        </div>
+                                        <p>
+                                            @item.ZhaiYao
+                                        </p>
+                                        <a href="/Article/Detail/@item.Id" class="btn">
+                                            阅读更多
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="layui-col-xs12 layui-col-sm4 layui-col-md4  wow fadeInUp" data-wow-delay=".2s" style="padding: 0 10px">
-                            <div class="single-news">
-                                <div class="news-head">
-                                    <img src="image/1.jpg">
-                                    <a href="/" class="link"><i class="fa fa-link"></i></a>
-                                </div>
-                                <div class="news-content">
-                                    <h4>
-                                        <a href="/">
-                                            标题
-                                        </a>
-                                    </h4>
-                                    <div class="date">
-                                        2017年2月16日
-                                    </div>
-                                    <p>
-                                        很想给你写封信,告诉你这里的天气. 昨夜的那场电影,还有我的心情.
-                                    </p>
-                                    <a href="/" class="btn">
-                                        阅读更多
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="layui-col-xs12 layui-col-sm4 layui-col-md4  wow fadeInUp" data-wow-delay=".4s" style="padding: 0 10px">
-                            <div class="single-news">
-                                <div class="news-head">
-                                    <img src="image/1.jpg">
-                                    <a href="/" class="link"><i class="fa fa-link"></i></a>
-                                </div>
-                                <div class="news-content">
-                                    <h4>
-                                        <a href="/">
-                                            标题
-                                        </a>
-                                    </h4>
-                                    <div class="date">
-                                        2017年2月16日
-                                    </div>
-                                    <p>
-                                        很想给你写封信,告诉你这里的天气. 昨夜的那场电影,还有我的心情.
-                                    </p>
-                                    <a href="/" class="btn">
-                                        阅读更多
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        }
                     </div>
                 </div>
             </div>
@@ -142,8 +98,8 @@
                         <div class="inner">
                             <div class="links">
                                 <ul>
-                                    <li class="wow fadeInLeft"><a href="/">关于</a></li>
-                                    <li class="wow fadeInRight"><a href="/">+友情链接</a></li>
+                                    <li class="wow fadeInLeft"><a href="/About">关于</a></li>
+                                    <li class="wow fadeInRight"><a href="/Links">+友情链接</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -158,9 +114,9 @@
                 <div class="warp-box">
                     <div class="about">
                         <div class="inner">
-                            <h1 class="wow fadeInLeft">次元使者</h1>
+                            <h1 class="wow fadeInLeft">孤独行者</h1>
                             <p class="wow fadeInRight">
-                                爱好游戏，动漫。闲来无事喜欢在一些不健康的场所虚度光阴，撸起代码就会废寝忘食。
+                                喜欢一个人静静地呆着，什么都不想，什么都不理，就一个人，做着自己喜欢的事。
                             </p>
                         </div>
                     </div>
@@ -179,7 +135,7 @@
                             </div>
                             <p>@Model.SiteTitle</p>
                             <div class="button">
-                                <a href="/" class="btn layui-btn layui-btn-normal">About Me</a>
+                                <a href="/About" class="btn layui-btn layui-btn-normal">About Me</a>
                             </div>
                         </div>
                     </div>
@@ -187,12 +143,12 @@
                         <div class="single-widget">
                             <h2>相关链接</h2>
                             <ul class="social-icon">
-                                <li class="active"><a href="/"><i class="fa fa-book"></i>博文</a></li>
-                                <li class="active"><a href="/"><i class="fa fa-comments"></i>留言</a></li>
-                                <li class="active"><a href="/"><i class="fa fa-files-o"></i>归档</a></li>
-                                <li class="active"><a href="/"><i class="fa fa-snowflake-o"></i>日记</a></li>
-                                <li class="active"><a href="/"><i class="fa fa-hashtag"></i>友链</a></li>
-                                <li class="active"><a href="/"><i class="fa fa-share"></i>关于</a></li>
+                                <li class="active"><a href="/Article"><i class="fa fa-book"></i>博文</a></li>
+                                <li class="active"><a href="/Feedback"><i class="fa fa-comments"></i>留言</a></li>
+                                <li class="active"><a href="/Archives"><i class="fa fa-files-o"></i>归档</a></li>
+                                <li class="active"><a href="/Diarys"><i class="fa fa-snowflake-o"></i>日记</a></li>
+                                <li class="active"><a href="/Links"><i class="fa fa-hashtag"></i>友链</a></li>
+                                <li class="active"><a href="/About"><i class="fa fa-share"></i>关于</a></li>
                             </ul>
                         </div>
                     </div>

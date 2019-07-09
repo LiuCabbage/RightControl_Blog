@@ -17,6 +17,10 @@ namespace RightControl.Model
         /// </summary>
         public string Title { get; set; }
         /// <summary>
+        /// 封面
+        /// </summary>
+        public string ImgUrl { get; set; }
+        /// <summary>
         /// 摘要
         /// </summary>
         public string ZhaiYao { get; set; }
