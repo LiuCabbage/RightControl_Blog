@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2019-07-08 18:29:42
+Date: 2019-07-09 15:23:24
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -67,13 +67,21 @@ CREATE TABLE `t_article` (
   `CreateOn` datetime DEFAULT NULL,
   `UpdateOn` datetime DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of t_article
 -- ----------------------------
-INSERT INTO `t_article` VALUES ('1', '如何装逼不被发现', '我想要装逼不被任何人发现', '装逼开始，装逼失败，装逼结束。', '1', '1', '1', '200', '0', '\0', '2019-07-01 12:02:11', '2019-07-01 12:02:21');
-INSERT INTO `t_article` VALUES ('5', '11', '44', '<div>00000</div>', '2', '6', '0', '0', '0', '\0', '2019-07-08 09:39:57', '2019-07-08 11:36:54');
+INSERT INTO `t_article` VALUES ('1', '测试文章1', '测试文章1', '<p><span>测试文章1</span></p>', '1', '1', '0', '0', '0', '', '2019-07-09 15:10:56', '2019-07-09 15:10:56');
+INSERT INTO `t_article` VALUES ('2', '测试文章2', '测试文章2', '<p><span>测试文章2</span></p>', '1', '1', '0', '0', '0', '', '2019-07-09 15:11:16', '2019-07-09 15:11:16');
+INSERT INTO `t_article` VALUES ('3', '测试文章3', '测试文章3', '<p><span>测试文章3</span></p>', '1', '1', '1', '0', '0', '', '2019-07-09 15:11:35', '2019-07-09 15:11:35');
+INSERT INTO `t_article` VALUES ('4', '测试文章4', '测试文章4', '<p><span>测试文章4</span></p>', '1', '1', '0', '0', '0', '', '2019-07-09 15:11:57', '2019-07-09 15:11:57');
+INSERT INTO `t_article` VALUES ('5', '测试文章5', '测试文章5', '<p><span>测试文章5</span></p>', '1', '1', '0', '0', '0', '', '2019-07-09 15:12:20', '2019-07-09 15:12:20');
+INSERT INTO `t_article` VALUES ('6', '测试文章6', '测试文章6', '<p><span>测试文章6</span></p>', '1', '2', '0', '0', '0', '', '2019-07-09 15:13:09', '2019-07-09 15:13:09');
+INSERT INTO `t_article` VALUES ('7', '测试文章7', '测试文章7', '<p><span>测试文章7</span></p>', '1', '2', '0', '0', '0', '', '2019-07-09 15:13:23', '2019-07-09 15:13:31');
+INSERT INTO `t_article` VALUES ('8', '测试文章8', '测试文章8', '<p><span>测试文章8</span></p>', '1', '3', '0', '0', '0', '', '2019-07-09 15:14:07', '2019-07-09 15:14:07');
+INSERT INTO `t_article` VALUES ('9', '测试文章9', '测试文章9', '<p><span>测试文章9</span></p>', '1', '3', '0', '0', '0', '', '2019-07-09 15:14:22', '2019-07-09 15:14:22');
+INSERT INTO `t_article` VALUES ('10', '测试文章10', '测试文章10', '<p><span>测试文章10</span></p>', '1', '4', '0', '0', '0', '', '2019-07-09 15:14:36', '2019-07-09 15:14:36');
 
 -- ----------------------------
 -- Table structure for t_article_class
@@ -90,12 +98,14 @@ CREATE TABLE `t_article_class` (
 -- ----------------------------
 -- Records of t_article_class
 -- ----------------------------
-INSERT INTO `t_article_class` VALUES ('1', 'ASP.NET MVC', '1', '2019-06-25 18:31:13');
-INSERT INTO `t_article_class` VALUES ('2', 'SQL Server', '2', '2019-06-25 18:32:13');
-INSERT INTO `t_article_class` VALUES ('3', 'MySQL', '3', '2019-06-25 18:31:19');
-INSERT INTO `t_article_class` VALUES ('4', 'IIS', '4', '2019-06-25 18:31:21');
-INSERT INTO `t_article_class` VALUES ('5', 'PHP', '5', '2019-06-29 09:39:39');
-INSERT INTO `t_article_class` VALUES ('6', 'Java', '6', '2019-06-29 17:33:51');
+INSERT INTO `t_article_class` VALUES ('1', '.NET', '0', '2019-07-09 15:05:08');
+INSERT INTO `t_article_class` VALUES ('2', 'JAVA', '0', '2019-07-09 15:08:20');
+INSERT INTO `t_article_class` VALUES ('3', 'PHP', '0', '2019-07-09 15:08:33');
+INSERT INTO `t_article_class` VALUES ('4', 'MySQL', '0', '2019-07-09 15:09:14');
+INSERT INTO `t_article_class` VALUES ('5', 'SQL Server', '0', '2019-07-09 15:09:38');
+INSERT INTO `t_article_class` VALUES ('6', 'IIS', '0', '2019-07-09 15:09:48');
+INSERT INTO `t_article_class` VALUES ('7', 'BUG记录', '0', '2019-07-09 15:09:58');
+INSERT INTO `t_article_class` VALUES ('8', 'WEB前端', '0', '2019-07-09 15:10:11');
 
 -- ----------------------------
 -- Table structure for t_article_type
@@ -128,14 +138,17 @@ CREATE TABLE `t_comment` (
   `ArticleId` int(11) DEFAULT NULL COMMENT '文章ID',
   `CreateOn` datetime DEFAULT NULL COMMENT '创建日期',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of t_comment
 -- ----------------------------
-INSERT INTO `t_comment` VALUES ('1', '1', '0', '哇，装逼好棒', '', '0', '1', '2019-07-01 12:03:11');
-INSERT INTO `t_comment` VALUES ('2', '1', '1', '可以教我装逼吗', '', '1', '1', '2019-07-01 12:03:47');
-INSERT INTO `t_comment` VALUES ('3', '1', '2', '不可以装逼哦', '', '1', '1', '2019-07-08 17:08:45');
+INSERT INTO `t_comment` VALUES ('1', '1', '0', '1', '', '0', '1', '2019-07-09 12:06:59');
+INSERT INTO `t_comment` VALUES ('2', '2', '1', '1', '', '1', '1', '2019-07-09 12:13:23');
+INSERT INTO `t_comment` VALUES ('3', '1', '2', '1', '', '1', '1', '2019-07-09 12:13:50');
+INSERT INTO `t_comment` VALUES ('4', '2', '0', '2', '', '0', '1', '2019-07-09 12:14:33');
+INSERT INTO `t_comment` VALUES ('5', '1', '2', '2', '', '4', '1', '2019-07-09 12:15:13');
+INSERT INTO `t_comment` VALUES ('6', '2', '1', '2', '', '4', '1', '2019-07-09 12:15:35');
 
 -- ----------------------------
 -- Table structure for t_diarys
@@ -146,17 +159,19 @@ CREATE TABLE `t_diarys` (
   `Content` text CHARACTER SET utf8 COMMENT '日记内容',
   `CreateOn` datetime DEFAULT NULL COMMENT '创建日期',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of t_diarys
 -- ----------------------------
-INSERT INTO `t_diarys` VALUES ('1', '装逼开始，装逼失败，装逼结束。', '2019-07-01 12:02:11');
-INSERT INTO `t_diarys` VALUES ('2', 'gfdgfds范德萨0.0<img src=\"http://localhost:27948/Areas/Admin/plugins/layui/images/face/17.gif\" alt=\"[白眼]\">', '2019-06-29 23:50:43');
-INSERT INTO `t_diarys` VALUES ('3', '<img src=\"http://localhost:27948/Areas/Admin/plugins/layui/images/face/17.gif\" alt=\"[白眼]\"><img src=\"http://localhost:27948/Areas/Admin/plugins/layui/images/face/44.gif\" alt=\"[阴险]\">范德萨范德萨<img src=\"http://localhost:27948/Areas/Admin/plugins/layui/images/face/31.gif\" alt=\"[汗]\">', '2019-06-30 02:47:16');
-INSERT INTO `t_diarys` VALUES ('4', '范德萨<img src=\"http://localhost:27948/Areas/Admin/plugins/layui/images/face/45.gif\" alt=\"[怒骂]\"><img src=\"http://localhost:27948/Areas/Admin/plugins/layui/images/face/19.gif\" alt=\"[左哼哼]\">', '2019-06-30 02:51:43');
-INSERT INTO `t_diarys` VALUES ('5', '<img src=\"http://localhost:27948/Areas/Admin/plugins/layui/images/face/44.gif\" alt=\"[阴险]\">我太他妈的帮帮了哦<img src=\"http://localhost:27948/Areas/Admin/plugins/layui/images/face/11.gif\" alt=\"[爱你]\"><img src=\"http://localhost:27948/Areas/Admin/plugins/layui/images/face/45.gif\" alt=\"[怒骂]\">', '2019-06-30 02:55:54');
-INSERT INTO `t_diarys` VALUES ('11', '<img src=\"http://localhost:27948/Areas/Admin/plugins/layui/images/face/5.gif\" alt=\"[挖鼻]\">说皮皮虾呢，臭弟弟<img src=\"http://localhost:27948/Areas/Admin/plugins/layui/images/face/17.gif\" alt=\"[白眼]\">', '2019-07-08 09:35:11');
+INSERT INTO `t_diarys` VALUES ('1', '日记1', '2019-07-01 12:02:11');
+INSERT INTO `t_diarys` VALUES ('2', '日记2', '2019-06-29 23:50:43');
+INSERT INTO `t_diarys` VALUES ('3', '日记3', '2019-06-30 02:47:16');
+INSERT INTO `t_diarys` VALUES ('4', '日记4', '2019-06-30 02:51:43');
+INSERT INTO `t_diarys` VALUES ('5', '日记5', '2019-06-30 02:55:54');
+INSERT INTO `t_diarys` VALUES ('6', '日记6', '2019-07-08 09:35:11');
+INSERT INTO `t_diarys` VALUES ('7', '日记7', '2019-07-09 12:18:19');
+INSERT INTO `t_diarys` VALUES ('8', '日记8', '2019-07-09 12:18:33');
 
 -- ----------------------------
 -- Table structure for t_feedback
@@ -172,14 +187,17 @@ CREATE TABLE `t_feedback` (
   `Equip` varchar(50) CHARACTER SET utf8 DEFAULT NULL COMMENT '设备',
   `CreateOn` datetime DEFAULT NULL COMMENT '创建日期',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of t_feedback
 -- ----------------------------
-INSERT INTO `t_feedback` VALUES ('1', '1', '0', '你是个帅逼', '0', '江西', '脑残浏览器', '2019-07-01 11:55:22');
-INSERT INTO `t_feedback` VALUES ('2', '1', '1', '我也是个帅比', '1', '江西', '脑残浏览器', '2019-07-01 11:55:59');
-INSERT INTO `t_feedback` VALUES ('3', '1', '2', '吼吼吼', '1', '江西', '脑残浏览器', '2019-07-08 17:15:05');
+INSERT INTO `t_feedback` VALUES ('1', '1', '0', '测试留言1', '0', '1', '1', '2019-07-09 11:55:49');
+INSERT INTO `t_feedback` VALUES ('2', '1', '2', '测试留言2', '1', '1', '1', '2019-07-09 11:58:27');
+INSERT INTO `t_feedback` VALUES ('3', '2', '1', '测试留言3', '1', '1', '1', '2019-07-09 11:59:02');
+INSERT INTO `t_feedback` VALUES ('4', '2', '0', '皮皮虾1', '0', '1', '1', '2019-07-09 12:00:18');
+INSERT INTO `t_feedback` VALUES ('5', '1', '2', '皮皮虾2', '4', '1', '1', '2019-07-09 12:00:45');
+INSERT INTO `t_feedback` VALUES ('6', '2', '1', '皮皮虾3', '4', '1', '1', '2019-07-09 12:01:16');
 
 -- ----------------------------
 -- Table structure for t_links
@@ -219,49 +237,14 @@ CREATE TABLE `t_log` (
   `IPAddressName` varchar(100) DEFAULT NULL COMMENT 'IP所在地',
   `Status` bit(1) DEFAULT NULL COMMENT '状态',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=utf8 COMMENT='日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='日志表';
 
 -- ----------------------------
 -- Records of t_log
 -- ----------------------------
-INSERT INTO `t_log` VALUES ('1', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-15 22:56:18', '192.168.1.2', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('2', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-15 23:11:59', '192.168.1.2', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('3', 'Exit', 'admin', '超级管理员', null, '安全退出系统', '2019-06-15 23:12:04', '192.168.1.2', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('49', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-26 09:31:20', '192.168.1.148', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('50', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-28 16:48:30', '192.168.1.148', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('51', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-28 17:48:57', '192.168.1.148', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('52', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-29 09:19:19', '192.168.1.148', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('53', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-29 10:19:32', '192.168.1.148', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('54', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-29 17:33:21', '192.168.1.148', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('55', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-29 22:55:42', '192.168.1.2', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('56', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-29 23:58:12', '192.168.1.2', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('57', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-30 01:00:40', '192.168.1.2', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('58', 'Exit', 'admin', '超级管理员', null, '安全退出系统', '2019-06-30 01:13:56', '192.168.1.2', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('59', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-30 01:14:03', '192.168.1.2', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('60', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-30 01:27:49', '192.168.1.2', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('61', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-30 02:28:27', '192.168.1.2', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('62', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-30 17:02:03', '192.168.1.2', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('63', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-06-30 19:09:01', '192.168.1.2', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('64', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-01 10:11:13', '192.168.1.148', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('65', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-01 11:11:23', '192.168.1.148', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('66', 'Login', 'admin', 'admin', '系统登录', '登录失败，用户名或密码错误。', '2019-07-01 12:22:54', '192.168.1.148', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('67', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-01 12:23:02', '192.168.1.148', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('68', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-01 14:24:24', '192.168.1.148', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('69', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-01 15:28:40', '192.168.1.148', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('70', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-01 16:57:53', '192.168.1.148', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('71', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-01 17:59:19', '192.168.1.148', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('72', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-02 16:27:48', '192.168.1.148', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('73', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-02 17:51:35', '192.168.1.148', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('74', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-06 17:56:08', '192.168.1.148', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('75', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-08 09:24:30', '192.168.1.148', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('76', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-08 10:50:43', '192.168.1.148', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('77', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-08 11:53:31', '192.168.1.148', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('78', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-08 14:01:41', '192.168.1.148', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('79', 'Login', 'admin', 'admin', '系统登录', '登录失败，验证码错误，请重新输入', '2019-07-08 17:00:05', '192.168.1.148', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('80', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-08 17:00:17', '192.168.1.148', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('81', 'Exit', 'admin', '超级管理员', null, '安全退出系统', '2019-07-08 17:05:31', '192.168.1.148', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('82', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-08 17:05:42', '192.168.1.148', '本地局域网', '');
-INSERT INTO `t_log` VALUES ('83', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-08 18:12:25', '192.168.1.148', '本地局域网', '');
+INSERT INTO `t_log` VALUES ('1', 'Login', 'admin', 'admin', '系统登录', '登录失败，验证码错误，请重新输入', '2019-07-09 14:12:10', '192.168.1.148', '本地局域网', '');
+INSERT INTO `t_log` VALUES ('2', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-09 14:12:28', '192.168.1.148', '本地局域网', '');
+INSERT INTO `t_log` VALUES ('3', 'Login', 'admin', '超级管理员', '系统登录', '登录成功', '2019-07-09 15:12:40', '192.168.1.148', '本地局域网', '');
 
 -- ----------------------------
 -- Table structure for t_menu

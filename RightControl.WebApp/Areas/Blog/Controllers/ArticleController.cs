@@ -63,7 +63,6 @@ namespace RightControl.WebApp.Areas.Blog.Controllers
         [ValidateInput(false)]
         public ActionResult Add(ArticleModel model)
         {
-            model.Ding = 0;
             model.ReadNum = 0;
             model.CommentNum = 0;
             model.UpdateOn = DateTime.Now;

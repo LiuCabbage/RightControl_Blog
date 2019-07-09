@@ -57,8 +57,8 @@ namespace RightControl.WebApp.Areas.Blog.Controllers
         [HttpPost]
         public ActionResult Delete(int Id)
         {
-            //这里删除文章分类，没有删除类别下的文章，后面改
-            var result = articleClassService.DeleteModel(Id) ? SuccessTip() : ErrorTip();
+            //删除文章分类，同时删除分类下的文章
+            var result = articleClassService.DeleteClassAllByClassId(Id) ? SuccessTip() : ErrorTip();
             return Json(result);
         }
     }

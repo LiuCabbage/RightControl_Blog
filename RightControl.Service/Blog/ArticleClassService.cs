@@ -17,5 +17,10 @@ namespace RightControl.Service
         {
             return repository.GetArticleClassList();
         }
+
+        public bool DeleteClassAllByClassId(int classId)
+        {
+            return repository.DeleteClassAllByClassId(classId);
+        }
     }
 }

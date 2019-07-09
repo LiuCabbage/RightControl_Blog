@@ -71,7 +71,7 @@
 			                }
 			            });
 			        } else if (obj.event === 'del') {
-			            layer.confirm('确定要删除吗？', function (index) {
+			            layer.confirm('删除分类同时删除分类下文章，确定要删除吗？', function (index) {
 			                $.ajax({
                                 url: "/Blog/ArticleClass/Delete",
 			                    type: "POST",

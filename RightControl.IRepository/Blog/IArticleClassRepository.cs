@@ -6,5 +6,6 @@ namespace RightControl.IRepository
     public interface IArticleClassRepository : IBaseRepository<ArticleClassModel>
     {
         IEnumerable<ArticleClassModel> GetArticleClassList();
+        bool DeleteClassAllByClassId(int classId);
     }
 }

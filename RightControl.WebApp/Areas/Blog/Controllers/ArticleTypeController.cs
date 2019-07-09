@@ -51,7 +51,7 @@ namespace RightControl.WebApp.Areas.Blog.Controllers
         [HttpPost]
         public ActionResult Delete(int Id)
         {
-            //这里删除文章类型，没有删除类型下的文章，后面改
+            //一般类别就是：原创，转载，翻译，所以不做联动删除文章。
             var result = articleTypeService.DeleteModel(Id) ? SuccessTip() : ErrorTip();
             return Json(result);
         }
