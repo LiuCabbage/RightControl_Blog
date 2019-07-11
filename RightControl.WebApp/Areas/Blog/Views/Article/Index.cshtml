@@ -55,13 +55,14 @@
                  { checkbox: true, fixed: true },
                  { field: 'Id', title: 'Id', width: 80, fixed: 'left' }
                    , { field: 'Title', title: '标题' }
+                   , { field: 'ImgUrl', title: '封面', templet: '<div>{{showImg(d.ImgUrl)}}</div>' }
                    , { field: 'ClassName', title: '分类', width: 120 }
                    , { field: 'TypeName', title: '类型', width: 80 }
                    , { field: 'Ding', title: '置顶', width: 80, templet: '<div>{{showDing(d.Ding)}}</div>' }
                    , { field: 'ReadNum', title: '阅读数', width: 80 }
                    , { field: 'Status', title: '状态', templet: '<div>{{showStatus(d.Status)}}</div>', unresize: true, width: 100, align: 'center' }
                    , { field: 'CreateOn', title: '创建时间', width: 160, sort: true, templet: '<div>{{showDate(d.CreateOn)}}</div>' }
-                   , { field: '', title: '操作', toolbar: "#bar" }
+                   , { field: '', title: '操作', toolbar: "#bar",width:200,fixed: 'right' }
                ]]
             });
             var $ = layui.$, active = {

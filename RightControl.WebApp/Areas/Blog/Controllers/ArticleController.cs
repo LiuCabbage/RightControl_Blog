@@ -1,4 +1,5 @@
-﻿using RightControl.IService;
+﻿using RightControl.Common;
+using RightControl.IService;
 using RightControl.Model;
 using RightControl.WebApp.Areas.Admin.Controllers;
 using System;
@@ -57,6 +58,8 @@ namespace RightControl.WebApp.Areas.Blog.Controllers
         {
             ViewBag.ClassId = ArticleClassList;
             ViewBag.TypeId = ArticleTypeList;
+            ViewBag.MaxFileUpload = Configs.GetValue("MaxFileUpload");
+            ViewBag.UploadFileType = Configs.GetValue("UploadFileType");
             return View();
         }
         [HttpPost]

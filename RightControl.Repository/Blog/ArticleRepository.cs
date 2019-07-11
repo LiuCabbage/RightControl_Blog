@@ -17,7 +17,7 @@ namespace RightControl.Repository
         {
             using (var conn = MySqlHelper.GetConnection())
             {
-                var sql = @"SELECT a.Id,a.Title,a.ZhaiYao,a.Content,a.TypeId,a.ClassId,c.`Name` as TypeName,b.`Name` as ClassName,a.Ding,a.ReadNum,
+                var sql = @"SELECT a.Id,a.Title,a.ZhaiYao,a.ImgUrl,a.Content,a.TypeId,a.ClassId,c.`Name` as TypeName,b.`Name` as ClassName,a.Ding,a.ReadNum,
                             (SELECT COUNT(1) FROM t_comment WHERE ArticleId = @Id) as CommentNum,
                             a.`Status`,a.UpdateOn,a.CreateOn FROM t_article a
                             INNER JOIN t_article_class b ON a.ClassId = b.Id

@@ -3,7 +3,15 @@
     ViewBag.Title = "Edit";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutForm.cshtml";
 }
-
+<style type="text/css">
+    .img-headshot {
+        width: 100px;
+        height: 100px;
+        border: medium none;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+</style>
 <div class="layui-col-md12 top10">
     <form class="layui-form" id="form" action="/Blog/Article/Edit" method="post">
         <input name="Id" value="@Model.Id" type="hidden">
@@ -20,6 +28,20 @@
             <label class="layui-form-label">摘要</label>
             <div class="layui-input-block">
                 <input type="text" name="ZhaiYao" lay-verify="required" lay-vertype="tips" class="layui-input" value="@Model.ZhaiYao" />
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">封面</label>
+            <div class="layui-input-inline">
+                <input name="ImgUrl" value="@Model.ImgUrl" lay-verify="required" readonly id="HeadShot" class="layui-input">
+            </div>
+            <div class="layui-input-inline layui-btn-container" style="width: auto;">
+                <button type="button" class="layui-btn layui-btn-primary" id="btnUpload">
+                    <i class="layui-icon">&#xe67c;</i>上传图片
+                </button>
+            </div>
+            <div id="layer-photos-demo" class="fr layui-input-inline">
+                <img class="img-headshot" id="imgHeadShot" layer-pid="HeadShot" layer-src="@Model.ImgUrl" src="@Model.ImgUrl" alt="封面预览">
             </div>
         </div>
         <div class="layui-form-item">
@@ -41,7 +63,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">是否置顶</label>
             <div class="layui-input-inline">
-                @Html.DingRadioHtml(Model.Ding==1?true:false)
+                @Html.DingRadioHtml(Model.Ding == 1 ? true : false)
             </div>
             <label class="layui-form-label">状态</label>
             <div class="layui-input-inline">
@@ -57,10 +79,34 @@
     </form>
 </div>
 <script>
-    layui.use(['form','layedit'], function () {
+    layui.use(['upload', 'form', 'layedit', 'layer'], function () {
+        var upload = layui.upload;
+        var layer = layui.layer;
         var form = layui.form;
         var layedit = layui.layedit;
         var $ = layui.$;
+        var uploadInst = upload.render({
+            elem: '#btnUpload' //绑定元素
+            , url: '/SysSet/Info/ExportFile/' //上传接口
+            , size: '@ViewBag.MaxFileUpload'
+            , exts: '@ViewBag.UploadFileType'
+            , done: function (res) {  //上传完毕回调
+            //假设code=0代表上传成功
+            if (res.code == 0) {
+                //do something （比如将res返回的图片链接保存到表单的隐藏域）
+                $("#HeadShot").val(res.data.src);
+                $("#imgHeadShot").attr("src", res.data.src);
+                $("#imgHeadShot").attr("layer-src", res.data.src)
+                }
+            }
+            , error: function () { //请求异常回调
+
+            }
+        });
+        layer.photos({
+            photos: '#layer-photos-demo',
+            anim: 1
+        });
         $("#Content").html("@Model.Content");
         layedit.set({
             uploadImage: {

@@ -41,6 +41,9 @@ function showDing(val) {
         return '否';
     }
 }
+function showImg(val) {
+    return '<img src=' + val+' style="width:100%; height:100%;" />';
+}
 function ajaxSubmitForm(form, func) {
     var $ = layui.$;
     var action = form.attr("action");
