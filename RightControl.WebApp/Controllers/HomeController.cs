@@ -7,12 +7,27 @@ namespace RightControl.WebApp.Controllers
     public class HomeController : Controller
     {
         public IArticleService service { get; set; }
+        WebSiteInfo model = new WebSiteInfo();
         // GET: Home
         public ActionResult Index()
         {
-            WebSiteInfo model = new WebSiteInfo();
             ViewBag.HotArtileList = service.GetHotArticle(3);
             return View(model.GetWebSiteInfo());
+        }
+        public ActionResult Meta()
+        {
+            ViewBag.Site = model.GetWebSiteInfo();
+            return View("~/Views/Shared/_Meta.cshtml");
+        }
+        public ActionResult Head()
+        {
+            ViewBag.Site = model.GetWebSiteInfo();
+            return View("~/Views/Shared/_Head.cshtml");
+        }
+        public ActionResult Foot()
+        {
+            ViewBag.Site = model.GetWebSiteInfo();
+            return View("/Views/Shared/_Foot.cshtml");
         }
     }
 }

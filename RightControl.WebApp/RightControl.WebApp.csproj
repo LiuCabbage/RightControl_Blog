@@ -565,8 +565,11 @@
     <Content Include="Views\Feedback\Index.cshtml" />
     <Content Include="Views\Links\Index.cshtml" />
     <Content Include="Views\Diarys\Index.cshtml" />
-    <Content Include="Views\Article\Index.cshtml" />
     <Content Include="Views\Archives\Index.cshtml" />
+    <Content Include="Views\Article\Index.cshtml" />
+    <Content Include="Views\Shared\_Head.cshtml" />
+    <Content Include="Views\Shared\_Foot.cshtml" />
+    <Content Include="Views\Shared\_Meta.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

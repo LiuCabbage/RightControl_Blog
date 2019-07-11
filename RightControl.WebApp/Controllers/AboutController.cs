@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RightControl.WebApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,8 @@ namespace RightControl.WebApp.Controllers
         // GET: About
         public ActionResult Index()
         {
-            return View();
+            WebSiteInfo model = new WebSiteInfo();
+            return View(model.GetWebSiteInfo());
         }
     }
 }

@@ -3,12 +3,42 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>博客前台</title>
-
+    <title>@ViewBag.Title</title>
+    @Html.Action("Meta", "Home")
+    <link rel="stylesheet" href="~/Content/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/layui/css/layui.css" />
+    <link rel="stylesheet" href="~/Content/css/master.css" />
+    <link rel="stylesheet" href="~/Content/css/gloable.css" />
+    <link rel="stylesheet" href="~/Content/css/nprogress.css" />
+    @RenderSection("css", required: false)
 </head>
 <body>
-
+    @Html.Action("Head", "Home")
     @RenderBody()
-
+    @Html.Action("Foot", "Home")
+    <script src="~/Content/layui/layui.js"></script>
+    <script src="~/Content/js/yss/gloable.js"></script>
+    <script src="~/Content/js/plugins/nprogress.js"></script>
+    <script>NProgress.start();</script>
+    @RenderSection("js", required: false)
+    <script>
+        window.onload = function () {
+            NProgress.done();
+        };
+    </script>
+    <script>
+        (function () {
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
 </body>
 </html>
