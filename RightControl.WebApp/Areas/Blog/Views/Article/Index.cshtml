@@ -2,7 +2,27 @@
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutList.cshtml";
 }
+<style type="text/css">
+    #defaultTable + .layui-table-view tbody > tr > td {
+        padding: 0;
+    }
 
+        #defaultTable + .layui-table-view tbody > tr > td > .layui-table-cell {
+            height: 80px;
+            line-height: 80px;
+        }
+
+    .tdImg {
+        width: 120px;
+        height: 60px;
+        max-width: none;
+        cursor: pointer;
+    }
+
+    .layui-table-view {
+        margin: 0;
+    }
+</style>
 <div class="admin-main">
     <blockquote class="layui-elem-quote p10">
         <form id="formSearch" class="layui-form" action="">

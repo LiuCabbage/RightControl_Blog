@@ -1,17 +1,97 @@
-﻿
-@{
-    Layout = null;
+﻿@{
+    ViewBag.Title = "Liu_Cabbage-文章归档";
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div> 
+@section css{
+    <link rel="stylesheet" href="~/Content/css/about.css" />
+    <link href="~/Content/css/archives.css" rel="stylesheet" />
+}
+<div class="doc-container" id="doc-container">
+    <div class="about-banner" id="container">
+        <header class="l-top hasAnim arrow-holder">
+            <a data-path-hover="M31.3184948,33.1943359 C36.3357454,28.0664371 44.4728686,28.0690462 49.572124,33.2807584 C54.6360745,38.4563871 54.6061839,46.8782889 49.6566817,51.9369454 L31.318494,69.5197703 L49.6566817,89.71735 C54.6739322,94.8452488 54.6713794,103.161825 49.572124,108.373537 C44.5081735,113.549166 36.267997,113.518616 31.3184948,108.459959 L3.8112137,78.891075 C-1.25273677,73.7154463 -1.2880417,65.3601778 3.8112137,60.1484655 L31.3184948,33.1943359 Z">
+                <svg width="0" height="0">
+                    <path fill="#fff" d="M58.9103319,3.8342148C63.9275825,-1.29368407,72.0647057,-1.29107495,77.1639611,3.92063726C82.2279116,9.09626594,82.198021,17.5181678,77.2485188,22.5768242C77.2485188,22.5768242,31.318494,69.5197703,31.318494,69.5197703C31.318494,69.5197703,77.2485188,116.462716,77.2485188,116.462716C82.2657693,121.590615,82.2632165,129.907191,77.1639611,135.118903C72.1000106,140.294532,63.8598341,140.263982,58.9103319,135.205326C58.9103319,135.205326,3.8112137,78.891075,3.8112137,78.891075C-1.25273677,73.7154463,-1.2880417,65.3601778,3.8112137,60.1484655C3.8112137,60.1484655,58.9103319,3.8342148,58.9103319,3.8342148C58.9103319,3.8342148,58.9103319,3.8342148,58.9103319,3.8342148"></path>
+                </svg>
+            </a><!--/arrow-->
+            <a data-path-hover="M31.3184948,33.1943359 C36.3357454,28.0664371 44.4728686,28.0690462 49.572124,33.2807584 C54.6360745,38.4563871 54.6061839,46.8782889 49.6566817,51.9369454 L31.318494,69.5197703 L49.6566817,89.71735 C54.6739322,94.8452488 54.6713794,103.161825 49.572124,108.373537 C44.5081735,113.549166 36.267997,113.518616 31.3184948,108.459959 L3.8112137,78.891075 C-1.25273677,73.7154463 -1.2880417,65.3601778 3.8112137,60.1484655 L31.3184948,33.1943359 Z">
+                <svg width="0" height="0">
+                    <path fill="#fff" d="M58.9103319,3.8342148 C63.9275825,-1.29368407 72.0647057,-1.29107495 77.1639611,3.92063726 C82.2279116,9.09626594 82.198021,17.5181678 77.2485188,22.5768242 L31.318494,69.5197703 L77.2485188,116.462716 C82.2657693,121.590615 82.2632165,129.907191 77.1639611,135.118903 C72.1000106,140.294532 63.8598341,140.263982 58.9103319,135.205326 L3.8112137,78.891075 C-1.25273677,73.7154463 -1.2880417,65.3601778 3.8112137,60.1484655 L58.9103319,3.8342148 Z"></path>
+                </svg>
+            </a><!--/arrow-->
+        </header>
+        <div class="about-title">
+            <h1>归档</h1>
+            <p>剑气纵横三万里,一剑光寒十九洲.</p>
+        </div>
     </div>
-</body>
-</html>
+    <div class="container-fixed">
+        <div class="col-content">
+            <div class="post-archives-list">
+                <h3>2018 年<sup>「 9 」</sup></h3>
+                <ul>
+                    <li>
+                        <a href="/Blog/Read/14" class="">MUI框架-快速开发APP</a>
+                        <time class="mo-text-hint">(Dec 29 2018)</time>
+                    </li>
+                    <li>
+                        <a href="/Blog/Read/9" class="">2018最新版QQ音乐api调用</a>
+                        <time class="mo-text-hint">(Jul 03 2018)</time>
+                    </li>
+                    <li>
+                        <a href="/Blog/Read/13" class="">逆水寒</a>
+                        <time class="mo-text-hint">(Jun 06 2018)</time>
+                    </li>
+                    <li>
+                        <a href="/Blog/Read/11" class="">使用码云和VS托管本地代码</a>
+                        <time class="mo-text-hint">(May 17 2018)</time>
+                    </li>
+                    <li>
+                        <a href="/Blog/Read/8" class="">NPOI导入导出Excel</a>
+                        <time class="mo-text-hint">(Apr 24 2018)</time>
+                    </li>
+                    <li>
+                        <a href="/Blog/Read/7" class="">解决百度分享插件不支持https</a>
+                        <time class="mo-text-hint">(Apr 23 2018)</time>
+                    </li>
+                    <li>
+                        <a href="/Blog/Read/6" class="">ASP.NET MVC Cookie修改无效</a>
+                        <time class="mo-text-hint">(Apr 17 2018)</time>
+                    </li>
+                    <li>
+                        <a href="/Blog/Read/5" class="">C#阿里云服务器发送QQ邮件</a>
+                        <time class="mo-text-hint">(Apr 16 2018)</time>
+                    </li>
+                    <li>
+                        <a href="/Blog/Read/4" class="">序章</a>
+                        <time class="mo-text-hint">(Apr 15 2018)</time>
+                    </li>
+                </ul>
+            </div>
+            <div class="post-archives-list">
+                <h3>2019 年<sup>「 4 」</sup></h3>
+                <ul>
+                    <li>
+                        <a href="/Blog/Read/19" class="">MUI上拉加载和下拉刷新出现双滚动条BUG解决办法</a>
+                        <time class="mo-text-hint">(Jul 03 2019)</time>
+                    </li>
+                    <li>
+                        <a href="/Blog/Read/18" class="">MUI动态加载组件</a>
+                        <time class="mo-text-hint">(Jun 03 2019)</time>
+                    </li>
+                    <li>
+                        <a href="/Blog/Read/12" class="">模板分享</a>
+                        <time class="mo-text-hint">(Feb 20 2019)</time>
+                    </li>
+                    <li>
+                        <a href="/Blog/Read/16" class="">.NET Spire.Doc组件</a>
+                        <time class="mo-text-hint">(Jan 21 2019)</time>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+@section js{
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="~/Content/js/plugins/blogbenoitboucart.min.js"></script>
+}

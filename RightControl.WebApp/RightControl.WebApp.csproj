@@ -131,12 +131,14 @@
     <Content Include="Areas\SysSet\Views\Log\Index.cshtml" />
     <Content Include="Content\css\about.css" />
     <Content Include="Content\css\animate.min.css" />
+    <Content Include="Content\css\archives.css" />
     <Content Include="Content\css\blog.css" />
     <Content Include="Content\css\gloable.css" />
     <Content Include="Content\css\index_style.css" />
     <Content Include="Content\css\master.css" />
     <Content Include="Content\css\message.css" />
     <Content Include="Content\css\nprogress.css" />
+    <Content Include="Content\css\timeline.css" />
     <Content Include="Content\font-awesome\css\font-awesome.css" />
     <Content Include="Content\font-awesome\css\font-awesome.min.css" />
     <Content Include="Content\font-awesome\fonts\fontawesome-webfont.svg" />

@@ -13,8 +13,7 @@ namespace RightControl.WebApp.Controllers
         // GET: Article
         public ActionResult Index()
         {
-            WebSiteInfo model = new WebSiteInfo();
-            return View(model.GetWebSiteInfo());
+            return View();
         }
     }
 }

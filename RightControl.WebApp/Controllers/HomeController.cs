@@ -17,17 +17,17 @@ namespace RightControl.WebApp.Controllers
         public ActionResult Meta()
         {
             ViewBag.Site = model.GetWebSiteInfo();
-            return View("~/Views/Shared/_Meta.cshtml");
+            return PartialView("~/Views/Shared/_Meta.cshtml");
         }
         public ActionResult Head()
         {
             ViewBag.Site = model.GetWebSiteInfo();
-            return View("~/Views/Shared/_Head.cshtml");
+            return PartialView("~/Views/Shared/_Head.cshtml");
         }
         public ActionResult Foot()
         {
             ViewBag.Site = model.GetWebSiteInfo();
-            return View("/Views/Shared/_Foot.cshtml");
+            return PartialView("/Views/Shared/_Foot.cshtml");
         }
     }
 }

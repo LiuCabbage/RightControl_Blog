@@ -1,16 +1,15 @@
-﻿
-<footer class="grid-footer">
+﻿<footer class="grid-footer">
     <div class="footer-fixed">
         <div class="copyright">
             <div class="info">
                 <div class="contact">
-                    <a href="" class="github" target="_blank"><i class="fa fa-github"></i></a>
-                    <a href="https://wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes" class="qq" target="_blank" title="930054439"><i class="fa fa-qq"></i></a>
-                    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=" class="email" target="_blank" title="930054439@qq.com"><i class="fa fa-envelope"></i></a>
+                    <a href="@ViewBag.Site.Gitee" class="github" target="_blank"><i class="fa fa-github"></i></a>
+                    <a href="https://wpa.qq.com/msgrd?v=3&uin=@ViewBag.Site.QQ&site=qq&menu=yes" class="qq" target="_blank" title="@ViewBag.Site.QQ"><i class="fa fa-qq"></i></a>
+                    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=@ViewBag.Site.Mail" class="email" target="_blank" title="@ViewBag.Site.Mail"><i class="fa fa-envelope"></i></a>
                     <a href="javascript:void(0)" class="weixin"><i class="fa fa-weixin"></i></a>
                 </div>
                 <p class="mt05">
-
+                    @ViewBag.Site.CopyRight
                 </p>
             </div>
         </div>
