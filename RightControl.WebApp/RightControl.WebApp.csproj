@@ -147,13 +147,8 @@
     <Content Include="Content\font\lg.svg" />
     <Content Include="Content\image\1.jpg" />
     <Content Include="Content\image\2.jpg" />
-    <Content Include="Content\image\2018415193031394.jpg" />
-    <Content Include="Content\image\201842415510280.png" />
-    <Content Include="Content\image\bg9.jpg" />
-    <Content Include="Content\image\cover\2018416205043154.jpg" />
-    <Content Include="Content\image\cover\2019121192339714.png" />
-    <Content Include="Content\image\page\shareicon.png" />
-    <Content Include="Content\image\page\weixin.png" />
+    <Content Include="Content\image\bg.jpg" />
+    <Content Include="Content\image\shareicon.png" />
     <Content Include="Content\js\index.js" />
     <Content Include="Content\js\message.js" />
     <Content Include="Content\js\pagecomment.js" />
