@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<RightControl.Model.LinksModel>
+@using RightControl.Model
+@{
     ViewBag.Title = "Liu_Cabbage-友情链接";
 }
 @section css{
@@ -37,10 +39,14 @@
                         <i class="fa fa-check"></i>技术优先
                     </p>
                     <p>
-                        交换友链可在留言板留言.请将本站加入友链<br>
-                        名称：Liu_Cabbage<br>
-                        网址：https://www.baocaige.top<br>
-                        图标：https://www.baocaige.top/favicon.ico<br>
+                        交换友链可在留言板留言.请将本站加入友链
+                        <br>
+                        名称：Liu_Cabbage
+                        <br>
+                        网址：https://www.baocaige.top
+                        <br>
+                        图标：https://www.baocaige.top/favicon.ico
+                        <br>
                         描述：一个97年的.NET小学生
                     </p>
                     <p>
@@ -49,42 +55,18 @@
                 </section>
             </article>
             <ul class="link-list">
-                <li>
-                    <div class="pd-lr-10">
-                        <a href="https://www.yanshisan.cn" target="_blank">
-                            <img src="https://www.yanshisan.cn/logo.png">
-                            <h3>燕十三</h3>
-                            <p>燕十三·一个人的江湖</p>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="pd-lr-10">
-                        <a href="https://www.yanshisan.cn" target="_blank">
-                            <img src="https://www.yanshisan.cn/logo.png">
-                            <h3>燕十三</h3>
-                            <p>燕十三·一个人的江湖</p>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="pd-lr-10">
-                        <a href="https://www.yanshisan.cn" target="_blank">
-                            <img src="https://www.yanshisan.cn/logo.png">
-                            <h3>燕十三</h3>
-                            <p>燕十三·一个人的江湖</p>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="pd-lr-10">
-                        <a href="https://www.yanshisan.cn" target="_blank">
-                            <img src="https://www.yanshisan.cn/logo.png">
-                            <h3>燕十三</h3>
-                            <p>燕十三·一个人的江湖</p>
-                        </a>
-                    </div>
-                </li>
+                @foreach (LinksModel item in Model)
+                {
+                    <li>
+                        <div class="pd-lr-10">
+                            <a href="@item.Url" target="_blank">
+                                <img src="@item.Icon">
+                                <h3>@item.Name</h3>
+                                <p>@item.Describe</p>
+                            </a>
+                        </div>
+                    </li>
+                }
             </ul>
         </div>
     </div>

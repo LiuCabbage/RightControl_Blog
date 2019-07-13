@@ -149,6 +149,8 @@
     <Content Include="Content\image\2.jpg" />
     <Content Include="Content\image\bg.jpg" />
     <Content Include="Content\image\shareicon.png" />
+    <Content Include="Content\image\weixin.jpg" />
+    <Content Include="Content\image\xlj.jpg" />
     <Content Include="Content\js\index.js" />
     <Content Include="Content\js\message.js" />
     <Content Include="Content\js\pagecomment.js" />

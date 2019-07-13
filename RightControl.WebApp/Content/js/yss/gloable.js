@@ -5,6 +5,17 @@
     util.fixbar();
     //导航控制
     master.start($);
+    $(".weixin").on("click", function () {
+        layer.open({
+            type: 1,
+            title: false,
+            closeBtn: 1,
+            area: ['200px','200px'],
+            skin: 'layui-layer-nobg', //没有背景色
+            shadeClose: true,
+            content: $('#weixin')
+        });
+    });
 });
 var slider = 0;
 var pathname = window.location.pathname.replace('Read', 'Article');

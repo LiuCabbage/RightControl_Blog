@@ -11,6 +11,47 @@ namespace RightControl.WebApp
     public static class MyExtHtmlLabel
     {
         /// <summary>
+        /// 博客前台日记
+        /// </summary>
+        /// <param name="helper"></param>
+        /// <param name="_year"></param>
+        /// <param name="_list"></param>
+        /// <returns></returns>
+        public static HtmlString DiarysHtml(this HtmlHelper helper, dynamic _year=null, dynamic _list=null)
+        {
+            StringBuilder sb = new StringBuilder();
+            var year = _year as List<DiarysModel>;
+            var list = _list as List<DiarysModel>;
+            if (year!=null && list!=null)
+            {
+                foreach (DiarysModel y in year)
+                {
+                    sb.AppendFormat(@"<div class='timeline-year'>
+                                  <h2><a class='yearToggle'>{0} 年</a><i class='fa fa-caret-down fa-fw'></i></h2>
+                                  <div class='timeline-month'>
+                                      <ul>",y.Year);
+                    foreach (DiarysModel item in list)
+                    {
+                        if (y.Year == item.CreateOn.ToString("yyyy"))
+                        {
+                            sb.AppendFormat(@"<li>
+                                        <div class='h4 animated fadeInLeft'>
+                                            <p class='date'>{0}</p>
+                                        </div>
+                                        <p class='dot-circle animated '><i class='fa fa-dot-circle-o'></i></p>
+                                        <div class='content animated fadeInRight'>{1}</div>
+                                        <div class='clear'></div>
+                                    </li>", item.CreateOn.ToString("MM月dd日"), item.Content);
+                        }
+                    }
+                    sb.Append(@"</ul>
+                            </div>
+                        </div>");
+                }
+            }
+            return new HtmlString(sb.ToString());
+        }
+        /// <summary>
         /// 菜单管理权限复选框
         /// </summary>
         /// <param name="helper"></param>
