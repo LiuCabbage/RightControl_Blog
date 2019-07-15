@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2019-07-09 18:29:22
+Date: 2019-07-15 18:28:03
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -94,19 +94,18 @@ CREATE TABLE `t_article_class` (
   `OrderNo` int(11) DEFAULT NULL COMMENT '排序ID',
   `CreateOn` datetime DEFAULT NULL COMMENT '创建日期',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of t_article_class
 -- ----------------------------
-INSERT INTO `t_article_class` VALUES ('1', '.NET', '0', '2019-07-09 15:05:08');
-INSERT INTO `t_article_class` VALUES ('2', 'JAVA', '0', '2019-07-09 15:08:20');
-INSERT INTO `t_article_class` VALUES ('3', 'PHP', '0', '2019-07-09 15:08:33');
-INSERT INTO `t_article_class` VALUES ('4', 'MySQL', '0', '2019-07-09 15:09:14');
-INSERT INTO `t_article_class` VALUES ('5', 'SQL Server', '0', '2019-07-09 15:09:38');
+INSERT INTO `t_article_class` VALUES ('1', 'ASP.NET MVC', '0', '2019-07-09 15:05:08');
+INSERT INTO `t_article_class` VALUES ('2', 'ORM', '0', '2019-07-09 15:08:46');
+INSERT INTO `t_article_class` VALUES ('3', 'MySQL', '0', '2019-07-09 15:09:14');
+INSERT INTO `t_article_class` VALUES ('4', 'SQL Server', '0', '2019-07-09 15:09:38');
+INSERT INTO `t_article_class` VALUES ('5', 'WEB前端', '0', '2019-07-09 15:09:40');
 INSERT INTO `t_article_class` VALUES ('6', 'IIS', '0', '2019-07-09 15:09:48');
 INSERT INTO `t_article_class` VALUES ('7', 'BUG记录', '0', '2019-07-09 15:09:58');
-INSERT INTO `t_article_class` VALUES ('8', 'WEB前端', '0', '2019-07-09 15:10:11');
 
 -- ----------------------------
 -- Table structure for t_article_type

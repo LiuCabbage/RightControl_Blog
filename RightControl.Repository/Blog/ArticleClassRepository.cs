@@ -12,7 +12,7 @@ namespace RightControl.Repository
         {
             using (var conn = MySqlHelper.GetConnection())
             {
-                var sql = "SELECT Id,Name from t_article_class ORDER BY OrderNo ASC";
+                var sql = "SELECT * from t_article_class ORDER BY OrderNo ASC,CreateOn ASC";
                 return conn.Query<ArticleClassModel>(sql);
             }
         }
