@@ -16,5 +16,6 @@ namespace RightControl.IService
         IEnumerable<T> GetAll(string returnFields = null, string orderby = null);
         dynamic GetListByFilter(T filter, PageInfo pageInfo);
         IEnumerable<T> GetByWhere(string where = null, object param = null, string returnFields = null, string orderby = null);
+        IEnumerable<T> GetBySkip(int skip, int take, string returnFields = null, string where = null, object param = null, string orderBy = null);
     }
 }

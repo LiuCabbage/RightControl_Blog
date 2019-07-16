@@ -20,10 +20,11 @@ namespace RightControl.WebApp.Controllers
             ViewBag.ClassList = classService.GetArticleClassList().ToList();
             ViewBag.HotList = service.GetHotArticle(5).ToList();
             ViewBag.DingList = service.GetDingArticle(3).ToList();
-            //这么获取12调QQ用户信息
+            ViewBag.UserList = userService.GetBySkip(0, 12, null, null, null, "ORDER BY CreateOn Desc");
             return View();
         }
-        public ActionResult Detail(int Id) {
+        public ActionResult Detail(int Id)
+        {
             return View();
         }
     }

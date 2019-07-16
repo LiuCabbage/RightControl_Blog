@@ -369,9 +369,10 @@
                     <h5 class="other-item-title">最近访客</h5>
                     <div class="inner">
                         <dl class="vistor">
-
-                            <dd><a href="javasript:;"><img src="https://thirdqq.qlogo.cn/qqapp/101465933/72388EA977643E8F97111222675720B1/100"><cite>Anonymous</cite></a></dd>
-                            
+                            @foreach  (QQUserModel item in ViewBag.UserList)
+                            {
+                            <dd><a href="javasript:;"><img src="@item.HeadShot"><cite>@item.NickName</cite></a></dd>
+                            }
                         </dl>
                     </div>
                 </div>

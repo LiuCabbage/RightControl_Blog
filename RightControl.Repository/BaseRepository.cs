@@ -90,5 +90,12 @@ namespace RightControl.Repository
                 return conn.GetTotal<T>(filter.where, filter.param);
             }
         }
+        public IEnumerable<T> GetBySkip(int skip, int take, string returnFields = null, string where = null, object param = null, string orderBy = null)
+        {
+            using (var conn = MySqlHelper.GetConnection())
+            {
+                return conn.GetBySkip<T>(skip, take, returnFields, where, param, orderBy);
+            }
+        }
     }
 }

@@ -97,5 +97,9 @@ namespace RightControl.Service
         {
             return baseRepository.GetByWhere(where, param, returnFields, orderby);
         }
+        public IEnumerable<T> GetBySkip(int skip, int take, string returnFields = null, string where = null, object param = null, string orderBy = null)
+        {
+            return baseRepository.GetBySkip(skip, take, returnFields, where, param, orderBy);
+        }
     }
 }

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2019-07-15 18:28:03
+Date: 2019-07-16 12:33:57
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -73,16 +73,16 @@ CREATE TABLE `t_article` (
 -- ----------------------------
 -- Records of t_article
 -- ----------------------------
-INSERT INTO `t_article` VALUES ('1', '测试文章1', '测试文章1', '/Upload/img/20161019214311_5e2fT_1.jpeg', '<p><span>测试文章1</span></p>', '1', '1', '0', '5', '0', '', '2019-07-09 15:10:56', '2019-07-09 15:10:56');
-INSERT INTO `t_article` VALUES ('2', '测试文章2', '测试文章2', '/Upload/img/20161019214311_5e2fT_1.jpeg', '<p><span>测试文章2</span></p>', '1', '1', '0', '1', '0', '', '2019-07-09 15:11:16', '2019-07-09 15:11:16');
-INSERT INTO `t_article` VALUES ('3', '测试文章3', '测试文章3', '/Upload/img/20161019214311_5e2fT_1.jpeg', '<p><span>测试文章3</span></p>', '1', '1', '1', '2', '0', '', '2019-07-09 15:11:35', '2019-07-09 15:11:35');
-INSERT INTO `t_article` VALUES ('4', '测试文章4', '测试文章4', '/Upload/img/20161019214311_5e2fT_1.jpeg', '<p><span>测试文章4</span></p>', '1', '1', '0', '4', '0', '', '2019-07-09 15:11:57', '2019-07-09 15:11:57');
-INSERT INTO `t_article` VALUES ('5', '测试文章5', '测试文章5', '/Upload/img/20161019214311_5e2fT_1.jpeg', '<p><span>测试文章5</span></p>', '1', '1', '0', '10', '0', '', '2019-07-09 15:12:20', '2019-07-09 15:12:20');
-INSERT INTO `t_article` VALUES ('6', '测试文章6', '测试文章6', '/Upload/img/20161019214311_5e2fT_1.jpeg', '<p><span>测试文章6</span></p>', '1', '2', '1', '22', '0', '', '2019-07-09 15:13:09', '2019-07-09 15:13:09');
-INSERT INTO `t_article` VALUES ('7', '测试文章7', '测试文章7', '/Upload/img/20161019214311_5e2fT_1.jpeg', '<p><span>测试文章7</span></p>', '1', '2', '1', '9', '0', '', '2019-07-09 15:13:23', '2019-07-09 15:13:31');
-INSERT INTO `t_article` VALUES ('8', '测试文章8', '测试文章8', '/Upload/img/20161019214311_5e2fT_1.jpeg', '<p><span>测试文章8</span></p>', '1', '3', '1', '8', '0', '', '2019-07-09 15:14:07', '2019-07-09 15:14:07');
-INSERT INTO `t_article` VALUES ('9', '测试文章9', '测试文章9', '/Upload/img/20161019214311_5e2fT_1.jpeg', '<p><span>测试文章9</span></p>', '1', '3', '0', '11', '0', '', '2019-07-09 15:14:22', '2019-07-09 15:14:22');
-INSERT INTO `t_article` VALUES ('10', '测试文章10', '测试文章10', '/Upload/img/20161019214311_5e2fT_1.jpeg', '<p><span>测试文章10</span></p>', '1', '4', '0', '30', '0', '', '2019-07-09 15:14:36', '2019-07-09 15:14:36');
+INSERT INTO `t_article` VALUES ('1', '测试文章1', '测试文章1', '/Upload/img/502.jpg', '<p><span>测试文章1</span></p>', '1', '1', '0', '5', '0', '', '2019-07-09 15:10:56', '2019-07-09 15:10:56');
+INSERT INTO `t_article` VALUES ('2', '测试文章2', '测试文章2', '/Upload/img/502.jpg', '<p><span>测试文章2</span></p>', '1', '1', '0', '1', '0', '', '2019-07-09 15:11:16', '2019-07-09 15:11:16');
+INSERT INTO `t_article` VALUES ('3', '测试文章3', '测试文章3', '/Upload/img/502.jpg', '<p><span>测试文章3</span></p>', '1', '1', '1', '2', '0', '', '2019-07-09 15:11:35', '2019-07-09 15:11:35');
+INSERT INTO `t_article` VALUES ('4', '测试文章4', '测试文章4', '/Upload/img/502.jpg', '<p><span>测试文章4</span></p>', '1', '1', '0', '4', '0', '', '2019-07-09 15:11:57', '2019-07-09 15:11:57');
+INSERT INTO `t_article` VALUES ('5', '测试文章5', '测试文章5', '/Upload/img/502.jpg', '<p><span>测试文章5</span></p>', '1', '1', '0', '10', '0', '', '2019-07-09 15:12:20', '2019-07-09 15:12:20');
+INSERT INTO `t_article` VALUES ('6', '测试文章6', '测试文章6', '/Upload/img/502.jpg', '<p><span>测试文章6</span></p>', '1', '2', '1', '22', '0', '', '2019-07-09 15:13:09', '2019-07-09 15:13:09');
+INSERT INTO `t_article` VALUES ('7', '测试文章7', '测试文章7', '/Upload/img/502.jpg', '<p><span>测试文章7</span></p>', '1', '2', '1', '9', '0', '', '2019-07-09 15:13:23', '2019-07-09 15:13:31');
+INSERT INTO `t_article` VALUES ('8', '测试文章8', '测试文章8', '/Upload/img/502.jpg', '<p><span>测试文章8</span></p>', '1', '3', '1', '8', '0', '', '2019-07-09 15:14:07', '2019-07-09 15:14:07');
+INSERT INTO `t_article` VALUES ('9', '测试文章9', '测试文章9', '/Upload/img/502.jpg', '<p><span>测试文章9</span></p>', '1', '3', '0', '11', '0', '', '2019-07-09 15:14:22', '2019-07-09 15:14:22');
+INSERT INTO `t_article` VALUES ('10', '测试文章10', '测试文章10', '/Upload/img/502.jpg', '<p><span>测试文章10</span></p>', '1', '4', '0', '30', '0', '', '2019-07-09 15:14:36', '2019-07-09 15:14:36');
 
 -- ----------------------------
 -- Table structure for t_article_class
@@ -211,15 +211,14 @@ CREATE TABLE `t_links` (
   `Describe` varchar(100) CHARACTER SET utf8 DEFAULT NULL COMMENT '描述',
   `CreateOn` datetime DEFAULT NULL COMMENT '创建日期',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of t_links
 -- ----------------------------
 INSERT INTO `t_links` VALUES ('1', '百度', 'https://www.baidu.com', 'https://www.baidu.com/favicon.ico', '国内广告搜索引擎', '2019-06-29 18:16:49');
-INSERT INTO `t_links` VALUES ('2', '谷歌', 'http://www.google.com.hk', 'http://www.google.com.hk/favicon.ico', '美国谷歌搜索引擎', '2019-06-29 18:18:02');
-INSERT INTO `t_links` VALUES ('3', '必应', 'https://cn.bing.com', 'https://cn.bing.com/favicon.ico', '微软必应搜索引擎', '2019-06-29 18:19:13');
-INSERT INTO `t_links` VALUES ('4', 'layui', 'https://www.layui.com', 'https://www.layui.com/favicon.ico', 'layui官网', '2019-06-29 23:03:51');
+INSERT INTO `t_links` VALUES ('2', '必应', 'https://cn.bing.com', 'https://cn.bing.com/favicon.ico', '微软必应搜索引擎', '2019-06-29 18:19:13');
+INSERT INTO `t_links` VALUES ('3', 'layui', 'https://www.layui.com', 'https://www.layui.com/favicon.ico', 'layui官网', '2019-06-29 23:03:51');
 
 -- ----------------------------
 -- Table structure for t_log
@@ -471,8 +470,8 @@ CREATE TABLE `t_qq_user` (
 -- ----------------------------
 -- Records of t_qq_user
 -- ----------------------------
-INSERT INTO `t_qq_user` VALUES ('1', 'woyebuzdhidao', '蚯蚓', '1', '/Upload/img/20161019214311_5e2fT_1.jpeg', '178899573@qq.com', '2019-07-01 10:34:30', '2019-07-01 10:34:33');
-INSERT INTO `t_qq_user` VALUES ('2', 'dfsdfsd', '小蚯蚓', '0', '/Upload/img/20161019214311_5e2fT_1.jpeg', '884632144', '2019-07-08 17:06:40', '2019-07-08 17:06:42');
+INSERT INTO `t_qq_user` VALUES ('1', 'woyebuzdhidao', '蚯蚓', '1', '/Upload/img/502.jpg', '178899573@qq.com', '2019-07-01 10:34:30', '2019-07-01 10:34:33');
+INSERT INTO `t_qq_user` VALUES ('2', 'dfsdfsd', '小蚯蚓', '0', '/Upload/img/502.jpg', '884632144', '2019-07-08 17:06:40', '2019-07-08 17:06:42');
 
 -- ----------------------------
 -- Table structure for t_role
@@ -524,6 +523,6 @@ CREATE TABLE `t_user` (
 -- ----------------------------
 -- Records of t_user
 -- ----------------------------
-INSERT INTO `t_user` VALUES ('1', 'admin', '超级管理员', 'e10adc3949ba59abbe56e057f20f883e', '1', '', '2019-02-28 16:18:52', '2019-06-30 01:13:52', '0', '1', '1', '11111111111', '123456@qq.com', '最高权限', '/Upload/img/20161019214311_5e2fT_1.jpeg');
+INSERT INTO `t_user` VALUES ('1', 'admin', '超级管理员', 'e10adc3949ba59abbe56e057f20f883e', '1', '', '2019-02-28 16:18:52', '2019-06-30 01:13:52', '0', '1', '1', '11111111111', '123456@qq.com', '最高权限', '/Upload/img/502.jpg');
 INSERT INTO `t_user` VALUES ('2', 'test', '普通管理员', 'e10adc3949ba59abbe56e057f20f883e', '2', '', '2019-02-28 16:21:31', '2019-02-28 16:21:34', '0', '0', '1', '178899573', '123456@qq.com', '普通权限', '');
 INSERT INTO `t_user` VALUES ('3', 'user', '用户', 'e10adc3949ba59abbe56e057f20f883e', '3', '', '2019-02-28 16:22:15', '2019-02-28 16:22:19', '0', '0', '1', '178899573', '123456@qq.com', '低级权限', null);
