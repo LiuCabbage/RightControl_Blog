@@ -24,5 +24,6 @@ namespace RightControl.IService
         /// <param name="content"></param>
         /// <returns></returns>
         IEnumerable<ArticleModel> GetArticleListBySearch(string content);
+        string GetListByClassId(int classId, int page, int pagesize);
     }
 }

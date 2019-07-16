@@ -7,20 +7,20 @@
         done: function (page, next) {
             var pagecount = $(".bloglist").attr("data-pagecount"),
                 type = $(".bloglist").attr("data-type"),
+                pagesize = $(".bloglist").attr("data-pagesize"),
                 lis = [];
             $.ajax({
                 type: "POST",
                 url: "/Article/LoadArticleByClass",
                 data: {
                     classId: type,
-                    page: page
+                    page: page,
+                    pagesize: pagesize
                 },
-                dataType: "json",
                 success: function (res) {
-                    layui.each(res, function (index, item) {
-                        lis.push('<li>' + item.title + '</li>');
-                    });
-                    next(lis.join(""), t < pagecount);
+                    //直接后台拼接返回每页的html，舒服啊。
+                    lis.push(res);
+                    next(lis.join(""), page < pagecount);
                 }
             })
         }
