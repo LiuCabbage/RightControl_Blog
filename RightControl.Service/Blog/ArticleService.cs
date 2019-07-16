@@ -9,6 +9,14 @@ namespace RightControl.Service
     public class ArticleService : BaseService<ArticleModel>, IArticleService
     {
         public IArticleRepository repository { get; set; }
+
+        public IEnumerable<ArticleModel> GetArticleListBySearch(string content)
+        {
+            string _where = "WHERE Title LIKE CONCAT('%',@Title,'%')";
+            string _orderby = @"ORDER BY ReadNum DESC,CreateOn DESC";
+            return repository.GetByWhere(_where, new { Title = content }, null, _orderby);
+        }
+
         public ArticleModel GetDetail(int Id)
         {
             return repository.GetDetail(Id);

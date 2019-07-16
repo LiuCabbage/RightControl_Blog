@@ -27,5 +27,12 @@ namespace RightControl.WebApp.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public JsonResult SearchResult(string context)
+        {
+            var result = service.GetArticleListBySearch(context);
+            return Json(result);
+        }
+        public JsonResult LoadArticleByClass(string ) { }
     }
 }

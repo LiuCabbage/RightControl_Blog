@@ -1,7 +1,30 @@
-﻿layui.use(['jquery'], function () {
+﻿layui.use(['jquery', 'flow'], function () {
     var $ = layui.jquery;
+    var flow = layui.flow;
     article.Init($);//初始化共用js
-   
+    flow.load({
+        elem: "#LAY_bloglist",
+        done: function (page, next) {
+            var pagecount = $(".bloglist").attr("data-pagecount"),
+                type = $(".bloglist").attr("data-type"),
+                lis = [];
+            $.ajax({
+                type: "POST",
+                url: "/Article/LoadArticleByClass",
+                data: {
+                    classId: type,
+                    page: page
+                },
+                dataType: "json",
+                success: function (res) {
+                    layui.each(res, function (index, item) {
+                        lis.push('<li>' + item.title + '</li>');
+                    });
+                    next(lis.join(""), t < pagecount);
+                }
+            })
+        }
+    })
 });
 var article = {};
 article.Init = function ($) {
@@ -51,6 +74,10 @@ article.Init = function ($) {
         $('.article-category').removeClass('categoryIn').addClass('categoryOut');
     }
     function blogtype() {
+        var i = $("#blogtypeid").val();
+        i != 0 && (t = parseInt(i) * 40, $(".slider").css({
+            top: t + "px"
+        }));
         $('#category li').hover(function () {
             $(this).addClass('current');
             var num = $(this).attr('data-index');
@@ -67,5 +94,32 @@ article.Init = function ($) {
                 $('#categoryandsearch').removeClass('fixed');
         });
     };
+    $("#searchtxt").on("keyup", function () {
+        setTimeout(function () {
+            "" == $("#searchtxt").val().trim() ? $(".search-result").empty().hide() : $.ajax({
+                type: "post",
+                url: "/Article/SearchResult",
+                data: {
+                    context: $("#searchtxt").val().trim()
+                },
+                dataType: "json",
+                success: function (a) {
+                    "[]" != a ? ($(".search-result").show().empty(), $.each(a,
+                        function (t, i) {
+                            $(".search-result").append('<li class="child"><a href="/Article/Detail/' + i.Id + '" style="display:block" target="_blank">' + i.Title.toLowerCase().replace($("#searchtxt").val().trim().toLowerCase(), '<b style="color:#6bc30d">' + $("#searchtxt").val().trim() + "<\/b>") + "<\/a><\/li>")
+                        })) : $(".search-result").hide().empty()
+                },
+                complete: function () {
+                    "" != $("#searchtxt").val().trim() && $(".search-icon i").removeClass("fa-search").addClass("fa-times")
+                }
+            })
+        },
+            500)
+    });
+    $("body").delegate(".fa-times", "click", function () {
+        $(".search-result").hide().empty();
+        $("#searchtxt").val("");
+        $(".search-icon i").removeClass("fa-times").addClass("fa-search")
+    });
 };
 

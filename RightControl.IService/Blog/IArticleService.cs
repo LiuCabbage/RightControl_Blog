@@ -18,5 +18,11 @@ namespace RightControl.IService
         /// <param name="num">记录数</param>
         /// <returns></returns>
         IEnumerable<ArticleModel> GetDingArticle(int num);
+        /// <summary>
+        /// 搜索文章
+        /// </summary>
+        /// <param name="content"></param>
+        /// <returns></returns>
+        IEnumerable<ArticleModel> GetArticleListBySearch(string content);
     }
 }

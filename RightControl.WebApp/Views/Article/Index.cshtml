@@ -6,380 +6,381 @@
 @section css{
     <link rel="stylesheet" href="~/Content/css/blog.css" />
 }
-<div class="doc-container" id="doc-container">
-    <div class="container-fixed">
-        <div class="col-content">
-            <div class="inner">
-                <article class="article-list bloglist" id="LAY_bloglist">
-                    <section class="article-item zoomIn article">
-                        <div class="fc-flag">置顶</div>
-                        <h5 class="title">
-                            <span class="fc-blue">【原创】</span>
-                            <a href="read.html">.NET Spire.Doc组件</a>
-                        </h5>
-                        <div class="time">
-                            <span class="day">21</span>
-                            <span class="month fs-18">1<span class="fs-14">月</span></span>
-                            <span class="year fs-18 ml10">2019</span>
-                        </div>
-                        <div class="content">
-                            <a href="read.html" class="cover img-light">
-                                <img src="image/cover/2019121192339714.png">
-                            </a>
-                            Spire.Doc for .NET是一款由E-iceblue公司开发的专业的Word .NET类库，使用该工具开发人员可以在任意.NET平台（C#，VB.NET，ASP.NET）上快速创建，读取，写入，转换，打印Word文档。作为一个独立的Word 组件，Spire.Doc的运行无需安装Microsoft Word。而且，它可以将Microsoft Word文档创建功能集成到开发者的任何.NET应用程序。
-                        </div>
-                        <div class="read-more">
-                            <a href="read.html" class="fc-black f-fwb">继续阅读</a>
-                        </div>
-                        <aside class="f-oh footer">
-                            <div class="f-fl tags">
-                                <span class="fa fa-tags fs-16"></span>
-                                <a class="tag">ASP.NET MVC</a>
+    <div class="doc-container" id="doc-container">
+        <div class="container-fixed">
+            <input type="hidden" value="0" id="blogtypeid" />
+            <div class="col-content">
+                <div class="inner">
+                    <article class="article-list bloglist" id="LAY_bloglist" data-count="13" data-pagesize="10" data-pagecount="2" data-type="0">@*记录数，每页条数，页数，分类id*@
+                        <section class="article-item zoomIn article">
+                            <div class="fc-flag">置顶</div>
+                            <h5 class="title">
+                                <span class="fc-blue">【原创】</span>
+                                <a href="read.html">.NET Spire.Doc组件</a>
+                            </h5>
+                            <div class="time">
+                                <span class="day">21</span>
+                                <span class="month fs-18">1<span class="fs-14">月</span></span>
+                                <span class="year fs-18 ml10">2019</span>
                             </div>
-                            <div class="f-fr">
-                                <span class="read">
-                                    <i class="fa fa-eye fs-16"></i>
-                                    <i class="num">57</i>
-                                </span>
-                                <span class="ml20">
-                                    <i class="fa fa-comments fs-16"></i>
-                                    <a href="javascript:void(0)" class="num fc-grey">1</a>
-                                </span>
+                            <div class="content">
+                                <a href="read.html" class="cover img-light">
+                                    <img src="image/cover/2019121192339714.png">
+                                </a>
+                                Spire.Doc for .NET是一款由E-iceblue公司开发的专业的Word .NET类库，使用该工具开发人员可以在任意.NET平台（C#，VB.NET，ASP.NET）上快速创建，读取，写入，转换，打印Word文档。作为一个独立的Word 组件，Spire.Doc的运行无需安装Microsoft Word。而且，它可以将Microsoft Word文档创建功能集成到开发者的任何.NET应用程序。
                             </div>
-                        </aside>
-                    </section>
-                    <section class="article-item zoomIn article">
-                        <div class="fc-flag">置顶</div>
-                        <h5 class="title">
-                            <span class="fc-blue">【原创】</span>
-                            <a href="/Blog/Read/16">.NET Spire.Doc组件</a>
-                        </h5>
-                        <div class="time">
-                            <span class="day">21</span>
-                            <span class="month fs-18">1<span class="fs-14">月</span></span>
-                            <span class="year fs-18 ml10">2019</span>
-                        </div>
-                        <div class="content">
-                            <a href="/Blog/Read/16" class="cover img-light">
-                                <img src="image/cover/2019121192339714.png">
-                            </a>
-                            Spire.Doc for .NET是一款由E-iceblue公司开发的专业的Word .NET类库，使用该工具开发人员可以在任意.NET平台（C#，VB.NET，ASP.NET）上快速创建，读取，写入，转换，打印Word文档。作为一个独立的Word 组件，Spire.Doc的运行无需安装Microsoft Word。而且，它可以将Microsoft Word文档创建功能集成到开发者的任何.NET应用程序。
-                        </div>
-                        <div class="read-more">
-                            <a href="/Blog/Read/16" class="fc-black f-fwb">继续阅读</a>
-                        </div>
-                        <aside class="f-oh footer">
-                            <div class="f-fl tags">
-                                <span class="fa fa-tags fs-16"></span>
-                                <a class="tag">ASP.NET MVC</a>
+                            <div class="read-more">
+                                <a href="read.html" class="fc-black f-fwb">继续阅读</a>
                             </div>
-                            <div class="f-fr">
-                                <span class="read">
-                                    <i class="fa fa-eye fs-16"></i>
-                                    <i class="num">57</i>
-                                </span>
-                                <span class="ml20">
-                                    <i class="fa fa-comments fs-16"></i>
-                                    <a href="javascript:void(0)" class="num fc-grey">1</a>
-                                </span>
+                            <aside class="f-oh footer">
+                                <div class="f-fl tags">
+                                    <span class="fa fa-tags fs-16"></span>
+                                    <a class="tag">ASP.NET MVC</a>
+                                </div>
+                                <div class="f-fr">
+                                    <span class="read">
+                                        <i class="fa fa-eye fs-16"></i>
+                                        <i class="num">57</i>
+                                    </span>
+                                    <span class="ml20">
+                                        <i class="fa fa-comments fs-16"></i>
+                                        <a href="javascript:void(0)" class="num fc-grey">1</a>
+                                    </span>
+                                </div>
+                            </aside>
+                        </section>
+                        <section class="article-item zoomIn article">
+                            <div class="fc-flag">置顶</div>
+                            <h5 class="title">
+                                <span class="fc-blue">【原创】</span>
+                                <a href="/Blog/Read/16">.NET Spire.Doc组件</a>
+                            </h5>
+                            <div class="time">
+                                <span class="day">21</span>
+                                <span class="month fs-18">1<span class="fs-14">月</span></span>
+                                <span class="year fs-18 ml10">2019</span>
                             </div>
-                        </aside>
-                    </section>
-                    <section class="article-item zoomIn article">
-                        <div class="fc-flag">置顶</div>
-                        <h5 class="title">
-                            <span class="fc-blue">【原创】</span>
-                            <a href="/Blog/Read/16">.NET Spire.Doc组件</a>
-                        </h5>
-                        <div class="time">
-                            <span class="day">21</span>
-                            <span class="month fs-18">1<span class="fs-14">月</span></span>
-                            <span class="year fs-18 ml10">2019</span>
-                        </div>
-                        <div class="content">
-                            <a href="/Blog/Read/16" class="cover img-light">
-                                <img src="image/cover/2019121192339714.png">
-                            </a>
-                            Spire.Doc for .NET是一款由E-iceblue公司开发的专业的Word .NET类库，使用该工具开发人员可以在任意.NET平台（C#，VB.NET，ASP.NET）上快速创建，读取，写入，转换，打印Word文档。作为一个独立的Word 组件，Spire.Doc的运行无需安装Microsoft Word。而且，它可以将Microsoft Word文档创建功能集成到开发者的任何.NET应用程序。
-                        </div>
-                        <div class="read-more">
-                            <a href="/Blog/Read/16" class="fc-black f-fwb">继续阅读</a>
-                        </div>
-                        <aside class="f-oh footer">
-                            <div class="f-fl tags">
-                                <span class="fa fa-tags fs-16"></span>
-                                <a class="tag">ASP.NET MVC</a>
+                            <div class="content">
+                                <a href="/Blog/Read/16" class="cover img-light">
+                                    <img src="image/cover/2019121192339714.png">
+                                </a>
+                                Spire.Doc for .NET是一款由E-iceblue公司开发的专业的Word .NET类库，使用该工具开发人员可以在任意.NET平台（C#，VB.NET，ASP.NET）上快速创建，读取，写入，转换，打印Word文档。作为一个独立的Word 组件，Spire.Doc的运行无需安装Microsoft Word。而且，它可以将Microsoft Word文档创建功能集成到开发者的任何.NET应用程序。
                             </div>
-                            <div class="f-fr">
-                                <span class="read">
-                                    <i class="fa fa-eye fs-16"></i>
-                                    <i class="num">57</i>
-                                </span>
-                                <span class="ml20">
-                                    <i class="fa fa-comments fs-16"></i>
-                                    <a href="javascript:void(0)" class="num fc-grey">1</a>
-                                </span>
+                            <div class="read-more">
+                                <a href="/Blog/Read/16" class="fc-black f-fwb">继续阅读</a>
                             </div>
-                        </aside>
-                    </section>
-                    <section class="article-item zoomIn article">
-                        <div class="fc-flag">置顶</div>
-                        <h5 class="title">
-                            <span class="fc-blue">【原创】</span>
-                            <a href="/Blog/Read/16">.NET Spire.Doc组件</a>
-                        </h5>
-                        <div class="time">
-                            <span class="day">21</span>
-                            <span class="month fs-18">1<span class="fs-14">月</span></span>
-                            <span class="year fs-18 ml10">2019</span>
-                        </div>
-                        <div class="content">
-                            <a href="/Blog/Read/16" class="cover img-light">
-                                <img src="image/cover/2019121192339714.png">
-                            </a>
-                            Spire.Doc for .NET是一款由E-iceblue公司开发的专业的Word .NET类库，使用该工具开发人员可以在任意.NET平台（C#，VB.NET，ASP.NET）上快速创建，读取，写入，转换，打印Word文档。作为一个独立的Word 组件，Spire.Doc的运行无需安装Microsoft Word。而且，它可以将Microsoft Word文档创建功能集成到开发者的任何.NET应用程序。
-                        </div>
-                        <div class="read-more">
-                            <a href="/Blog/Read/16" class="fc-black f-fwb">继续阅读</a>
-                        </div>
-                        <aside class="f-oh footer">
-                            <div class="f-fl tags">
-                                <span class="fa fa-tags fs-16"></span>
-                                <a class="tag">ASP.NET MVC</a>
+                            <aside class="f-oh footer">
+                                <div class="f-fl tags">
+                                    <span class="fa fa-tags fs-16"></span>
+                                    <a class="tag">ASP.NET MVC</a>
+                                </div>
+                                <div class="f-fr">
+                                    <span class="read">
+                                        <i class="fa fa-eye fs-16"></i>
+                                        <i class="num">57</i>
+                                    </span>
+                                    <span class="ml20">
+                                        <i class="fa fa-comments fs-16"></i>
+                                        <a href="javascript:void(0)" class="num fc-grey">1</a>
+                                    </span>
+                                </div>
+                            </aside>
+                        </section>
+                        <section class="article-item zoomIn article">
+                            <div class="fc-flag">置顶</div>
+                            <h5 class="title">
+                                <span class="fc-blue">【原创】</span>
+                                <a href="/Blog/Read/16">.NET Spire.Doc组件</a>
+                            </h5>
+                            <div class="time">
+                                <span class="day">21</span>
+                                <span class="month fs-18">1<span class="fs-14">月</span></span>
+                                <span class="year fs-18 ml10">2019</span>
                             </div>
-                            <div class="f-fr">
-                                <span class="read">
-                                    <i class="fa fa-eye fs-16"></i>
-                                    <i class="num">57</i>
-                                </span>
-                                <span class="ml20">
-                                    <i class="fa fa-comments fs-16"></i>
-                                    <a href="javascript:void(0)" class="num fc-grey">1</a>
-                                </span>
+                            <div class="content">
+                                <a href="/Blog/Read/16" class="cover img-light">
+                                    <img src="image/cover/2019121192339714.png">
+                                </a>
+                                Spire.Doc for .NET是一款由E-iceblue公司开发的专业的Word .NET类库，使用该工具开发人员可以在任意.NET平台（C#，VB.NET，ASP.NET）上快速创建，读取，写入，转换，打印Word文档。作为一个独立的Word 组件，Spire.Doc的运行无需安装Microsoft Word。而且，它可以将Microsoft Word文档创建功能集成到开发者的任何.NET应用程序。
                             </div>
-                        </aside>
-                    </section>
-                    <section class="article-item zoomIn article">
-                        <div class="fc-flag">置顶</div>
-                        <h5 class="title">
-                            <span class="fc-blue">【原创】</span>
-                            <a href="/Blog/Read/16">.NET Spire.Doc组件</a>
-                        </h5>
-                        <div class="time">
-                            <span class="day">21</span>
-                            <span class="month fs-18">1<span class="fs-14">月</span></span>
-                            <span class="year fs-18 ml10">2019</span>
-                        </div>
-                        <div class="content">
-                            <a href="/Blog/Read/16" class="cover img-light">
-                                <img src="image/cover/2019121192339714.png">
-                            </a>
-                            Spire.Doc for .NET是一款由E-iceblue公司开发的专业的Word .NET类库，使用该工具开发人员可以在任意.NET平台（C#，VB.NET，ASP.NET）上快速创建，读取，写入，转换，打印Word文档。作为一个独立的Word 组件，Spire.Doc的运行无需安装Microsoft Word。而且，它可以将Microsoft Word文档创建功能集成到开发者的任何.NET应用程序。
-                        </div>
-                        <div class="read-more">
-                            <a href="/Blog/Read/16" class="fc-black f-fwb">继续阅读</a>
-                        </div>
-                        <aside class="f-oh footer">
-                            <div class="f-fl tags">
-                                <span class="fa fa-tags fs-16"></span>
-                                <a class="tag">ASP.NET MVC</a>
+                            <div class="read-more">
+                                <a href="/Blog/Read/16" class="fc-black f-fwb">继续阅读</a>
                             </div>
-                            <div class="f-fr">
-                                <span class="read">
-                                    <i class="fa fa-eye fs-16"></i>
-                                    <i class="num">57</i>
-                                </span>
-                                <span class="ml20">
-                                    <i class="fa fa-comments fs-16"></i>
-                                    <a href="javascript:void(0)" class="num fc-grey">1</a>
-                                </span>
+                            <aside class="f-oh footer">
+                                <div class="f-fl tags">
+                                    <span class="fa fa-tags fs-16"></span>
+                                    <a class="tag">ASP.NET MVC</a>
+                                </div>
+                                <div class="f-fr">
+                                    <span class="read">
+                                        <i class="fa fa-eye fs-16"></i>
+                                        <i class="num">57</i>
+                                    </span>
+                                    <span class="ml20">
+                                        <i class="fa fa-comments fs-16"></i>
+                                        <a href="javascript:void(0)" class="num fc-grey">1</a>
+                                    </span>
+                                </div>
+                            </aside>
+                        </section>
+                        <section class="article-item zoomIn article">
+                            <div class="fc-flag">置顶</div>
+                            <h5 class="title">
+                                <span class="fc-blue">【原创】</span>
+                                <a href="/Blog/Read/16">.NET Spire.Doc组件</a>
+                            </h5>
+                            <div class="time">
+                                <span class="day">21</span>
+                                <span class="month fs-18">1<span class="fs-14">月</span></span>
+                                <span class="year fs-18 ml10">2019</span>
                             </div>
-                        </aside>
-                    </section>
-                    <section class="article-item zoomIn article">
-                        <div class="fc-flag">置顶</div>
-                        <h5 class="title">
-                            <span class="fc-blue">【原创】</span>
-                            <a href="/Blog/Read/16">.NET Spire.Doc组件</a>
-                        </h5>
-                        <div class="time">
-                            <span class="day">21</span>
-                            <span class="month fs-18">1<span class="fs-14">月</span></span>
-                            <span class="year fs-18 ml10">2019</span>
-                        </div>
-                        <div class="content">
-                            <a href="/Blog/Read/16" class="cover img-light">
-                                <img src="image/cover/2019121192339714.png">
-                            </a>
-                            Spire.Doc for .NET是一款由E-iceblue公司开发的专业的Word .NET类库，使用该工具开发人员可以在任意.NET平台（C#，VB.NET，ASP.NET）上快速创建，读取，写入，转换，打印Word文档。作为一个独立的Word 组件，Spire.Doc的运行无需安装Microsoft Word。而且，它可以将Microsoft Word文档创建功能集成到开发者的任何.NET应用程序。
-                        </div>
-                        <div class="read-more">
-                            <a href="/Blog/Read/16" class="fc-black f-fwb">继续阅读</a>
-                        </div>
-                        <aside class="f-oh footer">
-                            <div class="f-fl tags">
-                                <span class="fa fa-tags fs-16"></span>
-                                <a class="tag">ASP.NET MVC</a>
+                            <div class="content">
+                                <a href="/Blog/Read/16" class="cover img-light">
+                                    <img src="image/cover/2019121192339714.png">
+                                </a>
+                                Spire.Doc for .NET是一款由E-iceblue公司开发的专业的Word .NET类库，使用该工具开发人员可以在任意.NET平台（C#，VB.NET，ASP.NET）上快速创建，读取，写入，转换，打印Word文档。作为一个独立的Word 组件，Spire.Doc的运行无需安装Microsoft Word。而且，它可以将Microsoft Word文档创建功能集成到开发者的任何.NET应用程序。
                             </div>
-                            <div class="f-fr">
-                                <span class="read">
-                                    <i class="fa fa-eye fs-16"></i>
-                                    <i class="num">57</i>
-                                </span>
-                                <span class="ml20">
-                                    <i class="fa fa-comments fs-16"></i>
-                                    <a href="javascript:void(0)" class="num fc-grey">1</a>
-                                </span>
+                            <div class="read-more">
+                                <a href="/Blog/Read/16" class="fc-black f-fwb">继续阅读</a>
                             </div>
-                        </aside>
-                    </section>
-                    <section class="article-item zoomIn article">
-                        <div class="fc-flag">置顶</div>
-                        <h5 class="title">
-                            <span class="fc-blue">【原创】</span>
-                            <a href="/Blog/Read/16">.NET Spire.Doc组件</a>
-                        </h5>
-                        <div class="time">
-                            <span class="day">21</span>
-                            <span class="month fs-18">1<span class="fs-14">月</span></span>
-                            <span class="year fs-18 ml10">2019</span>
-                        </div>
-                        <div class="content">
-                            <a href="/Blog/Read/16" class="cover img-light">
-                                <img src="image/cover/2019121192339714.png">
-                            </a>
-                            Spire.Doc for .NET是一款由E-iceblue公司开发的专业的Word .NET类库，使用该工具开发人员可以在任意.NET平台（C#，VB.NET，ASP.NET）上快速创建，读取，写入，转换，打印Word文档。作为一个独立的Word 组件，Spire.Doc的运行无需安装Microsoft Word。而且，它可以将Microsoft Word文档创建功能集成到开发者的任何.NET应用程序。
-                        </div>
-                        <div class="read-more">
-                            <a href="/Blog/Read/16" class="fc-black f-fwb">继续阅读</a>
-                        </div>
-                        <aside class="f-oh footer">
-                            <div class="f-fl tags">
-                                <span class="fa fa-tags fs-16"></span>
-                                <a class="tag">ASP.NET MVC</a>
+                            <aside class="f-oh footer">
+                                <div class="f-fl tags">
+                                    <span class="fa fa-tags fs-16"></span>
+                                    <a class="tag">ASP.NET MVC</a>
+                                </div>
+                                <div class="f-fr">
+                                    <span class="read">
+                                        <i class="fa fa-eye fs-16"></i>
+                                        <i class="num">57</i>
+                                    </span>
+                                    <span class="ml20">
+                                        <i class="fa fa-comments fs-16"></i>
+                                        <a href="javascript:void(0)" class="num fc-grey">1</a>
+                                    </span>
+                                </div>
+                            </aside>
+                        </section>
+                        <section class="article-item zoomIn article">
+                            <div class="fc-flag">置顶</div>
+                            <h5 class="title">
+                                <span class="fc-blue">【原创】</span>
+                                <a href="/Blog/Read/16">.NET Spire.Doc组件</a>
+                            </h5>
+                            <div class="time">
+                                <span class="day">21</span>
+                                <span class="month fs-18">1<span class="fs-14">月</span></span>
+                                <span class="year fs-18 ml10">2019</span>
                             </div>
-                            <div class="f-fr">
-                                <span class="read">
-                                    <i class="fa fa-eye fs-16"></i>
-                                    <i class="num">57</i>
-                                </span>
-                                <span class="ml20">
-                                    <i class="fa fa-comments fs-16"></i>
-                                    <a href="javascript:void(0)" class="num fc-grey">1</a>
-                                </span>
+                            <div class="content">
+                                <a href="/Blog/Read/16" class="cover img-light">
+                                    <img src="image/cover/2019121192339714.png">
+                                </a>
+                                Spire.Doc for .NET是一款由E-iceblue公司开发的专业的Word .NET类库，使用该工具开发人员可以在任意.NET平台（C#，VB.NET，ASP.NET）上快速创建，读取，写入，转换，打印Word文档。作为一个独立的Word 组件，Spire.Doc的运行无需安装Microsoft Word。而且，它可以将Microsoft Word文档创建功能集成到开发者的任何.NET应用程序。
                             </div>
-                        </aside>
-                    </section>
-                    <section class="article-item zoomIn article">
-                        <div class="fc-flag">置顶</div>
-                        <h5 class="title">
-                            <span class="fc-blue">【原创】</span>
-                            <a href="/Blog/Read/16">.NET Spire.Doc组件</a>
-                        </h5>
-                        <div class="time">
-                            <span class="day">21</span>
-                            <span class="month fs-18">1<span class="fs-14">月</span></span>
-                            <span class="year fs-18 ml10">2019</span>
-                        </div>
-                        <div class="content">
-                            <a href="/Blog/Read/16" class="cover img-light">
-                                <img src="image/cover/2019121192339714.png">
-                            </a>
-                            Spire.Doc for .NET是一款由E-iceblue公司开发的专业的Word .NET类库，使用该工具开发人员可以在任意.NET平台（C#，VB.NET，ASP.NET）上快速创建，读取，写入，转换，打印Word文档。作为一个独立的Word 组件，Spire.Doc的运行无需安装Microsoft Word。而且，它可以将Microsoft Word文档创建功能集成到开发者的任何.NET应用程序。
-                        </div>
-                        <div class="read-more">
-                            <a href="/Blog/Read/16" class="fc-black f-fwb">继续阅读</a>
-                        </div>
-                        <aside class="f-oh footer">
-                            <div class="f-fl tags">
-                                <span class="fa fa-tags fs-16"></span>
-                                <a class="tag">ASP.NET MVC</a>
+                            <div class="read-more">
+                                <a href="/Blog/Read/16" class="fc-black f-fwb">继续阅读</a>
                             </div>
-                            <div class="f-fr">
-                                <span class="read">
-                                    <i class="fa fa-eye fs-16"></i>
-                                    <i class="num">57</i>
-                                </span>
-                                <span class="ml20">
-                                    <i class="fa fa-comments fs-16"></i>
-                                    <a href="javascript:void(0)" class="num fc-grey">1</a>
-                                </span>
+                            <aside class="f-oh footer">
+                                <div class="f-fl tags">
+                                    <span class="fa fa-tags fs-16"></span>
+                                    <a class="tag">ASP.NET MVC</a>
+                                </div>
+                                <div class="f-fr">
+                                    <span class="read">
+                                        <i class="fa fa-eye fs-16"></i>
+                                        <i class="num">57</i>
+                                    </span>
+                                    <span class="ml20">
+                                        <i class="fa fa-comments fs-16"></i>
+                                        <a href="javascript:void(0)" class="num fc-grey">1</a>
+                                    </span>
+                                </div>
+                            </aside>
+                        </section>
+                        <section class="article-item zoomIn article">
+                            <div class="fc-flag">置顶</div>
+                            <h5 class="title">
+                                <span class="fc-blue">【原创】</span>
+                                <a href="/Blog/Read/16">.NET Spire.Doc组件</a>
+                            </h5>
+                            <div class="time">
+                                <span class="day">21</span>
+                                <span class="month fs-18">1<span class="fs-14">月</span></span>
+                                <span class="year fs-18 ml10">2019</span>
                             </div>
-                        </aside>
-                    </section>
-                </article>
+                            <div class="content">
+                                <a href="/Blog/Read/16" class="cover img-light">
+                                    <img src="image/cover/2019121192339714.png">
+                                </a>
+                                Spire.Doc for .NET是一款由E-iceblue公司开发的专业的Word .NET类库，使用该工具开发人员可以在任意.NET平台（C#，VB.NET，ASP.NET）上快速创建，读取，写入，转换，打印Word文档。作为一个独立的Word 组件，Spire.Doc的运行无需安装Microsoft Word。而且，它可以将Microsoft Word文档创建功能集成到开发者的任何.NET应用程序。
+                            </div>
+                            <div class="read-more">
+                                <a href="/Blog/Read/16" class="fc-black f-fwb">继续阅读</a>
+                            </div>
+                            <aside class="f-oh footer">
+                                <div class="f-fl tags">
+                                    <span class="fa fa-tags fs-16"></span>
+                                    <a class="tag">ASP.NET MVC</a>
+                                </div>
+                                <div class="f-fr">
+                                    <span class="read">
+                                        <i class="fa fa-eye fs-16"></i>
+                                        <i class="num">57</i>
+                                    </span>
+                                    <span class="ml20">
+                                        <i class="fa fa-comments fs-16"></i>
+                                        <a href="javascript:void(0)" class="num fc-grey">1</a>
+                                    </span>
+                                </div>
+                            </aside>
+                        </section>
+                        <section class="article-item zoomIn article">
+                            <div class="fc-flag">置顶</div>
+                            <h5 class="title">
+                                <span class="fc-blue">【原创】</span>
+                                <a href="/Blog/Read/16">.NET Spire.Doc组件</a>
+                            </h5>
+                            <div class="time">
+                                <span class="day">21</span>
+                                <span class="month fs-18">1<span class="fs-14">月</span></span>
+                                <span class="year fs-18 ml10">2019</span>
+                            </div>
+                            <div class="content">
+                                <a href="/Blog/Read/16" class="cover img-light">
+                                    <img src="image/cover/2019121192339714.png">
+                                </a>
+                                Spire.Doc for .NET是一款由E-iceblue公司开发的专业的Word .NET类库，使用该工具开发人员可以在任意.NET平台（C#，VB.NET，ASP.NET）上快速创建，读取，写入，转换，打印Word文档。作为一个独立的Word 组件，Spire.Doc的运行无需安装Microsoft Word。而且，它可以将Microsoft Word文档创建功能集成到开发者的任何.NET应用程序。
+                            </div>
+                            <div class="read-more">
+                                <a href="/Blog/Read/16" class="fc-black f-fwb">继续阅读</a>
+                            </div>
+                            <aside class="f-oh footer">
+                                <div class="f-fl tags">
+                                    <span class="fa fa-tags fs-16"></span>
+                                    <a class="tag">ASP.NET MVC</a>
+                                </div>
+                                <div class="f-fr">
+                                    <span class="read">
+                                        <i class="fa fa-eye fs-16"></i>
+                                        <i class="num">57</i>
+                                    </span>
+                                    <span class="ml20">
+                                        <i class="fa fa-comments fs-16"></i>
+                                        <a href="javascript:void(0)" class="num fc-grey">1</a>
+                                    </span>
+                                </div>
+                            </aside>
+                        </section>
+                        <section class="article-item zoomIn article">
+                            <div class="fc-flag">置顶</div>
+                            <h5 class="title">
+                                <span class="fc-blue">【原创】</span>
+                                <a href="/Blog/Read/16">.NET Spire.Doc组件</a>
+                            </h5>
+                            <div class="time">
+                                <span class="day">21</span>
+                                <span class="month fs-18">1<span class="fs-14">月</span></span>
+                                <span class="year fs-18 ml10">2019</span>
+                            </div>
+                            <div class="content">
+                                <a href="/Blog/Read/16" class="cover img-light">
+                                    <img src="image/cover/2019121192339714.png">
+                                </a>
+                                Spire.Doc for .NET是一款由E-iceblue公司开发的专业的Word .NET类库，使用该工具开发人员可以在任意.NET平台（C#，VB.NET，ASP.NET）上快速创建，读取，写入，转换，打印Word文档。作为一个独立的Word 组件，Spire.Doc的运行无需安装Microsoft Word。而且，它可以将Microsoft Word文档创建功能集成到开发者的任何.NET应用程序。
+                            </div>
+                            <div class="read-more">
+                                <a href="/Blog/Read/16" class="fc-black f-fwb">继续阅读</a>
+                            </div>
+                            <aside class="f-oh footer">
+                                <div class="f-fl tags">
+                                    <span class="fa fa-tags fs-16"></span>
+                                    <a class="tag">ASP.NET MVC</a>
+                                </div>
+                                <div class="f-fr">
+                                    <span class="read">
+                                        <i class="fa fa-eye fs-16"></i>
+                                        <i class="num">57</i>
+                                    </span>
+                                    <span class="ml20">
+                                        <i class="fa fa-comments fs-16"></i>
+                                        <a href="javascript:void(0)" class="num fc-grey">1</a>
+                                    </span>
+                                </div>
+                            </aside>
+                        </section>
+                    </article>
+                </div>
             </div>
-        </div>
-        <div class="col-other">
-            <div class="inner">
-                <div class="other-item" id="categoryandsearch">
-                    <div class="search">
-                        <label class="search-wrap">
-                            <input type="text" id="searchtxt" placeholder="输入关键字搜索" />
-                            <span class="search-icon">
-                                <i class="fa fa-search"></i>
-                            </span>
-                        </label>
-                        <ul class="search-result"></ul>
+            <div class="col-other">
+                <div class="inner">
+                    <div class="other-item" id="categoryandsearch">
+                        <div class="search">
+                            <label class="search-wrap">
+                                <input type="text" id="searchtxt" placeholder="输入关键字搜索" />
+                                <span class="search-icon">
+                                    <i class="fa fa-search"></i>
+                                </span>
+                            </label>
+                            <ul class="search-result"></ul>
+                        </div>
+                        <ul class="category mt20" id="category">
+                            <li data-index="0" class="slider"></li>
+                            <li data-index="1"><a href="/Article/Index">全部文章</a></li>
+                            @foreach (ArticleClassModel item in ViewBag.ClassList)
+                            {
+                                <li data-index="@{num++;}@num"><a href="/Article/Index/@item.Id">@item.Name</a></li>
+                            }
+                        </ul>
                     </div>
-                    <ul class="category mt20" id="category">
-                        <li data-index="0" class="slider"></li>
-                        <li data-index="1"><a href="/Article/Index">全部文章</a></li>
+                    <!--右边悬浮 平板或手机设备显示-->
+                    <div class="category-toggle"><i class="layui-icon">&#xe603;</i></div>
+                    <div class="article-category">
+                        <div class="article-category-title">分类导航</div>
                         @foreach (ArticleClassModel item in ViewBag.ClassList)
                         {
-                        <li data-index="@{num++;}@num"><a href="/Article/Index/@item.Id">@item.Name</a></li>
+                            <a href="/Article/Index/@item.Id">@item.Name</a>
                         }
-                    </ul>
-                </div>
-                <!--右边悬浮 平板或手机设备显示-->
-                <div class="category-toggle"><i class="layui-icon">&#xe603;</i></div>
-                <div class="article-category">
-                    <div class="article-category-title">分类导航</div>
-                    @foreach (ArticleClassModel item in ViewBag.ClassList)
-                    {
-                        <a href="/Article/Index/@item.Id">@item.Name</a>
-                    }
-                    <div class="f-cb"></div>
-                </div>
-                <!--遮罩-->
-                <div class="blog-mask animated layui-hide"></div>
-                <div class="other-item">
-                    <h5 class="other-item-title">热门文章</h5>
-                    <div class="inner">
-                        <ul class="hot-list-article">
-                            @foreach (ArticleModel item in ViewBag.HotList)
-                            {
-                            <li> <a href="/Article/Detail/@item.Id">@item.Title</a></li>
-                            }
-                        </ul>
+                        <div class="f-cb"></div>
                     </div>
-                </div>
-                <div class="other-item">
-                    <h5 class="other-item-title">置顶推荐</h5>
-                    <div class="inner">
-                        <ul class="hot-list-article">
-                            @foreach (ArticleModel item in ViewBag.DingList)
-                            {
-                                <li> <a href="/Article/Detail/@item.Id">@item.Title</a></li>
-                            }
-                        </ul>
+                    <!--遮罩-->
+                    <div class="blog-mask animated layui-hide"></div>
+                    <div class="other-item">
+                        <h5 class="other-item-title">热门文章</h5>
+                        <div class="inner">
+                            <ul class="hot-list-article">
+                                @foreach (ArticleModel item in ViewBag.HotList)
+                                {
+                                    <li> <a href="/Article/Detail/@item.Id">@item.Title</a></li>
+                                }
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="other-item">
-                    <h5 class="other-item-title">最近访客</h5>
-                    <div class="inner">
-                        <dl class="vistor">
-                            @foreach  (QQUserModel item in ViewBag.UserList)
-                            {
-                            <dd><a href="javasript:;"><img src="@item.HeadShot"><cite>@item.NickName</cite></a></dd>
-                            }
-                        </dl>
+                    <div class="other-item">
+                        <h5 class="other-item-title">置顶推荐</h5>
+                        <div class="inner">
+                            <ul class="hot-list-article">
+                                @foreach (ArticleModel item in ViewBag.DingList)
+                                {
+                                    <li> <a href="/Article/Detail/@item.Id">@item.Title</a></li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="other-item">
+                        <h5 class="other-item-title">最近访客</h5>
+                        <div class="inner">
+                            <dl class="vistor">
+                                @foreach (QQUserModel item in ViewBag.UserList)
+                                {
+                                    <dd><a href="javasript:;"><img src="@item.HeadShot"><cite>@item.NickName</cite></a></dd>
+                                }
+                            </dl>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @section js{
     <script src="~/Content/js/yss/article.js"></script>
 }
