@@ -6,6 +6,11 @@ namespace RightControl.IService
     public interface IArticleService : IBaseService<ArticleModel>
     {
         /// <summary>
+        /// 获得文章所有年份
+        /// </summary>
+        /// <returns></returns>
+        IEnumerable<ArticleModel> GetYear();
+        /// <summary>
         /// 延伸阅读-获取两条随机文章
         /// </summary>
         /// <param name="num"></param>

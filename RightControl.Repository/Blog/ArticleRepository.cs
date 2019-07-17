@@ -26,5 +26,15 @@ namespace RightControl.Repository
                 return conn.Query<ArticleModel>(sql, new { Id }).FirstOrDefault();
             }
         }
+        public IEnumerable<ArticleModel> GetYear()
+        {
+            using (var conn = MySqlHelper.GetConnection())
+            {
+                var sql = @"SELECT date_format(CreateOn,'%Y') as Year FROM t_article
+                            GROUP BY date_format(CreateOn,'%Y')
+                            ORDER BY date_format(CreateOn,'%Y') desc";
+                return conn.Query<ArticleModel>(sql);
+            }
+        }
     }
 }

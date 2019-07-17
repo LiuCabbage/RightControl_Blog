@@ -26,68 +26,7 @@
     </div>
     <div class="container-fixed">
         <div class="col-content">
-            <div class="post-archives-list">
-                <h3>2018 年<sup>「 9 」</sup></h3>
-                <ul>
-                    <li>
-                        <a href="/Blog/Read/14" class="">MUI框架-快速开发APP</a>
-                        <time class="mo-text-hint">(Dec 29 2018)</time>
-                    </li>
-                    <li>
-                        <a href="/Blog/Read/9" class="">2018最新版QQ音乐api调用</a>
-                        <time class="mo-text-hint">(Jul 03 2018)</time>
-                    </li>
-                    <li>
-                        <a href="/Blog/Read/13" class="">逆水寒</a>
-                        <time class="mo-text-hint">(Jun 06 2018)</time>
-                    </li>
-                    <li>
-                        <a href="/Blog/Read/11" class="">使用码云和VS托管本地代码</a>
-                        <time class="mo-text-hint">(May 17 2018)</time>
-                    </li>
-                    <li>
-                        <a href="/Blog/Read/8" class="">NPOI导入导出Excel</a>
-                        <time class="mo-text-hint">(Apr 24 2018)</time>
-                    </li>
-                    <li>
-                        <a href="/Blog/Read/7" class="">解决百度分享插件不支持https</a>
-                        <time class="mo-text-hint">(Apr 23 2018)</time>
-                    </li>
-                    <li>
-                        <a href="/Blog/Read/6" class="">ASP.NET MVC Cookie修改无效</a>
-                        <time class="mo-text-hint">(Apr 17 2018)</time>
-                    </li>
-                    <li>
-                        <a href="/Blog/Read/5" class="">C#阿里云服务器发送QQ邮件</a>
-                        <time class="mo-text-hint">(Apr 16 2018)</time>
-                    </li>
-                    <li>
-                        <a href="/Blog/Read/4" class="">序章</a>
-                        <time class="mo-text-hint">(Apr 15 2018)</time>
-                    </li>
-                </ul>
-            </div>
-            <div class="post-archives-list">
-                <h3>2019 年<sup>「 4 」</sup></h3>
-                <ul>
-                    <li>
-                        <a href="/Blog/Read/19" class="">MUI上拉加载和下拉刷新出现双滚动条BUG解决办法</a>
-                        <time class="mo-text-hint">(Jul 03 2019)</time>
-                    </li>
-                    <li>
-                        <a href="/Blog/Read/18" class="">MUI动态加载组件</a>
-                        <time class="mo-text-hint">(Jun 03 2019)</time>
-                    </li>
-                    <li>
-                        <a href="/Blog/Read/12" class="">模板分享</a>
-                        <time class="mo-text-hint">(Feb 20 2019)</time>
-                    </li>
-                    <li>
-                        <a href="/Blog/Read/16" class="">.NET Spire.Doc组件</a>
-                        <time class="mo-text-hint">(Jan 21 2019)</time>
-                    </li>
-                </ul>
-            </div>
+            @Html.ArchivesHtml(ViewData["Year"], ViewData["ArticleList"])
         </div>
     </div>
 </div>

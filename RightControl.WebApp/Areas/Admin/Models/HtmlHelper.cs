@@ -11,6 +11,45 @@ namespace RightControl.WebApp
     public static class MyExtHtmlLabel
     {
         /// <summary>
+        /// 博客前台文章归档
+        /// </summary>
+        /// <param name="helper"></param>
+        /// <param name="_year"></param>
+        /// <param name="_list"></param>
+        /// <returns></returns>
+        public static HtmlString ArchivesHtml(this HtmlHelper helper, dynamic _year = null, dynamic _list = null)
+        {
+            StringBuilder sb = new StringBuilder();
+            var year = _year as List<ArticleModel>;
+            var list = _list as List<ArticleModel>;
+            if (year != null && list != null)
+            {
+                foreach (ArticleModel y in year)
+                {
+                    var query = from u in list
+                                where u.CreateOn.ToString("yyyy")==y.Year
+                                select u;
+                    var articleCount = query.ToList().Count;
+                    sb.AppendFormat(@"<div class='post-archives-list'>
+                                    <h3>{0} 年<sup>「 {1} 」</sup></h3>
+                                    <ul>",y.Year, articleCount);
+                    foreach (ArticleModel item in list)
+                    {
+                        if (y.Year==item.CreateOn.ToString("yyyy"))
+                        {
+                            sb.AppendFormat(@"<li>
+                                                <a href='/Article/Detail/{0}' class=''>{1}</a>
+                                                <time class='mo-text-hint'>({2})</time>
+                                            </li>",item.Id,item.Title,item.CreateOn.ToString("yyyy-MM-dd HH:mm:ss"));
+                        }
+                    }
+                    sb.Append(@"</ul>
+                            </div>");
+                }
+            }
+            return new HtmlString(sb.ToString());
+        }
+        /// <summary>
         /// 博客前台日记
         /// </summary>
         /// <param name="helper"></param>

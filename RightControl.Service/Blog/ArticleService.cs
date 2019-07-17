@@ -11,6 +11,14 @@ namespace RightControl.Service
     {
         public IArticleRepository repository { get; set; }
         /// <summary>
+        /// 获得文章所有年份
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<ArticleModel> GetYear()
+        {
+            return repository.GetYear();
+        }
+        /// <summary>
         /// 延伸阅读-获取两条随机文章
         /// </summary>
         /// <param name="num"></param>
