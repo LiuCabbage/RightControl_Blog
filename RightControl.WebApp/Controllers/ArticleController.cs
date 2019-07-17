@@ -15,24 +15,41 @@ namespace RightControl.WebApp.Controllers
         public IArticleClassService classService { get; set; }
         public IQQUserService userService { get; set; }
         // GET: Article
-        public ActionResult Index(int? Id=0)
+        public ActionResult Index(int? Id = 0)
         {
             ViewBag.ClassList = classService.GetArticleClassList().ToList();
             ViewBag.HotList = service.GetHotArticle(5).ToList();
             ViewBag.DingList = service.GetDingArticle(3).ToList();
             ViewBag.UserList = userService.GetBySkip(0, 12, null, null, null, "ORDER BY CreateOn Desc");
-            int PageSize = 5;
+            //每页显示数目
+            int PageSize = 10;
             ViewBag.PageSize = PageSize;
-            int Count = service.GetByWhere(Id==0?null:string.Format("WHERE ClassId = {0}",Id)).ToList().Count;
+            //总条数
+            int Count = service.GetByWhere(Id == 0 ? null : string.Format("WHERE ClassId = {0}", Id)).ToList().Count;
             ViewBag.Count = Count;
+            //总页数
             int PageCount = (Count + PageSize - 1) / PageSize;
             ViewBag.PageCount = PageCount;
+            //文章分类Id
             ViewBag.ClassId = Id;
             return View();
         }
         public ActionResult Detail(int Id)
         {
-            return View();
+            //获得文章作者，默认都是站点名称
+            WebSiteInfo siteInfo = new WebSiteInfo();
+            ViewBag.SiteName = siteInfo.GetWebSiteInfo().SiteName;
+            //获得域名链接用来拼接本文章链接
+            ViewBag.SiteDomain = siteInfo.GetWebSiteInfo().SiteDomain;
+            //浏览次数+1
+            var model = service.GetDetail(Id);
+            model.ReadNum++;
+            service.UpdateModel(model);
+            //获得最新model
+            model = service.GetDetail(Id);
+            //延伸阅读
+            ViewBag.OtherList = service.GetRandomArticleList(2);
+            return View(model);
         }
         [HttpPost]
         public JsonResult SearchResult(string context)

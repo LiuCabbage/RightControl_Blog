@@ -10,6 +10,16 @@ namespace RightControl.Service
     public class ArticleService : BaseService<ArticleModel>, IArticleService
     {
         public IArticleRepository repository { get; set; }
+        /// <summary>
+        /// 延伸阅读-获取两条随机文章
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
+        public IEnumerable<ArticleModel> GetRandomArticleList(int num)
+        {
+            string _where = "WHERE Id >= ((SELECT MAX(Id) FROM t_article)-(SELECT MIN(Id) FROM t_article)) * RAND() + (SELECT MIN(Id) FROM t_article) LIMIT "+num;
+            return repository.GetByWhere(_where,null,null,null); ;
+        }
 
         public IEnumerable<ArticleModel> GetArticleListBySearch(string content)
         {

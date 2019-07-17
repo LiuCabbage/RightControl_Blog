@@ -264,7 +264,7 @@
     <Content Include="Content\layui\lay\modules\tree.js" />
     <Content Include="Content\layui\lay\modules\upload.js" />
     <Content Include="Content\layui\lay\modules\util.js" />
-    <Content Include="favicon.ico" />
+    <Content Include="Views\favicon.ico" />
     <Content Include="Areas\Admin\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Areas\Admin\plugins\app\common.js" />
@@ -570,6 +570,7 @@
     <Content Include="Views\Shared\_Head.cshtml" />
     <Content Include="Views\Shared\_Foot.cshtml" />
     <Content Include="Views\Shared\_Meta.cshtml" />
+    <Content Include="Views\Article\Detail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
