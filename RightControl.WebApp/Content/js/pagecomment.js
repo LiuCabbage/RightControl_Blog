@@ -4,7 +4,12 @@
     var $ = layui.jquery;
     var layedit = layui.layedit;
     var flow = layui.flow;
-    //评论和留言的编辑器的验证
+    //评论和留言的编辑器
+    var editIndex = layedit.build('remarkEditor', {
+        height: 150,
+        tool: ['face', '|', 'link'],
+    });
+    //评论的编辑器的验证
     form.verify({
         content: function (value) {
             value = $.trim(layedit.getContent(editIndex));
@@ -15,7 +20,6 @@
             if (value == "") return "请输入内容";
         }
     });
-     
     //回复按钮点击事件
     $('#blog-comment').on('click', '.btn-reply', function () {
         var targetId = $(this).data('targetid')

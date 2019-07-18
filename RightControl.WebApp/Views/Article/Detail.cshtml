@@ -5,6 +5,16 @@
 }
 @section css{
     <link rel="stylesheet" href="~/Content/css/blog.css" />
+    <style>
+        .blog-dz {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            bottom: 100px;
+            left: 50%;
+            margin-left: -10px;
+        }
+    </style>
 }
 <div class="doc-container" id="doc-container">
     <div class="container-fixed">
@@ -12,6 +22,8 @@
             <div class="inner">
                 <article class="article-list">
                     <input type="hidden" value="@Model.ClassId" id="blogtypeid" />
+                    <input type="hidden" id="coverImage" value="@Model.ImgUrl">
+                    <input type="hidden" id="description" value="@Model.ZhaiYao">
                     <section class="article-item">
                         <aside class="title" style="line-height:1.5;">
                             <h4>@Model.Title</h4>
@@ -55,13 +67,14 @@
                                 }
                             </ol>
                         </div>
-                        <div class="bdsharebuttonbox share" data-tag="share_1">
+                        <div class="bdsharebuttonbox share" data-tag="share_1" onmousemove="shareThanks()">
+                            <div id="demo"></div>
                             <ul>
-                                <li class="f-praise"><span><a class="s-praise"></a></span></li>
-                                <li class="f-weinxi"><a class="s-weinxi" data-cmd="weixin"></a></li>
-                                <li class="f-sina"><a class="s-sina" data-cmd="tsina"></a></li>
-                                <li class="f-qq" href="#"><i class="fa fa-qq"></i></li>
-                                <li class="f-qzone"><a class="s-qzone" data-cmd="qzone"></a></li>
+                                <li class="f-praise" title="点赞,待开发"><span><a class="s-praise" style="width: 70%;height: 70%;"></a></span></li>
+                                <li class="f-weinxi" title="微信分享"><a class="s-weinxi" data-cmd="weixin" style="width: 70%;height: 70%;"></a></li>
+                                <li class="f-sina" title="key需要在新浪微博开放平台中申请,待开发"><a class="s-sina" data-cmd="tsina" style="width: 70%;height: 70%;"></a></li>
+                                <li class="f-qq" title="QQ分享"><i class="fa fa-qq"></i></li>
+                                <li class="f-qzone" title="QQ空间分享"><a class="s-qzone" data-cmd="qzone" style="width: 70%;height: 70%;"></a></li>
                             </ul>
                         </div>
                         <div class="f-cb"></div>
@@ -76,8 +89,8 @@
                                         <div class="layui-form-item">
                                             <textarea name="editorContent" lay-verify="content" id="remarkEditor" placeholder="请输入内容" class="layui-textarea layui-hide"></textarea>
                                         </div>
-                                        <div class="layui-form-item">
-                                            <button class="layui-btn" lay-submit="formLeaveMessage" lay-filter="formLeaveMessage">提交留言</button>
+                                        <div class="layui-form-item" id="tj">
+                                            <button id="sub" class="layui-btn" lay-submit="formLeaveMessage" lay-filter="formLeaveMessage">提交留言</button>
                                         </div>
                                     </form>
                                 </div>
@@ -89,7 +102,99 @@
             </div>
         </div>
     </div>
+    <div id="qrcode" style="display:none;"></div>
 </div>
+
 @section js{
     <script src="~/Content/js/pagecomment.js"></script>
+    <script src="~/Content/js/plugins/qrcode.min.js"></script>
+    <script type="text/javascript">
+        var $;
+        layui.use(['jquery','layer'], function () {
+            $ = layui.jquery,
+            layer = layui.layer;
+            var qrcode = new QRCode("qrcode", {
+                text: location.href,
+                width: 200,
+                height: 200,
+                colorDark: "#000000",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+            //QQ分享
+            $(".f-qq").click(function () {
+                var initUrl = "http://connect.qq.com/widget/shareqq/index.html?url=";
+                //浏览器网址
+                var browser = location.href;
+                //文章标题
+                var title = $(".r-title").text();
+                //分享图片地址
+                var coverImage = "https://qiqing-1256225409.cos-website.ap-guangzhou.myqcloud.com/image/" + $("#coverImage").val();
+                //描述
+                var description = $("#description").val();
+                initUrl = initUrl + browser + "&sharesource=qzone&title=" + title + "&pics=" + coverImage + "&summary=" + description + "&desc=" + description;
+                window.open(initUrl);
+                //http://connect.qq.com/widget/shareqq/index.html?url=你的分享网址&sharesource=qzone&title=你的分享标题&pics=你的分享图片地址&summary=你的分享描述&desc=你的分享简述
+            });
+            //QQ空间分享,本地测试链接为localhost会出现标题和内容undefined
+            $(".f-qzone").click(function () {
+                var initUrl = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=";
+                //浏览器网址
+                var browser = location.href;
+                //文章标题
+                var title = $(".r-title").text();
+                //分享图片地址
+                var coverImage = "https://qiqing-1256225409.cos-website.ap-guangzhou.myqcloud.com/image/" + $("#coverImage").val();
+                //描述
+                var description = $("#description").val();
+                initUrl = initUrl + browser + "?sharesource=qzone&title=" + title + "&pics=" + coverImage + "&summary=" + description;
+                console.log(initUrl);
+                window.open(initUrl);
+                //https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://zixuephp.net/article-309.html?sharesource=qzone&title=一键分享到QQ空间、QQ好友、新浪微博、微信代码&pics=http://zixuephp.net/uploads/image/20170810/1502335815192079.png&summary=通过各自平台的开发接口，进行参数指定，进行一键分享javascript代码功能
+            });
+            //新浪微博
+            /*$(".f-qzone").click(function () {
+                var initUrl = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=";
+                //浏览器网址
+                var browser = location.href;
+                //文章标题
+                var title = $(".r-title").text();
+                //分享图片地址
+                var coverImage = "https://qiqing-1256225409.cos-website.ap-guangzhou.myqcloud.com/image/"+$("#coverImage").val();
+                //描述
+                var description = $("#description").val();
+                initUrl=initUrl+browser+"&sharesource=qzone&title="+title+"&pics="+coverImage+"&summary="+description;
+                window.open(initUrl);
+                //http://service.weibo.com/share/share.php?url=你的分享网址&sharesource=weibo&title=你的分享标题&pic=你的分享图片&appkey=你的key，需要在新浪微博开放平台中申请
+            });*/
+            //微信分享
+            $(".f-weinxi").click(function () {
+                //浏览器网址
+                var browser = location.href;
+                layer.open({
+                    type: 1,
+                    title: false,
+                    area: ['200px', '200px'],
+                    shadeClose: true,
+                    closeBtn: 2,
+                    content: $('#qrcode')
+                });
+            });
+        });
+        //分享区域感谢特效
+        function shareThanks() {
+            var x = 100;
+            var y = 900;
+            var num = Math.floor(Math.random() * 3 + 1);
+            var index = $('#demo').children('img').length;
+            var rand = parseInt(Math.random() * (x - y + 1) + y);
+            $("#demo").append("<img class='blog-dz' src=''>");
+            $('.blog-dz:eq(' + index + ')').attr('src', '/Content/image/dianzan/' + num + '.png')
+            $(".blog-dz").animate({
+                bottom: Math.random(),
+                opacity: "0",
+                left: Math.random(),
+            }, 3000)
+        }
+    </script>
 }

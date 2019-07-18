@@ -148,6 +148,9 @@
     <Content Include="Content\image\1.jpg" />
     <Content Include="Content\image\2.jpg" />
     <Content Include="Content\image\bg.jpg" />
+    <Content Include="Content\image\dianzan\1.png" />
+    <Content Include="Content\image\dianzan\2.png" />
+    <Content Include="Content\image\dianzan\3.png" />
     <Content Include="Content\image\shareicon.png" />
     <Content Include="Content\image\weixin.jpg" />
     <Content Include="Content\image\xlj.jpg" />
@@ -157,6 +160,7 @@
     <Content Include="Content\js\pagemessage.js" />
     <Content Include="Content\js\plugins\blogbenoitboucart.min.js" />
     <Content Include="Content\js\plugins\nprogress.js" />
+    <Content Include="Content\js\plugins\qrcode.min.js" />
     <Content Include="Content\js\plugins\wow.min.js" />
     <Content Include="Content\js\timeline.js" />
     <Content Include="Content\js\wow.min.js" />
@@ -264,7 +268,7 @@
     <Content Include="Content\layui\lay\modules\tree.js" />
     <Content Include="Content\layui\lay\modules\upload.js" />
     <Content Include="Content\layui\lay\modules\util.js" />
-    <Content Include="Views\favicon.ico" />
+    <Content Include="favicon.ico" />
     <Content Include="Areas\Admin\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Areas\Admin\plugins\app\common.js" />

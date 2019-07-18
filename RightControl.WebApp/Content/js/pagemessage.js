@@ -38,6 +38,4 @@ layui.use(['element', 'jquery', 'form', 'layedit', 'flow'], function () {
              $(this).text('回复');
          }
      });
- 
 });
- 
