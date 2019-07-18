@@ -1,10 +1,30 @@
-﻿var area;
-layui.use(['element', 'jquery', 'form', 'layedit', 'flow'], function () {
+﻿layui.use(['element', 'jquery', 'form', 'layedit', 'flow'], function () {
     var element = layui.element;
     var form = layui.form;
     var $ = layui.jquery;
     var layedit = layui.layedit;
     var flow = layui.flow;
+    flow.load({
+        elem: "#message-list",
+        done: function (page, next) {
+            var pagecount = $(".message-list").attr("data-pagecount"),
+                pagesize = $(".message-list").attr("data-pagesize"),
+                lis = [];
+            $.ajax({
+                type: "POST",
+                url: "/Feedback/LoadFeedback",
+                data: {
+                    page: page,
+                    pagesize: pagesize
+                },
+                success: function (res) {
+                    //直接后台拼接返回每页的html，舒服啊。
+                    lis.push(res);
+                    next(lis.join(""), page < pagecount);
+                }
+            })
+        }
+    })
     //留言的编辑器
     var editIndex = layedit.build('remarkEditor', {
         height: 150,

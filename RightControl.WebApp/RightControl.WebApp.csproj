@@ -155,13 +155,11 @@
     <Content Include="Content\image\weixin.jpg" />
     <Content Include="Content\image\xlj.jpg" />
     <Content Include="Content\js\index.js" />
-    <Content Include="Content\js\message.js" />
     <Content Include="Content\js\pagecomment.js" />
     <Content Include="Content\js\pagemessage.js" />
     <Content Include="Content\js\plugins\blogbenoitboucart.min.js" />
     <Content Include="Content\js\plugins\nprogress.js" />
     <Content Include="Content\js\plugins\qrcode.min.js" />
-    <Content Include="Content\js\plugins\wow.min.js" />
     <Content Include="Content\js\timeline.js" />
     <Content Include="Content\js\wow.min.js" />
     <Content Include="Content\js\yss\APlayer.min.js" />
