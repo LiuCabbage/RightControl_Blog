@@ -69,7 +69,6 @@ namespace RightControl.WebApp.Areas.Blog.Controllers
             model.ReadNum = 0;
             model.CommentNum = 0;
             model.UpdateOn = DateTime.Now;
-            model.CreateOn = DateTime.Now;
             var result = articleService.CreateModel(model) ? SuccessTip() : ErrorTip();
             return Json(result);
         }

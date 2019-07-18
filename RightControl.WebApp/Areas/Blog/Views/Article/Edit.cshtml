@@ -15,7 +15,6 @@
 <div class="layui-col-md12 top10">
     <form class="layui-form" id="form" action="/Blog/Article/Edit" method="post">
         <input name="Id" value="@Model.Id" type="hidden">
-        @Html.HiddenFor(x => x.CreateOn)
         @Html.HiddenFor(x => x.ReadNum)
         @Html.HiddenFor(x => x.CommentNum)
         <div class="layui-form-item">
@@ -51,6 +50,12 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">添加时间</label>
+            <div class="layui-input-block">
+                <input type="text" name="CreateOn" id="CreateOn" readonly lay-verify="required" lay-vertype="tips" placeholder="yyyy-MM-dd HH:mm:ss" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
             <label class="layui-form-label">分类</label>
             <div class="layui-input-inline">
                 @Html.DropDownList("ClassId", null, "-请选择分类-", new Dictionary<string, object> { { "lay-verify", "required" }, { "lay-vertype", "tips" }, { "class", "layui-input" } })
@@ -79,12 +84,18 @@
     </form>
 </div>
 <script>
-    layui.use(['upload', 'form', 'layedit', 'layer'], function () {
+    layui.use(['upload', 'form', 'layedit', 'layer', 'laydate'], function () {
         var upload = layui.upload;
         var layer = layui.layer;
         var form = layui.form;
         var layedit = layui.layedit;
+        var laydate = layui.laydate;
         var $ = layui.$;
+        laydate.render({
+            elem: '#CreateOn',
+            type: 'datetime',
+            value: '@Model.CreateOn.ToString("yyyy-MM-dd HH:mm:ss")'
+        });
         var uploadInst = upload.render({
             elem: '#btnUpload' //绑定元素
             , url: '/SysSet/Info/ExportFile/' //上传接口

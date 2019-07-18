@@ -10,7 +10,7 @@
             width: 20px;
             height: 20px;
             position: absolute;
-            bottom: 100px;
+            bottom: -100px; /*初始红心生成的高度*/
             left: 50%;
             margin-left: -10px;
         }
@@ -191,9 +191,9 @@
             $("#demo").append("<img class='blog-dz' src=''>");
             $('.blog-dz:eq(' + index + ')').attr('src', '/Content/image/dianzan/' + num + '.png')
             $(".blog-dz").animate({
-                bottom: Math.random(),
+                bottom: "800px",
                 opacity: "0",
-                left: Math.random(),
+                left: rand,
             }, 3000)
         }
     </script>
