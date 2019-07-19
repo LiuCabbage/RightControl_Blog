@@ -27,15 +27,16 @@ namespace RightControl.Service
         public string GetFlowFeedback(int page, int pagesize)
         {
             string prefix = "a.";
-            string _where = @"LEFT OUTER JOIN t_qq_user b on a.SendId=b.Id
+            string _where = @"a
+                            LEFT OUTER JOIN t_qq_user b on a.SendId=b.Id
                             LEFT OUTER JOIN t_qq_user c on a.AcceptId=c.Id";
             long total = 0;
             string _orderBy = @"ORDER BY a.CreateOn DESC";
-            string returnFields = string.Format("{0}*,b.NickName as SendNickName,c.NickName as AcceptNickName", prefix);
+            string returnFields = string.Format("{0}*,b.NickName as SendNickName,c.NickName as AcceptNickName,b.HeadShot", prefix);
             //根据这里的_where条件
             //返回的total是不对的，也用不上，就不管啦。
             IEnumerable<FeedbackModel> parentList = repository.GetByPage(new SearchFilter { pageIndex = page, pageSize = pagesize, returnFields = returnFields, param = null, where = _where + " WHERE a.ParentId=0", orderBy = _orderBy }, out total);
-            IEnumerable<FeedbackModel> list = repository.GetByWhere(_where, null, returnFields, _orderBy);
+            IEnumerable<FeedbackModel> list = repository.GetByWhere(_where + " WHERE a.ParentId!=0", null, returnFields, _orderBy);
             string feedbackHtml = CreateFeedbackHtml(parentList, list);
             return feedbackHtml;
         }
@@ -46,19 +47,59 @@ namespace RightControl.Service
             {
                 foreach (FeedbackModel item in parentList)
                 {
-
+                    sb.AppendFormat(@"<li class='zoomIn article'>
+                    <div class='comment-parent'>
+                        <a name='remark-{0}'></a>
+                        <img src='{1}' />
+                        <div class='info'>
+                            <span class='username'>{2}</span>
+                        </div>
+                        <div class='comment-content'>
+                            {3}
+                        </div>
+                        <p class='info info-footer'>
+                            <i class='fa fa-map-marker' aria-hidden='true'></i>
+                            <span>{4}</span>
+                            <span class='comment-time'>{5}</span>
+                            <a href='javascript:;' class='btn-reply' data-targetid='{6}' data-targetname='{7}'>回复</a>
+                        </p>
+                    </div>
+                    <hr />",item.Id,item.HeadShot,item.SendNickName,item.Content,item.City,item.CreateOn,item.SendId,item.SendNickName);
+                    foreach (FeedbackModel model in list)
+                    {
+                        if (item.Id==model.ParentId)
+                        {
+                            sb.AppendFormat(@"<div class='comment-child'>
+                                <a name='reply-{0}'></a>
+                                <img src='{1}' >
+                                <div class='info'>
+                                    <span class='username'>{2}</span>
+                                    <span style='padding-right:0;margin-left:-5px;'> 回复 </ span>
+                                    <span class='username'>{3}</span>
+                                    <span>{4}</span>
+                                </div>
+                                <p class='info'>
+                                    <i class='fa fa-map-marker' aria-hidden='true'></i>
+                                    <span>{5}</span>
+                                    <span class='comment-time'>{6}</span>
+                                    <a href='javascript:;' class='btn-reply' data-targetid='{7}' data-targetname='{8}'>回复</a>
+                                </p>
+                            </div>", model.Id, model.HeadShot, model.SendNickName, model.AcceptNickName, model.Content, model.City, model.CreateOn, model.SendId, model.SendNickName);
+                        }
+                    }
                     sb.AppendFormat(@"<div class='replycontainer layui-hide'>
-                        <form class='layui-form' action=''>
-                            <input type='hidden' name='remarkId' value='{0}'>
-                            <input type='hidden' name='targetUserId' value='0'>
-                            <div class='layui-form-item'>
-                                <textarea name='replyContent' lay-verify='replyContent' placeholder='请输入回复内容' class='layui-textarea' style='min-height:80px;'></textarea>
-                            </div>
-                            <div class='layui-form-item'>
-                                <button class='layui-btn layui-btn-xs' lay-submit='formReply' lay-filter='formReply'>提交</button>
-                            </div>
-                        </form>
-                    </div>",item.Id);
+                            <form class='layui-form' action=''>
+                                <input type='hidden' name='remarkId' value='{0}'>
+                                <input type='hidden' name='targetUserId' value='0'>
+                                <div class='layui-form-item'>
+                                    <textarea name='replyContent' lay-verify='replyContent' placeholder='请输入回复内容' class='layui-textarea' style='min-height:80px;'></textarea>
+                                </div>
+                                <div class='layui-form-item'>
+                                    <button class='layui-btn layui-btn-xs' lay-submit='formReply' lay-filter='formReply'>提交</button>
+                                </div>
+                            </form>
+                        </div>
+                    </li>", item.Id);
                 }
             }
             return sb.ToString();

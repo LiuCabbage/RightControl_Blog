@@ -52,5 +52,7 @@ namespace RightControl.Model
         [Display(Name = "创建日期")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd HH:mm:ss}")]
         public DateTime CreateOn { get; set; }
+        [Computed]
+        public string HeadShot { get; set; }
     }
 }
