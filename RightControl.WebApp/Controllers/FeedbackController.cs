@@ -15,7 +15,7 @@ namespace RightControl.WebApp.Controllers
         {
             int Count = service.GetByWhere("WHERE ParentId=0").ToList().Count;
             ViewBag.Count = Count;
-            int PageSize = 1;
+            int PageSize = 15;
             ViewBag.PageSize = PageSize;
             ViewBag.PageCount = (Count + PageSize - 1) / PageSize;
             return View();
