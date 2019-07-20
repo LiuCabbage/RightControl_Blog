@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using RightControl.IService;
+using RightControl.WebApp.Models;
 using System.Web.Mvc;
-using RightControl.IService;
 
 namespace RightControl.WebApp.Controllers
 {
@@ -13,6 +10,8 @@ namespace RightControl.WebApp.Controllers
         // GET: Archives
         public ActionResult Index()
         {
+            WebSiteInfo siteInfo = new WebSiteInfo();
+            ViewBag.SiteTitle = siteInfo.GetWebSiteInfo().SiteTitle;
             ViewData["Year"] = service.GetYear();
             ViewData["ArticleList"] = service.GetAll();
             return View();

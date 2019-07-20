@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using RightControl.IService;
 using RightControl.Model;
-using RightControl.IService;
+using RightControl.WebApp.Models;
+using System.Collections.Generic;
+using System.Web.Mvc;
 
 namespace RightControl.WebApp.Controllers
 {
@@ -14,6 +12,8 @@ namespace RightControl.WebApp.Controllers
         // GET: Links
         public ActionResult Index()
         {
+            WebSiteInfo siteInfo = new WebSiteInfo();
+            ViewBag.SiteTitle = siteInfo.GetWebSiteInfo().SiteTitle;
             IEnumerable<LinksModel> LinksList = service.GetAll();
             return View(LinksList);
         }
