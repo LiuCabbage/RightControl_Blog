@@ -36,11 +36,8 @@ namespace RightControl.WebApp.Controllers
         }
         public ActionResult Detail(int Id)
         {
-            //获得文章作者，默认都是站点名称
             WebSiteInfo siteInfo = new WebSiteInfo();
-            ViewBag.SiteName = siteInfo.GetWebSiteInfo().SiteName;
-            //获得域名链接用来拼接本文章链接
-            ViewBag.SiteDomain = siteInfo.GetWebSiteInfo().SiteDomain;
+            ViewBag.Site = siteInfo.GetWebSiteInfo();
             //浏览次数+1
             var model = service.GetDetail(Id);
             model.ReadNum++;

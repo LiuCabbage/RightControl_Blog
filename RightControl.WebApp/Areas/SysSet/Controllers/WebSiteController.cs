@@ -17,6 +17,8 @@ namespace RightControl.WebApp.Areas.SysSet.Controllers
         {
             try
             {
+                Configs.SetValue("OpenComment", model.OpenComment == "on" ? "true" : "false");
+                Configs.SetValue("OpenFeedback", model.OpenFeedback == "on" ? "true" : "false");
                 Configs.SetValue("SiteName", model.SiteName);
                 Configs.SetValue("SiteTitle", model.SiteTitle);
                 Configs.SetValue("SiteDomain", model.SiteDomain);

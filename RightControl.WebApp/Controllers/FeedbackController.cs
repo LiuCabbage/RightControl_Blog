@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using RightControl.IService;
+using RightControl.WebApp.Models;
 
 namespace RightControl.WebApp.Controllers
 {
@@ -13,6 +14,8 @@ namespace RightControl.WebApp.Controllers
         // GET: Feedback
         public ActionResult Index()
         {
+            WebSiteInfo siteInfo = new WebSiteInfo();
+            ViewBag.Site = siteInfo.GetWebSiteInfo();
             int Count = service.GetByWhere("WHERE ParentId=0").ToList().Count;
             ViewBag.Count = Count;
             int PageSize = 15;

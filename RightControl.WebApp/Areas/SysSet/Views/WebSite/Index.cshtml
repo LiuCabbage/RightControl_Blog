@@ -25,7 +25,7 @@
             <div class="layui-card">
                 <div class="layui-card-header">网站设置</div>
                 <div class="layui-card-body" pad15>
-                    <form class="layui-form" wid100 lay-filter="" action="/SysSet/WebSite/Index" method="post">
+                    <form class="layui-form" wid100 lay-filter="formTest" action="/SysSet/WebSite/Index" method="post">
                         <div class="layui-form-item">
                             <label class="layui-form-label">网站名称</label>
                             <div class="layui-input-block">
@@ -42,6 +42,16 @@
                             <label class="layui-form-label">网站域名</label>
                             <div class="layui-input-block">
                                 @Html.TextBoxFor(x => x.SiteDomain, null, new Dictionary<string, object> { { "class", "layui-input" }, { "lay-verify", "url" } })
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">开启评论</label>
+                            <div class="layui-input-inline">
+                                <input type="checkbox" name="OpenComment" @if (Model.OpenComment == "true"){ @Html.Raw("checked") } lay-skin="switch" lay-text="ON|OFF">
+                            </div>
+                            <label class="layui-form-label">开启留言</label>
+                            <div class="layui-input-inline">
+                                <input type="checkbox" name="OpenFeedback" @if (Model.OpenFeedback == "true"){ @Html.Raw("checked") } lay-skin="switch" lay-text="ON|OFF">
                             </div>
                         </div>
                         <div class="layui-form-item">

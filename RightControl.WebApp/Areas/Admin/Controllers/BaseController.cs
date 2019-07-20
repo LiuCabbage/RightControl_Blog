@@ -53,6 +53,8 @@ namespace RightControl.WebApp.Areas.Admin.Controllers
         {
             return new WebSiteModel
             {
+                OpenComment = Configs.GetValue("OpenComment"),
+                OpenFeedback=Configs.GetValue("OpenFeedback"),
                 SiteName = Configs.GetValue("SiteName"),
                 SiteTitle = Configs.GetValue("SiteTitle"),
                 SiteDomain = Configs.GetValue("SiteDomain"),

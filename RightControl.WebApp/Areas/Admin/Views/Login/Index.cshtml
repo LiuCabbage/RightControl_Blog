@@ -18,11 +18,6 @@
     <![endif]-->
 </head>
 <body style="background-image: url('/Areas/Admin/Content/images/bg.jpg');">
-    <div style="position: absolute; z-index: 999; top: 20px; left: 20px; color: #fff; font-size: 13px; line-height: 22px;">
-        <strong style="color:red; font-size:14px; font-weight:bold;">Tip:请不要随便删除账号及其他信息(每晚重置数据库)</strong><br />
-        超级管理员账号：admin 密码：123456<br />
-        普通用户账号：user 密码：123456<br />
-    </div>
     <div class="wrapper">
         <div class="container">
             <div class="logo">
@@ -103,7 +98,7 @@
                                 if (data.state == "success") {
                                     $("#login_button").find('span').html("登录成功，正在跳转...");
                                     window.setTimeout(function () {
-                                        window.location.href = "/Admin/Home/Index";
+                                        window.location.href = "/Admin/Home";
                                     }, 500);
                                 } else {
                                     $("#login_button").removeAttr('disabled').find('span').html("登录");
