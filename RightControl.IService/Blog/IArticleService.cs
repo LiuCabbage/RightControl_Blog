@@ -36,5 +36,6 @@ namespace RightControl.IService
         /// <returns></returns>
         IEnumerable<ArticleModel> GetArticleListBySearch(string content);
         string GetListByClassId(int classId, int page, int pagesize);
+        string GetFlowArticleComment(int articleId, int page, int pagesize);
     }
 }

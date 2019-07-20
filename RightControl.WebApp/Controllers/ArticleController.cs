@@ -14,6 +14,7 @@ namespace RightControl.WebApp.Controllers
         public IArticleService service { get; set; }
         public IArticleClassService classService { get; set; }
         public IQQUserService userService { get; set; }
+        public ICommentService commentService { get; set; }
         // GET: Article
         public ActionResult Index(int? Id = 0)
         {
@@ -46,6 +47,15 @@ namespace RightControl.WebApp.Controllers
             model = service.GetDetail(Id);
             //延伸阅读
             ViewBag.OtherList = service.GetRandomArticleList(2);
+            //每页显示数目
+            int PageSize = 10;
+            ViewBag.PageSize = PageSize;
+            //总条数
+            int Count = commentService.GetByWhere(Id == 0 ? null : string.Format("WHERE ParentId=0 and ArticleId = {0}", Id)).ToList().Count;
+            ViewBag.Count = Count;
+            //总页数
+            int PageCount = (Count + PageSize - 1) / PageSize;
+            ViewBag.PageCount = PageCount;
             return View(model);
         }
         [HttpPost]
@@ -58,6 +68,12 @@ namespace RightControl.WebApp.Controllers
         public ContentResult LoadArticleByClass(int classId, int page, int pagesize)
         {
             string result = service.GetListByClassId(classId, page, pagesize);
+            return Content(result);
+        }
+        [HttpPost]
+        public ContentResult LoadArticleComment(int articleId, int page, int pagesize)
+        {
+            string result = service.GetFlowArticleComment(articleId, page, pagesize);
             return Content(result);
         }
     }

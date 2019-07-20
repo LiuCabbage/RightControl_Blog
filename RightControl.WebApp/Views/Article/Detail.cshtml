@@ -107,7 +107,9 @@
                                 </div>
                             </div>
                         </fieldset>
-                        <ul class="blog-comment" id="blog-comment"></ul>
+                        <ul class="blog-comment" id="blog-comment" data-count="@ViewBag.Count" data-pagesize="@ViewBag.PageSize" data-pagecount="@ViewBag.PageCount" data-articleId="@Model.Id">
+                            
+                        </ul>
                     </section>
                 </article>
             </div>

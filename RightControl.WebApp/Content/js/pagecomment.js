@@ -4,6 +4,29 @@
     var $ = layui.jquery;
     var layedit = layui.layedit;
     var flow = layui.flow;
+    flow.load({
+        elem: "#blog-comment",
+        done: function (page, next) {
+            var pagecount = $(".blog-comment").attr("data-pagecount"),
+                pagesize = $(".blog-comment").attr("data-pagesize"),
+                articleId = $(".blog-comment").attr("data-articleId")
+                lis = [];
+            $.ajax({
+                type: "POST",
+                url: "/Article/LoadArticleComment",
+                data: {
+                    articleId: articleId,
+                    page: page,
+                    pagesize: pagesize
+                },
+                success: function (res) {
+                    //直接后台拼接返回每页的html，舒服啊。
+                    lis.push(res);
+                    next(lis.join(""), page < pagecount);
+                }
+            })
+        }
+    })
     //评论和留言的编辑器
     var editIndex = layedit.build('remarkEditor', {
         height: 150,

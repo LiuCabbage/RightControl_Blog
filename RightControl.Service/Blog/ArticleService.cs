@@ -10,6 +10,7 @@ namespace RightControl.Service
     public class ArticleService : BaseService<ArticleModel>, IArticleService
     {
         public IArticleRepository repository { get; set; }
+        public ICommentRepository commentRepository { get; set; }
         /// <summary>
         /// 获得文章所有年份
         /// </summary>
@@ -25,8 +26,8 @@ namespace RightControl.Service
         /// <returns></returns>
         public IEnumerable<ArticleModel> GetRandomArticleList(int num)
         {
-            string _where = "WHERE Id >= ((SELECT MAX(Id) FROM t_article)-(SELECT MIN(Id) FROM t_article)) * RAND() + (SELECT MIN(Id) FROM t_article) LIMIT "+num;
-            return repository.GetByWhere(_where,null,null,null); ;
+            string _where = "WHERE Id >= ((SELECT MAX(Id) FROM t_article)-(SELECT MIN(Id) FROM t_article)) * RAND() + (SELECT MIN(Id) FROM t_article) LIMIT " + num;
+            return repository.GetByWhere(_where, null, null, null); ;
         }
 
         public IEnumerable<ArticleModel> GetArticleListBySearch(string content)
@@ -154,6 +155,74 @@ namespace RightControl.Service
                                         </aside>
                                     </section>", item.Ding == 1 ? "<div class='fc-flag'>置顶</div>" : "", item.TypeName, item.Title, item.CreateOn.ToString("dd"), item.CreateOn.ToString("MM"), item.CreateOn.ToString("yyyy"), item.ImgUrl, item.ZhaiYao, item.ClassName, item.ReadNum, item.CommentNum, links, links, links);
 
+                }
+            }
+            return sb.ToString();
+        }
+
+        public string GetFlowArticleComment(int articleId, int page, int pagesize)
+        {
+            string prefix = "a.";
+            string _where = @"a
+                            LEFT OUTER JOIN t_qq_user b on a.SendId=b.Id
+                            LEFT OUTER JOIN t_qq_user c on a.AcceptId=c.Id";
+            long total = 0;
+            string _orderBy = @"ORDER BY a.CreateOn DESC";
+            string returnFields = string.Format("{0}*,b.NickName as SendNickName,c.NickName as AcceptNickName,b.HeadShot", prefix);
+            //根据这里的_where条件
+            //返回的total是不对的，也用不上，就不管啦。
+            IEnumerable<CommentModel> parentList = commentRepository.GetByPage(new SearchFilter { pageIndex = page, pageSize = pagesize, returnFields = returnFields, param = null, where = _where + " WHERE a.ParentId=0 and a.ArticleId=" + articleId, orderBy = _orderBy }, out total);
+            IEnumerable<CommentModel> list = commentRepository.GetByWhere(_where + " WHERE a.ParentId!=0 and a.ArticleId=" + articleId, null, returnFields, _orderBy);
+            string articleCommentHtml = CreateArticleCommentHtml(parentList, list);
+            return articleCommentHtml;
+        }
+        private string CreateArticleCommentHtml(IEnumerable<CommentModel> parentList, IEnumerable<CommentModel> list)
+        {
+            StringBuilder sb = new StringBuilder();
+            if (parentList != null && list != null)
+            {
+                foreach (CommentModel item in parentList)
+                {
+                    sb.AppendFormat(@"<li>
+                                <div class='comment-parent'>
+                                    <a name='remark-{0}'></a><img src='{1}'>
+                                    <div class='info'>
+                                        <span class='username'>{2}</span>
+                                    </div>
+                                    <div class='comment-content'>{3}</div>
+                                    <p class='info info-footer'>
+                                        <span class='comment-time'>{4}</span><a href='javascript:;' class='btn-reply' data-targetid='{5}' data-targetname='{6}'>回复</a>
+                                    </p>
+
+                                </div>
+                                <hr>", item.Id, item.HeadShot, item.SendNickName, item.Content, item.CreateOn, item.SendId, item.SendNickName);
+                    foreach (CommentModel model in list)
+                    {
+                        if (item.Id == model.ParentId)
+                        {
+                            sb.AppendFormat(@"<div class='comment-child'>
+                                            <a name='reply-{0}'></a><img src='{1}'>
+                                            <div class='info'>
+                                                <span class='username'>{2}</span><span style='padding-right:0;margin-left:-5px;'> 回复 </span><span class='username'>{3}</span><span>{4}</span>
+                                            </div>
+                                            <p class='info'>
+                                                <span class='comment-time'>{5}</span><a href='javascript:;' class='btn-reply' data-targetid='{6}' data-targetname='{7}'>回复</a>
+                                            </p>
+                                        </div>", model.Id, model.HeadShot, model.SendNickName, model.AcceptNickName, model.Content, model.CreateOn, model.SendId, model.SendNickName);
+                        }
+                    }
+                    sb.AppendFormat(@"<div class='replycontainer layui-hide'>
+                                    <form class='layui-form' action=''>
+                                        <input type='hidden' name='remarkId' value='{0}'><input type='hidden' name='targetUserId' value='0'><input type='hidden' name='articleId' value='{1}'>
+                                        <div class='layui-form-item'>
+                                            <textarea name='replyContent' lay-verify='replyContent' placeholder='请输入回复内容' class='layui-textarea' style='min-height:80px;'></textarea>
+                                        </div>
+                                        <div class='layui-form-item'>
+                                            <button class='layui-btn layui-btn-xs' lay-submit='formReply' lay-filter='formReply'>提交</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>", item.Id, item.ArticleId);
                 }
             }
             return sb.ToString();

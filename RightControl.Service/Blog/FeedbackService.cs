@@ -54,9 +54,7 @@ namespace RightControl.Service
                         <div class='info'>
                             <span class='username'>{2}</span>
                         </div>
-                        <div class='comment-content'>
-                            {3}
-                        </div>
+                        <div class='comment-content'>{3}</div>
                         <p class='info info-footer'>
                             <i class='fa fa-map-marker' aria-hidden='true'></i>
                             <span>{4}</span>
@@ -64,10 +62,10 @@ namespace RightControl.Service
                             <a href='javascript:;' class='btn-reply' data-targetid='{6}' data-targetname='{7}'>回复</a>
                         </p>
                     </div>
-                    <hr />",item.Id,item.HeadShot,item.SendNickName,item.Content,item.City,item.CreateOn,item.SendId,item.SendNickName);
+                    <hr />", item.Id, item.HeadShot, item.SendNickName, item.Content, item.City, item.CreateOn, item.SendId, item.SendNickName);
                     foreach (FeedbackModel model in list)
                     {
-                        if (item.Id==model.ParentId)
+                        if (item.Id == model.ParentId)
                         {
                             sb.AppendFormat(@"<div class='comment-child'>
                                 <a name='reply-{0}'></a>
