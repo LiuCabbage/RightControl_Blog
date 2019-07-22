@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using RightControl.IService;
 using RightControl.Model;
-using RightControl.Common;
+using System.Web.Routing;
 
 namespace RightControl.WebApp.Controllers
 {
@@ -16,7 +16,14 @@ namespace RightControl.WebApp.Controllers
         [HttpGet]
         public ActionResult QQLogin()
         {
-            return View();
+            string appId = "101734578"; //申请QQ登录成功后，分配给应用的appid。
+            string redirect_uri = "http://www.baocaige.top/QQUser/CallBack"; //成功授权后的回调地址，必须是注册appid时填写的主域名下的地址。
+            string salt = DateTime.Now.ToString("yyyyMMddHHmmssffff");  //client端的状态值。用于第三方应用防止CSRF攻击，成功授权后回调时会原样带回。
+            string url = string.Format("{0}?client_id={1}&response_type=code&redirect_uri={2}&state={3}", "https://graph.qq.com/oauth2.0/authorize", appId, redirect_uri, salt);
+            RouteValueDictionary routeValue = RouteData.Route.GetRouteData(this.HttpContext).Values;
+            Session["QQLoginSalt"] = salt;    //记录client端状态值
+            Session["BeforeLoginUrl"] = Request.UrlReferrer;    //记录登陆之前的URL，登陆成功后返回
+            return Redirect(url);
         }
         [HttpGet]
         public ActionResult QQLogOut()
