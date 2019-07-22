@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using RightControl.IService;
 using RightControl.Model;
+using RightControl.Common;
 
 namespace RightControl.WebApp.Controllers
 {
@@ -12,27 +13,18 @@ namespace RightControl.WebApp.Controllers
     {
         public IQQUserService service { get; set; }
         // GET: QQUser
+        [HttpGet]
         public ActionResult QQLogin()
         {
-            //模拟QQ登录
-            QQUserModel model = new QQUserModel()
-            {
-                Id = 1,
-                OpenId = "123456",
-                NickName = "",
-                Gender=1,
-                HeadShot= "/Upload/img/502.jpg",
-                Email="178899573@qq.com",
-                LastLogin=DateTime.Now,
-                CreateOn=DateTime.Now
-            };
-            HttpCookie cookie = new HttpCookie("LoginUser");
-            cookie.Value = model.ToString();    //RightControl.Model.QQUserModel cookie 有问题
-            cookie.Expires = DateTime.Now.Add(new TimeSpan(168, 0, 0));//cookie保存7天
-            Response.Cookies.Add(cookie);
-            return RedirectToAction("Index","Article");
+            return View();
         }
+        [HttpGet]
         public ActionResult QQLogOut()
+        {
+            return View();
+        }
+        [HttpGet]
+        public ActionResult CallBack()
         {
             return View();
         }

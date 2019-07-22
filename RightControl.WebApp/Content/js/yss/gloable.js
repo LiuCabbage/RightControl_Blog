@@ -18,7 +18,7 @@
     });
 });
 var slider = 0;
-var pathname = window.location.pathname.replace('Read', 'Article');
+var pathname = window.location.pathname.replace('Detail', 'Article');
 var master = {};
 master.start = function ($) {
     $('#nav li').hover(function () {
