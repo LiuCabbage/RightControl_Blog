@@ -19,12 +19,33 @@
     <script src="~/Content/layui/layui.js"></script>
     <script src="~/Content/js/yss/gloable.js"></script>
     <script src="~/Content/js/plugins/nprogress.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <script>NProgress.start();</script>
     @RenderSection("js", required: false)
     <script>
         window.onload = function () {
             NProgress.done();
         };
+    </script>
+    <script>
+        layui.use(['jquery'], function () {
+            var $ = layui.jquery;
+            var openid = $.cookie('openid');
+            var nickname = $.cookie('nickname');
+            var figureurl_qq = $.cookie('figureurl_qq');
+            console.log(openid);
+            console.log(nickname);
+            console.log(figureurl_qq);
+            if (openid != undefined && "" != openid) {
+                $(".blog-user").attr("href","/QQUser/QQLogOut");
+                $(".blog-user>i").hide();
+                $(".blog-user>img").attr("src", figureurl_qq);
+                $(".blog-user>img").attr("alt", nickname);
+                $(".blog-user>img").attr("title", nickname);
+                $(".blog-user>img").show();
+            }
+        });
     </script>
     <script>
         (function () {

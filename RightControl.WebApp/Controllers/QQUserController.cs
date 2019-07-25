@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using RightControl.IService;
+﻿using RightControl.IService;
 using RightControl.Model;
-using System.Web.Routing;
 using RightControl.WebApp.Models;
+using System;
+using System.Linq;
+using System.Web.Mvc;
+using System.Web.Routing;
 
 
 namespace RightControl.WebApp.Controllers
@@ -89,8 +87,11 @@ namespace RightControl.WebApp.Controllers
         }
         public ActionResult QQLogOut()
         {
+            Response.Cookies["openid"].Value = "";
             Response.Cookies["openid"].Expires = DateTime.Now.AddDays(-7);
+            Response.Cookies["nickname"].Value = "";
             Response.Cookies["nickname"].Expires = DateTime.Now.AddDays(-7);
+            Response.Cookies["figureurl_qq"].Value = "";
             Response.Cookies["figureurl_qq"].Expires = DateTime.Now.AddDays(-7);
             return Redirect(Request.UrlReferrer.ToString());
         }
