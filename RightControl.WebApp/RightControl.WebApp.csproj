@@ -440,6 +440,8 @@
     </Compile>
     <Compile Include="Areas\Admin\Models\HtmlHelper.cs" />
     <Compile Include="Areas\Admin\Models\WebSiteModel.cs" />
+    <Compile Include="Models\QQLoginHelper.cs" />
+    <Compile Include="Models\QQUserInfo.cs" />
     <Compile Include="Models\WebSiteInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

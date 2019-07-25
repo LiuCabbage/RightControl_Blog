@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using RightControl.Common;
-using RightControl.Model;
+﻿using RightControl.Common;
 
 namespace RightControl.WebApp.Models
 {

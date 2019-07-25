@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using RightControl.IService;
 using RightControl.Model;
 using System.Web.Routing;
+using RightControl.WebApp.Models;
+
 
 namespace RightControl.WebApp.Controllers
 {
@@ -13,27 +15,84 @@ namespace RightControl.WebApp.Controllers
     {
         public IQQUserService service { get; set; }
         // GET: QQUser
-        [HttpGet]
         public ActionResult QQLogin()
         {
-            string appId = "101734578"; //申请QQ登录成功后，分配给应用的appid。
-            string redirect_uri = "http://www.baocaige.top/QQUser/CallBack"; //成功授权后的回调地址，必须是注册appid时填写的主域名下的地址。
-            string salt = DateTime.Now.ToString("yyyyMMddHHmmssffff");  //client端的状态值。用于第三方应用防止CSRF攻击，成功授权后回调时会原样带回。
-            string url = string.Format("{0}?client_id={1}&response_type=code&redirect_uri={2}&state={3}", "https://graph.qq.com/oauth2.0/authorize", appId, redirect_uri, salt);
+            string state = DateTime.Now.ToString("yyyyMMddHHmmssffff");  //client端的状态值。用于第三方应用防止CSRF攻击，成功授权后回调时会原样带回。
+            string url = QQLoginHelper.CreateAuthorizeUrl(state);
             RouteValueDictionary routeValue = RouteData.Route.GetRouteData(this.HttpContext).Values;
-            Session["QQLoginSalt"] = salt;    //记录client端状态值
+            Session["QQLoginState"] = state;    //记录client端状态值
             Session["BeforeLoginUrl"] = Request.UrlReferrer;    //记录登陆之前的URL，登陆成功后返回
             return Redirect(url);
         }
-        [HttpGet]
-        public ActionResult QQLogOut()
-        {
-            return View();
-        }
-        [HttpGet]
         public ActionResult CallBack()
         {
-            return View();
+            string backState = Request.QueryString["state"];
+            string code = Request.QueryString["code"];
+            if (null != backState && null != code && null != Session["QQLoginState"] && backState == Session["QQLoginState"].ToString())
+            {
+                Session["QQLoginState"] = null;
+                //调获取AccessToken的接口
+                string access_token = QQLoginHelper.GetAccessToken(code);
+                //调获取OpenID的接口
+                string openid = QQLoginHelper.GetOpenId(access_token);
+                //调获取用户信息的接口
+                QQUserInfo qqUserInfo = QQLoginHelper.GetQQUserInfo(access_token, openid);
+                if (qqUserInfo.ret == 0 && string.IsNullOrEmpty(qqUserInfo.msg))
+                {
+                    QQUserModel userModel = service.GetByWhere("WHERE OpenId=@openid", new { openid = openid }).FirstOrDefault();
+                    if (userModel!=null)
+                    {
+                        //更新QQ用户信息
+                        userModel.NickName = qqUserInfo.nickname;
+                        userModel.Gender = Convert.ToInt32(qqUserInfo.gender);
+                        userModel.HeadShot = qqUserInfo.figureurl_qq;
+                        userModel.LastLogin = DateTime.Now;
+                        service.UpdateModel(userModel);
+                    }
+                    else
+                    {
+                        //添加QQ用户
+                        userModel.OpenId = openid;
+                        userModel.NickName = qqUserInfo.nickname;
+                        userModel.Gender = Convert.ToInt32(qqUserInfo.gender);
+                        userModel.HeadShot = qqUserInfo.figureurl_qq;
+                        userModel.Email = "";
+                        userModel.LastLogin = DateTime.Now;
+                        userModel.CreateOn = DateTime.Now;
+                        service.CreateModel(userModel);
+                    }
+                    Response.Cookies["openid"].Value = openid;
+                    Response.Cookies["openid"].Expires = DateTime.Now.AddDays(7);
+                    Response.Cookies["nickname"].Value = qqUserInfo.nickname;
+                    Response.Cookies["nickname"].Expires = DateTime.Now.AddDays(7);
+                    Response.Cookies["figureurl_qq"].Value = qqUserInfo.figureurl_qq;
+                    Response.Cookies["figureurl_qq"].Expires = DateTime.Now.AddDays(7);
+                }
+                else
+                {
+                    //获取用户失败
+                    throw new ApplicationException(qqUserInfo.msg);
+                }
+                if (Session["BeforeLoginUrl"] != null)
+                {
+                    return Redirect(Session["BeforeLoginUrl"].ToString()); //返回登陆之前的URL
+                }
+                else
+                {
+                    throw new Exception("登录之前的路由丢失");
+                }
+            }
+            else
+            {
+                throw new Exception("登录State已丢失或不正确");
+            }
+        }
+        public ActionResult QQLogOut()
+        {
+            Response.Cookies["openid"].Expires = DateTime.Now.AddDays(-7);
+            Response.Cookies["nickname"].Expires = DateTime.Now.AddDays(-7);
+            Response.Cookies["figureurl_qq"].Expires = DateTime.Now.AddDays(-7);
+            return Redirect(Request.UrlReferrer.ToString());
         }
     }
 }
