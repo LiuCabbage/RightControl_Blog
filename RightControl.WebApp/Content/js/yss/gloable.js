@@ -50,3 +50,33 @@ master.start = function ($) {
         layer.closeAll('tips');
     })
 };
+var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+var browserName = "";
+//判断是否Safari浏览器
+if (userAgent.indexOf("Safari") > 0) {
+    browserName = "Safari浏览器";
+}
+//判断是否Opera浏览器
+if (userAgent.indexOf("Opera") > 0) {
+    browserName = "Opera浏览器";
+};
+//判断是否Firefox浏览器
+if (userAgent.indexOf("Firefox") > 0) {
+    browserName = "Firefox浏览器";
+}
+//判断是否chorme浏览器
+if (userAgent.indexOf("Chrome") > 0) {
+    browserName = "Chrome浏览器";
+}
+//判断是否Edge浏览器
+if (userAgent.indexOf("Trident") > 0) {
+    browserName = "Edge浏览器";
+}
+//判断是否浏览器
+if (userAgent.indexOf("qqbrowser") > 0) {
+    browserName = "QQ浏览器";
+}
+//判断是否搜狗浏览器
+if (userAgent.indexOf("se 2.x") > 0) {
+    browserName = "搜狗浏览器";
+}

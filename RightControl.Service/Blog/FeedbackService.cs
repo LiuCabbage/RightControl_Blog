@@ -58,11 +58,13 @@ namespace RightControl.Service
                         <p class='info info-footer'>
                             <i class='fa fa-map-marker' aria-hidden='true'></i>
                             <span>{4}</span>
+                            <i class='fa fa-safari' aria-hidden='true'></i>
+                            <span>{8}</span>
                             <span class='comment-time'>{5}</span>
                             <a href='javascript:;' class='btn-reply' data-targetid='{6}' data-targetname='{7}'>回复</a>
                         </p>
                     </div>
-                    <hr />", item.Id, item.HeadShot, item.SendNickName, item.Content, item.City, item.CreateOn, item.SendId, item.SendNickName);
+                    <hr />", item.Id, item.HeadShot, item.SendNickName, item.Content, item.City, item.CreateOn, item.SendId, item.SendNickName,item.Equip);
                     foreach (FeedbackModel model in list)
                     {
                         if (item.Id == model.ParentId)
@@ -79,10 +81,12 @@ namespace RightControl.Service
                                 <p class='info'>
                                     <i class='fa fa-map-marker' aria-hidden='true'></i>
                                     <span>{5}</span>
+                                    <i class='fa fa-safari' aria-hidden='true'></i>
+                                    <span>{9}</span>
                                     <span class='comment-time'>{6}</span>
                                     <a href='javascript:;' class='btn-reply' data-targetid='{7}' data-targetname='{8}'>回复</a>
                                 </p>
-                            </div>", model.Id, model.HeadShot, model.SendNickName, model.AcceptNickName, model.Content, model.City, model.CreateOn, model.SendId, model.SendNickName);
+                            </div>", model.Id, model.HeadShot, model.SendNickName, model.AcceptNickName, model.Content, model.City, model.CreateOn, model.SendId, model.SendNickName,model.Equip);
                         }
                     }
                     sb.AppendFormat(@"<div class='replycontainer layui-hide'>

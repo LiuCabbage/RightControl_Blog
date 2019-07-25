@@ -41,21 +41,112 @@
             if (value == "") return "请输入内容";
         }
     });
+    //监听提交
+    form.on('submit(formLeaveMessage)', function (obj) {
+        var openid = $.cookie('openid');
+        if (openid != undefined && "" != openid) {
+            var index = layer.load(1);
+            $.ajax({
+                type: "post",
+                url: "/Feedback/AddFeedback",
+                data: {
+                    openid: openid,
+                    editorContent: filterXSS(obj.field.editorContent),
+                    fromcity: returnCitySN['cname'],
+                    browserName: browserName
+                },
+                dataType: "json",
+                success: function (data) {
+                    layer.close(index); //关闭弹框
+                    if (data.state == "success") {
+                        layer.msg(data.message, {
+                            icon: 6
+                        });
+                    } else {
+                        layer.msg(data.message, {
+                            icon: 5
+                        });
+                    }
+                    setTimeout(function () {
+                        location.reload(!0)
+                    }, 500);
+                },
+                error: function () {
+                    layer.close(index);
+                    layer.msg("请求异常", {
+                        icon: 2
+                    });
+                }
+            });
+            return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+        } else {
+            layer.msg("请先登录", {
+                icon: 5
+            });
+        }
+        return false;
+    });
+    form.on('submit(formReply)', function (obj) {
+        var openid = $.cookie('openid');
+        if (openid != undefined && "" != openid) {
+            var index = layer.load(1);
+            $.ajax({
+                type: "post",
+                url: "/Feedback/ReplyFeedback",
+                data: {
+                    openid: openid,
+                    remarkId: obj.field.remarkId,
+                    targetUserId: obj.field.targetUserId,
+                    editorContent: filterXSS(obj.field.replyContent),
+                    fromcity: returnCitySN['cname'],
+                    browserName: browserName
+                },
+                dataType: "json",
+                success: function (data) {
+                    layer.close(index); //关闭弹框
+                    if (data.state == "success") {
+                        layer.msg(data.message, {
+                            icon: 6
+                        });
+                    } else {
+                        layer.msg(data.message, {
+                            icon: 5
+                        });
+                    }
+                    setTimeout(function () {
+                        location.reload(!0)
+                    }, 500);
+                },
+                error: function () {
+                    layer.close(index);
+                    layer.msg("请求异常", {
+                        icon: 2
+                    });
+                }
+            });
+            return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+        } else {
+            layer.msg("请先登录", {
+                icon: 5
+            });
+        }
+        return false;
+    });
     //回复按钮点击事件
     $('#message-list').on('click', '.btn-reply', function () {
-         var targetId = $(this).data('targetid')
-             , targetName = $(this).data('targetname')
-             , $container = $(this).parent('p').parent().siblings('.replycontainer');
-         if ($(this).text() == '回复') {
-             $container.find('textarea').attr('placeholder', '回复【' + targetName + '】');
-             $container.removeClass('layui-hide');
-             $container.find('input[name="targetUserId"]').val(targetId);
-             $(this).parents('.message-list li').find('.btn-reply').text('回复');
-             $(this).text('收起');
-         } else {
-             $container.addClass('layui-hide');
-             $container.find('input[name="targetUserId"]').val(0);
-             $(this).text('回复');
-         }
-     });
+        var targetId = $(this).data('targetid')
+            , targetName = $(this).data('targetname')
+            , $container = $(this).parent('p').parent().siblings('.replycontainer');
+        if ($(this).text() == '回复') {
+            $container.find('textarea').attr('placeholder', '回复【' + targetName + '】');
+            $container.removeClass('layui-hide');
+            $container.find('input[name="targetUserId"]').val(targetId);
+            $(this).parents('.message-list li').find('.btn-reply').text('回复');
+            $(this).text('收起');
+        } else {
+            $container.addClass('layui-hide');
+            $container.find('input[name="targetUserId"]').val(0);
+            $(this).text('回复');
+        }
+    });
 });

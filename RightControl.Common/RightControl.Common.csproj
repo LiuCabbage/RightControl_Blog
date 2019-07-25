@@ -73,6 +73,7 @@
     <Compile Include="VerifyCode.cs" />
     <Compile Include="WebHelper.cs" />
     <Compile Include="Web\AjaxResult.cs" />
+    <Compile Include="XSS.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
