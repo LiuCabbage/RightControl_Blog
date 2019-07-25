@@ -15,20 +15,20 @@ namespace RightControl.WebApp.Controllers
         // GET: QQUser
         public ActionResult QQLogin()
         {
-            //string state = DateTime.Now.ToString("yyyyMMddHHmmssffff");  //client端的状态值。用于第三方应用防止CSRF攻击，成功授权后回调时会原样带回。
-            //string url = QQLoginHelper.CreateAuthorizeUrl(state);
-            //RouteValueDictionary routeValue = RouteData.Route.GetRouteData(this.HttpContext).Values;
-            //Session["QQLoginState"] = state;    //记录client端状态值
-            //Session["BeforeLoginUrl"] = Request.UrlReferrer;    //记录登陆之前的URL，登陆成功后返回
-            //return Redirect(url);
+            string state = DateTime.Now.ToString("yyyyMMddHHmmssffff");  //client端的状态值。用于第三方应用防止CSRF攻击，成功授权后回调时会原样带回。
+            string url = QQLoginHelper.CreateAuthorizeUrl(state);
+            RouteValueDictionary routeValue = RouteData.Route.GetRouteData(this.HttpContext).Values;
+            Session["QQLoginState"] = state;    //记录client端状态值
+            Session["BeforeLoginUrl"] = Request.UrlReferrer;    //记录登陆之前的URL，登陆成功后返回
+            return Redirect(url);
             //假登录，本地测试
-            Response.Cookies["openid"].Value = "123456";
-            Response.Cookies["openid"].Expires = DateTime.Now.AddDays(3);
-            Response.Cookies["nickname"].Value = "蚯蚓";
-            Response.Cookies["nickname"].Expires = DateTime.Now.AddDays(3);
-            Response.Cookies["figureurl_qq"].Value = "https://thirdqq.qlogo.cn/g?b=oidb&k=q8BmhyWUTZEpo7Us6QTqhA&s=100&t=1557712926";
-            Response.Cookies["figureurl_qq"].Expires = DateTime.Now.AddDays(3);
-            return Redirect(Request.UrlReferrer.ToString());
+            //Response.Cookies["openid"].Value = "123456";
+            //Response.Cookies["openid"].Expires = DateTime.Now.AddDays(3);
+            //Response.Cookies["nickname"].Value = "蚯蚓";
+            //Response.Cookies["nickname"].Expires = DateTime.Now.AddDays(3);
+            //Response.Cookies["figureurl_qq"].Value = "https://thirdqq.qlogo.cn/g?b=oidb&k=q8BmhyWUTZEpo7Us6QTqhA&s=100&t=1557712926";
+            //Response.Cookies["figureurl_qq"].Expires = DateTime.Now.AddDays(3);
+            //return Redirect(Request.UrlReferrer.ToString());
         }
         public ActionResult CallBack()
         {

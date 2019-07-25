@@ -43,6 +43,93 @@
             if (value == "") return "请输入内容";
         }
     });
+    //监听提交
+    form.on('submit(formLeaveMessage)', function (obj) {
+        var openid = $.cookie('openid');
+        if (openid != undefined && "" != openid) {
+            var index = layer.load(1);
+            $.ajax({
+                type: "post",
+                url: "/Comment/AddComment",
+                data: {
+                    openid: openid,
+                    articleid: obj.field.articleid,
+                    editorContent: filterXSS(obj.field.editorContent)
+                },
+                dataType: "json",
+                success: function (data) {
+                    layer.close(index); //关闭弹框
+                    if (data.state == "success") {
+                        layer.msg(data.message, {
+                            icon: 6
+                        });
+                    } else {
+                        layer.msg(data.message, {
+                            icon: 5
+                        });
+                    }
+                    setTimeout(function () {
+                        location.reload(!0)
+                    }, 500);
+                },
+                error: function () {
+                    layer.close(index);
+                    layer.msg("请求异常", {
+                        icon: 2
+                    });
+                }
+            });
+        } else {
+            layer.msg("请先登录", {
+                icon: 5
+            });
+        }
+        return false;
+    });
+    form.on('submit(formReply)', function (obj) {
+        var openid = $.cookie('openid');
+        if (openid != undefined && "" != openid) {
+            var index = layer.load(1);
+            $.ajax({
+                type: "post",
+                url: "/Comment/ReplyComment",
+                data: {
+                    openid: openid,
+                    remarkId: obj.field.remarkId,
+                    articleId: obj.field.articleId,
+                    targetUserId: obj.field.targetUserId,
+                    editorContent: filterXSS(obj.field.replyContent)
+                },
+                dataType: "json",
+                success: function (data) {
+                    layer.close(index); //关闭弹框
+                    if (data.state == "success") {
+                        layer.msg(data.message, {
+                            icon: 6
+                        });
+                    } else {
+                        layer.msg(data.message, {
+                            icon: 5
+                        });
+                    }
+                    setTimeout(function () {
+                        location.reload(!0)
+                    }, 500);
+                },
+                error: function () {
+                    layer.close(index);
+                    layer.msg("请求异常", {
+                        icon: 2
+                    });
+                }
+            });
+        } else {
+            layer.msg("请先登录", {
+                icon: 5
+            });
+        }
+        return false;
+    });
     //回复按钮点击事件
     $('#blog-comment').on('click', '.btn-reply', function () {
         var targetId = $(this).data('targetid')

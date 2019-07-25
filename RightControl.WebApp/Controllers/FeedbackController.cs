@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using RightControl.Common;
 using RightControl.IService;
 using RightControl.Model;
 using RightControl.WebApp.Models;
-using RightControl.Common;
+using System;
+using System.Linq;
+using System.Web.Mvc;
 
 namespace RightControl.WebApp.Controllers
 {

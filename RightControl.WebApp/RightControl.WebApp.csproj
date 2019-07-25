@@ -430,6 +430,7 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\ArchivesController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\DiarysController.cs" />
     <Compile Include="Controllers\FeedbackController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -594,6 +595,7 @@
     <Folder Include="Areas\Permissions\Views\Shared\" />
     <Folder Include="Areas\SysSet\Models\" />
     <Folder Include="Areas\SysSet\Views\Shared\" />
+    <Folder Include="Views\Comment\" />
     <Folder Include="Views\QQUser\" />
   </ItemGroup>
   <ItemGroup>
