@@ -87,11 +87,8 @@ namespace RightControl.WebApp.Controllers
         }
         public ActionResult QQLogOut()
         {
-            Response.Cookies["openid"].Value = "";
             Response.Cookies["openid"].Expires = DateTime.Now.AddDays(-7);
-            Response.Cookies["nickname"].Value = "";
             Response.Cookies["nickname"].Expires = DateTime.Now.AddDays(-7);
-            Response.Cookies["figureurl_qq"].Value = "";
             Response.Cookies["figureurl_qq"].Expires = DateTime.Now.AddDays(-7);
             return Redirect(Request.UrlReferrer.ToString());
         }

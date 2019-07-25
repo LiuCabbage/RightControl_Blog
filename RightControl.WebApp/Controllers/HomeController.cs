@@ -22,12 +22,6 @@ namespace RightControl.WebApp.Controllers
         }
         public ActionResult Head()
         {
-            Response.Cookies["openid"].Value = "123456";
-            Response.Cookies["openid"].Expires = DateTime.Now.AddDays(7);
-            Response.Cookies["nickname"].Value = "蚯蚓";
-            Response.Cookies["nickname"].Expires = DateTime.Now.AddDays(7);
-            Response.Cookies["figureurl_qq"].Value = "http://thirdqq.qlogo.cn/g?b=oidb&k=q8BmhyWUTZEpo7Us6QTqhA&s=100&t=1557712926";
-            Response.Cookies["figureurl_qq"].Expires = DateTime.Now.AddDays(7);
             ViewBag.Site = model.GetWebSiteInfo();
             return PartialView("~/Views/Shared/_Head.cshtml");
         }
