@@ -42,7 +42,7 @@ namespace RightControl.WebApp.Controllers
                     {
                         //更新QQ用户信息
                         userModel.NickName = qqUserInfo.nickname;
-                        userModel.Gender = Convert.ToInt32(qqUserInfo.gender);
+                        userModel.Gender = qqUserInfo.gender == "男" ? 1 : 0;
                         userModel.HeadShot = qqUserInfo.figureurl_qq;
                         userModel.LastLogin = DateTime.Now;
                         service.UpdateModel(userModel);
