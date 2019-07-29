@@ -21,14 +21,6 @@ namespace RightControl.WebApp.Controllers
             Session["QQLoginState"] = state;    //记录client端状态值
             Session["BeforeLoginUrl"] = Request.UrlReferrer;    //记录登陆之前的URL，登陆成功后返回
             return Redirect(url);
-            //假登录，本地测试
-            //Response.Cookies["openid"].Value = "123456";
-            //Response.Cookies["openid"].Expires = DateTime.Now.AddDays(3);
-            //Response.Cookies["nickname"].Value = "蚯蚓";
-            //Response.Cookies["nickname"].Expires = DateTime.Now.AddDays(3);
-            //Response.Cookies["figureurl_qq"].Value = "https://thirdqq.qlogo.cn/g?b=oidb&k=q8BmhyWUTZEpo7Us6QTqhA&s=100&t=1557712926";
-            //Response.Cookies["figureurl_qq"].Expires = DateTime.Now.AddDays(3);
-            //return Redirect(Request.UrlReferrer.ToString());
         }
         public ActionResult CallBack()
         {
@@ -45,8 +37,8 @@ namespace RightControl.WebApp.Controllers
                 QQUserInfo qqUserInfo = QQLoginHelper.GetQQUserInfo(access_token, openid);
                 if (qqUserInfo.ret == 0 && string.IsNullOrEmpty(qqUserInfo.msg))
                 {
-                    QQUserModel userModel = service.GetByWhere("WHERE OpenId='"+openid+"'").FirstOrDefault();
-                    if (userModel!=null)
+                    QQUserModel userModel = service.GetByWhere("WHERE OpenId='" + openid + "'").FirstOrDefault();
+                    if (userModel != null)
                     {
                         //更新QQ用户信息
                         userModel.NickName = qqUserInfo.nickname;
@@ -57,10 +49,11 @@ namespace RightControl.WebApp.Controllers
                     }
                     else
                     {
+                        userModel = new QQUserModel();
                         //添加QQ用户
                         userModel.OpenId = openid;
                         userModel.NickName = qqUserInfo.nickname;
-                        userModel.Gender = Convert.ToInt32(qqUserInfo.gender);
+                        userModel.Gender = qqUserInfo.gender=="男"?1:0;
                         userModel.HeadShot = qqUserInfo.figureurl_qq;
                         userModel.Email = "";
                         userModel.LastLogin = DateTime.Now;

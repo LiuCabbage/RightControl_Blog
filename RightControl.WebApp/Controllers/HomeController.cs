@@ -1,6 +1,8 @@
 ﻿using RightControl.IService;
+using RightControl.Model;
 using RightControl.WebApp.Models;
 using System;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace RightControl.WebApp.Controllers
@@ -8,6 +10,7 @@ namespace RightControl.WebApp.Controllers
     public class HomeController : Controller
     {
         public IArticleService service { get; set; }
+        public IQQUserService qqUserService { get; set; }
         WebSiteInfo model = new WebSiteInfo();
         // GET: Home
         public ActionResult Index()
