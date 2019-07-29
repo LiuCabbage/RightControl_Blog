@@ -22,7 +22,7 @@ namespace RightControl.WebApp.Controllers
             int PageSize = 10;
             ViewBag.PageSize = PageSize;
             //总条数
-            int Count = service.GetByWhere(Id == 0 ? null : string.Format("WHERE ClassId = {0}", Id)).ToList().Count;
+            int Count = service.GetByWhere(Id == 0 ? "WHERE Status=1" : string.Format("WHERE Status=1 and ClassId = {0}", Id)).ToList().Count;
             ViewBag.Count = Count;
             //总页数
             int PageCount = (Count + PageSize - 1) / PageSize;

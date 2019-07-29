@@ -97,12 +97,16 @@ namespace RightControl.Service
                             LEFT JOIN t_comment d on a.Id=d.ArticleId";
             if (classId != 0)
             {
-                _where += " WHERE a.ClassId=" + classId;
+                _where += " WHERE a.Status=1 and a.ClassId=" + classId;
+            }
+            else
+            {
+                _where += " WHERE a.Status=1";
             }
             long total = 0;
             string _orderBy = @"GROUP BY a.Id 
-                                ORDER BY Ding DESC,ReadNum DESC,CreateOn DESC";
-            string returnFields = string.Format("{0}Id,{0}Title,a.ImgUrl,c.`Name` as TypeName,b.`Name` as ClassName,{0}Ding,{0}ReadNum,COUNT(d.Id) as CommentNum,{0}Status,{0}CreateOn", prefix);
+                                ORDER BY Ding DESC,CreateOn DESC";
+            string returnFields = string.Format("{0}Id,{0}Title,{0}ZhaiYao,{0}ImgUrl,c.`Name` as TypeName,b.`Name` as ClassName,{0}Ding,{0}ReadNum,COUNT(d.Id) as CommentNum,{0}Status,{0}CreateOn", prefix);
             //根据这里的_where条件
             //返回的total是不对的，也用不上，就不管啦。
             IEnumerable<ArticleModel> list = repository.GetByPage(new SearchFilter { pageIndex = page, pageSize = pagesize, returnFields = returnFields, param = null, where = _where, orderBy = _orderBy }, out total);
