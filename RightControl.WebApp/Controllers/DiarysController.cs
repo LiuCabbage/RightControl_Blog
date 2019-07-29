@@ -10,7 +10,8 @@ namespace RightControl.WebApp.Controllers
         public ActionResult Index()
         {
             ViewData["Year"] = service.GetYear();
-            ViewData["DiarysList"] = service.GetAll();
+            string _orderby = "ORDER BY CreateOn DESC";
+            ViewData["DiarysList"] = service.GetAll(null, _orderby);
             return View();
         }
     }

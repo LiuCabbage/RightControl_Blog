@@ -393,7 +393,22 @@
     <Content Include="Areas\Admin\Scripts\jquery-1.10.2.min.js" />
     <Content Include="Areas\Admin\Scripts\modernizr-2.6.2.js" />
     <Content Include="Icon.html" />
+    <Content Include="Upload\img\1.jpg" />
+    <Content Include="Upload\img\1260852-20190620144549201-1384742553.jpg" />
+    <Content Include="Upload\img\1260852-20190620144549201-1384742553_1.jpg" />
+    <Content Include="Upload\img\1260852-20190620144600057-1249279035.png" />
+    <Content Include="Upload\img\1260852-20190620182652975-893533851.png" />
+    <Content Include="Upload\img\1260852-20190620183134180-861990751.png" />
+    <Content Include="Upload\img\1260852-20190712145453950-818976929.jpg" />
+    <Content Include="Upload\img\1260852-20190712145504706-1458531772.jpg" />
+    <Content Include="Upload\img\1260852-20190712145504706-1458531772_1.jpg" />
+    <Content Include="Upload\img\1260852-20190717163824398-638143940.png" />
+    <Content Include="Upload\img\1260852-20190717163824398-638143940_1.png" />
+    <Content Include="Upload\img\2.jpg" />
     <Content Include="Upload\img\502.jpg" />
+    <Content Include="Upload\img\mysql.jpg" />
+    <Content Include="Upload\img\temo123.jpg" />
+    <Content Include="Upload\img\u=2715563049,865769039&amp;fm=26&amp;gp=0.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
