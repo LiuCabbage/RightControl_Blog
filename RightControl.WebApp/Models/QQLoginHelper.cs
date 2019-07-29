@@ -7,9 +7,9 @@ namespace RightControl.WebApp.Models
 {
     public class QQLoginHelper
     {
-        public static string appId = "101734578"; //申请QQ登录成功后，分配给应用的appid。
-        public static string appKey = "6f737128453fdaace7adddbcb9b91c00"; //申请QQ登录成功后，分配给应用的appkey。
-        public static string redirect_uri = "http://www.baocaige.top/QQUser/CallBack"; //成功授权后的回调地址，必须是注册appid时填写的主域名下的地址。
+        public static string appId = ""; //申请QQ登录成功后，分配给应用的appid。
+        public static string appKey = ""; //申请QQ登录成功后，分配给应用的appkey。
+        public static string redirect_uri = "域名/QQUser/CallBack"; //成功授权后的回调地址，必须是注册appid时填写的主域名下的地址。
         public static string CreateAuthorizeUrl(string state)
         {
             string url = string.Format("{0}?client_id={1}&response_type=code&redirect_uri={2}&state={3}", "https://graph.qq.com/oauth2.0/authorize", appId, redirect_uri, state);
