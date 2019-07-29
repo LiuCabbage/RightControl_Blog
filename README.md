@@ -25,3 +25,9 @@
 2. 文章编辑器用的是Layedit，功能有点弱，但是Layui文档全，用的比较舒服（我试过改用wangEditor，只需要引用一个js，但是它上传的图片也是不能右键修改图片大小的，还要重写图片上传方法，我枯了，就退回了Layedit的版本。）
 3. 编辑器推荐：KindEditor，UEditor。
 4. 流加载文章列表，评论，留言后台拼接代码可优化，双重foreach+if，怎么看都有点沙雕。
+
+#### 项目截图
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0730/001444_bd456231_1130037.png "1.png")
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0730/001451_90d864da_1130037.png "2.png")
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0730/001500_cb7484df_1130037.png "3.png")
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0730/001508_6f04a175_1130037.png "4.png")
