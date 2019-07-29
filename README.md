@@ -27,7 +27,7 @@
 4. 流加载文章列表，评论，留言后台拼接代码可优化，双重foreach+if，怎么看都有点沙雕。
 
 #### 项目截图
-![输入图片说明](https://images.gitee.com/uploads/images/2019/0730/001444_bd456231_1130037.png "1.png")
-![输入图片说明](https://images.gitee.com/uploads/images/2019/0730/001451_90d864da_1130037.png "2.png")
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0730/001705_92a610e2_1130037.png "1.png")
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0730/001712_84d46d7f_1130037.png "2.png")
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/0730/001500_cb7484df_1130037.png "3.png")
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/0730/001508_6f04a175_1130037.png "4.png")
