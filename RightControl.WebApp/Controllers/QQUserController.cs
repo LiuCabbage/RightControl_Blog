@@ -45,7 +45,7 @@ namespace RightControl.WebApp.Controllers
                 QQUserInfo qqUserInfo = QQLoginHelper.GetQQUserInfo(access_token, openid);
                 if (qqUserInfo.ret == 0 && string.IsNullOrEmpty(qqUserInfo.msg))
                 {
-                    QQUserModel userModel = service.GetByWhere("WHERE OpenId=@openid", new { openid = openid }).FirstOrDefault();
+                    QQUserModel userModel = service.GetByWhere("WHERE OpenId='"+openid+"'").FirstOrDefault();
                     if (userModel!=null)
                     {
                         //更新QQ用户信息
