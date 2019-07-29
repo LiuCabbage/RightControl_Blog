@@ -29,7 +29,7 @@
             </tr>
             <tr>
                 <td>内容：</td>
-                <td><textarea id="Content" name="Content" lay-verify="concact"></textarea></td>
+                <td><textarea id="Content" name="Content" lay-verify="concact">@Html.Raw(Model.Content)</textarea></td>
             </tr>
             <tr>
                 <td>分类：</td>
@@ -63,7 +63,6 @@
         var form = layui.form;
         var layedit = layui.layedit;
         var $ = layui.$;
-        $("#Content").html("@Model.Content");
         layedit.set({
             uploadImage: {
                 url: '/SysSet/Info/ExportFile/' //接口url

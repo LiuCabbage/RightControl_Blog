@@ -11,7 +11,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">日记</label>
             <div class="layui-input-block">
-                <textarea id="Content"  name="Content" lay-verify="concact"></textarea>
+                <textarea id="Content"  name="Content" lay-verify="concact">@Html.Raw(Model.Content)</textarea>
             </div>
         </div>
         <div class="layui-form-item">
@@ -27,7 +27,6 @@
         var form = layui.form;
         var layedit = layui.layedit;
         var $ = layui.$;
-        $("#Content").html("@Model.Content");
         layedit.set({
             uploadImage: {
                 url: '/SysSet/Info/ExportFile/' //接口url

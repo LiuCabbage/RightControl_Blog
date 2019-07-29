@@ -266,6 +266,8 @@
     <Content Include="Content\layui\lay\modules\tree.js" />
     <Content Include="Content\layui\lay\modules\upload.js" />
     <Content Include="Content\layui\lay\modules\util.js" />
+    <Content Include="ErrorPage\404.html" />
+    <Content Include="ErrorPage\500.html" />
     <Content Include="favicon.ico" />
     <Content Include="Areas\Admin\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
