@@ -19,7 +19,7 @@ namespace RightControl.WebApp
             if (OperatorProvider.Provider.GetCurrent() == null)
             {
                 WebHelper.WriteCookie("nfine_login_error", "overdue");
-                filterContext.HttpContext.Response.Write("<script>top.location.href = '/Admin/Login/Index';</script>");
+                filterContext.HttpContext.Response.Write("<script>top.location.href = '/Admin/Login';</script>");
                 return;
             }
         }
