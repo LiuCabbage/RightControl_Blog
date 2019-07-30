@@ -1,4 +1,4 @@
-﻿pre{white-space:pre}
+pre{white-space:pre}
 .container-fixed:after{content:".";display:block;height:0;clear:both;visibility:hidden}
 .col-content{float:left}
 .col-other{float:right}
@@ -14,7 +14,7 @@
 .article-item .time .day{display:block;text-align:center;font-weight:700;font-size:40px;color:#6bc30d;position:relative;top:2px}
 .article-item .time .month,.article-item .time .year{color:#989997}
 .article-item .content{margin:20px 0 0 0;line-height:28px;position:relative;/*overflow:hidden;*/min-height:200px}
-.article-item .content p img{ width:100%;}
+.article-item .content p img{ max-width:100%;}
 .article-item .artiledetail img:hover {box-shadow: 0 0 5px #333;}
 .article-item .content a{color:#3e8bc7;margin:0 2px}
 .article-item .content .cover{display:block;width:300px;height:180px;border:1px solid #e8e9e7;overflow:hidden;float:left;margin-right:20px}
