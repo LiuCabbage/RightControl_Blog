@@ -6,7 +6,7 @@
 
 #### 使用说明
 
-1. 先创建数据库，然后执行sql目录下面的rightcontrol.sql即可。
+1. 先创建数据库，然后执行sql目录下面的rightcontrol_blog.sql即可。
 2. 账号：admin
 3. 密码：123456
 
