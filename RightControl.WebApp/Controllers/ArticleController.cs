@@ -17,7 +17,7 @@ namespace RightControl.WebApp.Controllers
             ViewBag.ClassList = classService.GetArticleClassList().ToList();
             ViewBag.HotList = service.GetHotArticle(5).ToList();
             ViewBag.DingList = service.GetDingArticle(3).ToList();
-            ViewBag.UserList = userService.GetBySkip(0, 12, null, null, null, "ORDER BY CreateOn Desc");
+            ViewBag.UserList = userService.GetBySkip(0, 12, null, null, null, "ORDER BY LastLogin Desc");
             //每页显示数目
             int PageSize = 10;
             ViewBag.PageSize = PageSize;
