@@ -1,4 +1,5 @@
-﻿using RightControl.IRepository;
+﻿using RightControl.Common;
+using RightControl.IRepository;
 using RightControl.IService;
 using RightControl.Model;
 using System;
@@ -182,6 +183,8 @@ namespace RightControl.Service
         }
         private string CreateArticleCommentHtml(IEnumerable<CommentModel> parentList, IEnumerable<CommentModel> list)
         {
+            string OpenComment = Configs.GetValue("OpenComment");
+            string replyBtn = "<a href='javascript:;' class='btn-reply' data-targetid='{0}' data-targetname='{1}'>回复</a>";
             StringBuilder sb = new StringBuilder();
             if (parentList != null && list != null)
             {
@@ -195,11 +198,11 @@ namespace RightControl.Service
                                     </div>
                                     <div class='comment-content'>{3}</div>
                                     <p class='info info-footer'>
-                                        <span class='comment-time'>{4}</span><a href='javascript:;' class='btn-reply' data-targetid='{5}' data-targetname='{6}'>回复</a>
+                                        <span class='comment-time'>{4}</span>{5}
                                     </p>
 
                                 </div>
-                                <hr>", item.Id, item.HeadShot, item.SendNickName, item.Content, item.CreateOn, item.SendId, item.SendNickName);
+                                <hr>", item.Id, item.HeadShot, item.SendNickName, item.Content, item.CreateOn, OpenComment == "true" ? string.Format(replyBtn, item.SendId, item.SendNickName) : "回复已关闭");
                     foreach (CommentModel model in list)
                     {
                         if (item.Id == model.ParentId)
@@ -210,9 +213,9 @@ namespace RightControl.Service
                                                 <span class='username'>{2}</span><span style='padding-right:0;margin-left:-5px;'> 回复 </span><span class='username'>{3}</span><span>{4}</span>
                                             </div>
                                             <p class='info'>
-                                                <span class='comment-time'>{5}</span><a href='javascript:;' class='btn-reply' data-targetid='{6}' data-targetname='{7}'>回复</a>
+                                                <span class='comment-time'>{5}</span>{6}
                                             </p>
-                                        </div>", model.Id, model.HeadShot, model.SendNickName, model.AcceptNickName, model.Content, model.CreateOn, model.SendId, model.SendNickName);
+                                        </div>", model.Id, model.HeadShot, model.SendNickName, model.AcceptNickName, model.Content, model.CreateOn, OpenComment == "true" ? string.Format(replyBtn, model.SendId, model.SendNickName) : "回复已关闭");
                         }
                     }
                     sb.AppendFormat(@"<div class='replycontainer layui-hide'>

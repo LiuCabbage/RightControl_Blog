@@ -1,4 +1,5 @@
-﻿using RightControl.IRepository;
+﻿using RightControl.Common;
+using RightControl.IRepository;
 using RightControl.IService;
 using RightControl.Model;
 using System.Collections.Generic;
@@ -42,6 +43,8 @@ namespace RightControl.Service
         }
         private string CreateFeedbackHtml(IEnumerable<FeedbackModel> parentList, IEnumerable<FeedbackModel> list)
         {
+            string OpenFeedback = Configs.GetValue("OpenFeedback");
+            string replyBtn = "<a href='javascript:;' class='btn-reply' data-targetid='{0}' data-targetname='{1}'>回复</a>";
             StringBuilder sb = new StringBuilder();
             if (parentList != null && list != null)
             {
@@ -59,12 +62,12 @@ namespace RightControl.Service
                             <i class='fa fa-map-marker' aria-hidden='true'></i>
                             <span>{4}</span>
                             <i class='fa fa-safari' aria-hidden='true'></i>
-                            <span>{8}</span>
-                            <span class='comment-time'>{5}</span>
-                            <a href='javascript:;' class='btn-reply' data-targetid='{6}' data-targetname='{7}'>回复</a>
+                            <span>{5}</span>
+                            <span class='comment-time'>{6}</span>
+                            {7}
                         </p>
                     </div>
-                    <hr />", item.Id, item.HeadShot, item.SendNickName, item.Content, item.City, item.CreateOn, item.SendId, item.SendNickName,item.Equip);
+                    <hr />", item.Id, item.HeadShot, item.SendNickName, item.Content, item.City, item.Equip, item.CreateOn, OpenFeedback == "true" ? string.Format(replyBtn, item.SendId, item.SendNickName) : "回复已关闭");
                     foreach (FeedbackModel model in list)
                     {
                         if (item.Id == model.ParentId)
@@ -82,11 +85,11 @@ namespace RightControl.Service
                                     <i class='fa fa-map-marker' aria-hidden='true'></i>
                                     <span>{5}</span>
                                     <i class='fa fa-safari' aria-hidden='true'></i>
-                                    <span>{9}</span>
-                                    <span class='comment-time'>{6}</span>
-                                    <a href='javascript:;' class='btn-reply' data-targetid='{7}' data-targetname='{8}'>回复</a>
+                                    <span>{6}</span>
+                                    <span class='comment-time'>{7}</span>
+                                    {8}
                                 </p>
-                            </div>", model.Id, model.HeadShot, model.SendNickName, model.AcceptNickName, model.Content, model.City, model.CreateOn, model.SendId, model.SendNickName,model.Equip);
+                            </div>", model.Id, model.HeadShot, model.SendNickName, model.AcceptNickName, model.Content, model.City, model.Equip, model.CreateOn, OpenFeedback == "true" ? string.Format(replyBtn, model.SendId, model.SendNickName) : "回复已关闭");
                         }
                     }
                     sb.AppendFormat(@"<div class='replycontainer layui-hide'>
