@@ -411,7 +411,9 @@
     <Content Include="Upload\img\mysql.jpg" />
     <Content Include="Upload\img\temo123.jpg" />
     <Content Include="Upload\img\u=2715563049,865769039&amp;fm=26&amp;gp=0.jpg" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -657,7 +659,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>27948</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:27948/</IISUrl>
+          <IISUrl>http://localhost:27000/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:27000/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
