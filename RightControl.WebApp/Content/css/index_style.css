@@ -1,3 +1,21 @@
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {
+    width: 5px;
+}
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #8C85E6;
+    -webkit-box-shadow: #8C85E6;
+}
+
+    ::-webkit-scrollbar-thumb:window-inactive {
+        background: rgba(175, 190, 255, 0.4);
+    }
 *{padding:0;margin:0;}
 ul li{list-style:none;}
 a,img{text-decoration:none;border:none;}
