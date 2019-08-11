@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Areas/Permissions/Views/User/Detail.cshtml" hash="ffffffffb1ac842a" filehash="ffffddeaca9d609c" flags="110000" assembly="App_Web_vbgak3qa" type="ASP._Page_Areas_Permissions_Views_User_Detail_cshtml">
+    <filedeps>
+        <filedep name="/Areas/Permissions/Views/User/Detail.cshtml" />
+    </filedeps>
+</preserve>

@@ -31,5 +31,16 @@ namespace RightControl.WebApp.Areas.Blog.Controllers
             var result = qqUserService.DeleteModel(Id) ? SuccessTip() : ErrorTip();
             return Json(result);
         }
+        public ActionResult Edit(int id)
+        {
+            var model = qqUserService.ReadModel(id);
+            return View(model);
+        }
+        [HttpPost]
+        public ActionResult Edit(QQUserModel model)
+        {
+            var result = qqUserService.UpdateModel(model) ? SuccessTip() : ErrorTip();
+            return Json(result);
+        }
     }
 }

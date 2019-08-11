@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Areas/Admin/Views/Shared/_LayoutSinglePage.cshtml" hash="ffffffffb1ac842a" filehash="1a9251bded26" flags="110000" assembly="App_Web_1ux5wsco" type="ASP._Page_Areas_Admin_Views_Shared__LayoutSinglePage_cshtml">
+    <filedeps>
+        <filedep name="/Areas/Admin/Views/Shared/_LayoutSinglePage.cshtml" />
+    </filedeps>
+</preserve>

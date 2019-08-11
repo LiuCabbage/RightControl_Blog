@@ -109,5 +109,14 @@ namespace RightControl.Service
             }
             return sb.ToString();
         }
+        /// <summary>
+        /// 获得用户今日留言总数
+        /// </summary>
+        /// <param name="OpenId"></param>
+        /// <returns></returns>
+        public int GetTodayFeedbackNum(string OpenId)
+        {
+            return repository.GetTodayFeedbackNum(OpenId);
+        }
     }
 }

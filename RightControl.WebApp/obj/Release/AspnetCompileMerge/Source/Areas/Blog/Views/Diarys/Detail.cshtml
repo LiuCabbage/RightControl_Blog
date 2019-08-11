@@ -1,0 +1,53 @@
+﻿@model RightControl.Model.DiarysModel
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutDetail.cshtml";
+}
+
+<div class="layui-col-md12">
+    <table class="layui-table" lay-skin="line">
+        <tbody>
+            <tr>
+                <td>ID：</td>
+                <td>@Model.Id</td>
+            </tr>
+            <tr>
+                <td>日记：</td>
+                <td><textarea id="Content" name="Content" lay-verify="concact">@Model.Content</textarea></td>
+            </tr>
+            <tr>
+                <td>创建时间：</td>
+                <td>@Model.CreateOn</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script>
+    layui.use(['form', 'layedit'], function () {
+        var form = layui.form;
+        var layedit = layui.layedit;
+        var $ = layui.$;
+        layedit.set({
+            uploadImage: {
+                url: '/SysSet/Info/ExportFile/' //接口url
+                , type: 'post' //默认post
+            }
+        });
+        var index = layedit.build('Content', {
+            tool: [
+                'strong' //加粗
+                , 'italic' //斜体
+                , 'underline' //下划线
+                , 'del' //删除线
+
+                , '|' //分割线
+
+                , 'left' //左对齐
+                , 'center' //居中对齐
+                , 'right' //右对齐
+                , 'link' //超链接
+                , 'unlink' //清除链接
+            ]
+        }); //建立编辑器
+    });
+</script>

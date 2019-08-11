@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Areas/Permissions/Views/Role/Edit.cshtml" hash="ffffffffb1ac842a" filehash="fffff101e9a41e2d" flags="110000" assembly="App_Web_reqsqrbp" type="ASP._Page_Areas_Permissions_Views_Role_Edit_cshtml">
+    <filedeps>
+        <filedep name="/Areas/Permissions/Views/Role/Edit.cshtml" />
+    </filedeps>
+</preserve>

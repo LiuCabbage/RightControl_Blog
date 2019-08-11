@@ -34,7 +34,25 @@ namespace RightControl.WebApp.Controllers
         [ValidateInput(false)]
         public JsonResult AddFeedback(string openid, string editorContent, string fromcity, string browserName)
         {
-            QQUserModel userModel = qqUserService.GetByWhere("WHERE OpenId=@openid", new { openid = openid }).FirstOrDefault();
+            QQUserModel userModel = qqUserService.GetQQUserByOpenId(openid);
+            if (userModel == null)
+            {
+                return Json(new AjaxResult { state = ResultType.error.ToString(), message = "非法提交，Openid不存在" });
+            }
+            if (!userModel.Status.Value)
+            {
+                return Json(new AjaxResult { state = ResultType.error.ToString(), message = "QQ用户已被锁定，无法留言" });
+            }
+            WebSiteInfo siteInfo = new WebSiteInfo();
+            int maxFeedbackNum = Convert.ToInt32(siteInfo.GetWebSiteInfo().MaxFeedbackNum);
+            int todayFeedbackNum = service.GetTodayFeedbackNum(openid);
+            if (todayFeedbackNum >= maxFeedbackNum)
+            {
+                //锁定QQ用户
+                userModel.Status = false;
+                qqUserService.UpdateQQUser(userModel);
+                return Json(new AjaxResult { state = ResultType.error.ToString(), message = "留言提交失败，已超出每日最大提交数量" });
+            }
             FeedbackModel model = new FeedbackModel()
             {
                 SendId = userModel.Id,
@@ -59,7 +77,25 @@ namespace RightControl.WebApp.Controllers
         [ValidateInput(false)]
         public JsonResult ReplyFeedback(string openid, string remarkId, string targetUserId, string editorContent, string fromcity, string browserName)
         {
-            QQUserModel userModel = qqUserService.GetByWhere("WHERE OpenId=@openid", new { openid = openid }).FirstOrDefault();
+            QQUserModel userModel = qqUserService.GetQQUserByOpenId(openid);
+            if (userModel == null)
+            {
+                return Json(new AjaxResult { state = ResultType.error.ToString(), message = "非法提交，Openid不存在" });
+            }
+            if (!userModel.Status.Value)
+            {
+                return Json(new AjaxResult { state = ResultType.error.ToString(), message = "QQ用户已被锁定，无法留言" });
+            }
+            WebSiteInfo siteInfo = new WebSiteInfo();
+            int maxFeedbackNum = Convert.ToInt32(siteInfo.GetWebSiteInfo().MaxFeedbackNum);
+            int todayFeedbackNum = service.GetTodayFeedbackNum(openid);
+            if (todayFeedbackNum >= maxFeedbackNum)
+            {
+                //锁定QQ用户
+                userModel.Status = false;
+                qqUserService.UpdateQQUser(userModel);
+                return Json(new AjaxResult { state = ResultType.error.ToString(), message = "留言提交失败，已超出每日最大提交数量" });
+            }
             FeedbackModel model = new FeedbackModel()
             {
                 SendId = userModel.Id,

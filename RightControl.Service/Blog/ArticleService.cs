@@ -1,10 +1,10 @@
-﻿using RightControl.Common;
-using RightControl.IRepository;
+﻿using RightControl.IRepository;
 using RightControl.IService;
 using RightControl.Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using RightControl.Common;
 
 namespace RightControl.Service
 {

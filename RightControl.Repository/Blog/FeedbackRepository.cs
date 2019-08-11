@@ -19,5 +19,17 @@ namespace RightControl.Repository
                 return conn.Query<FeedbackModel>(sql, new { Id }).FirstOrDefault();
             }
         }
+
+        public int GetTodayFeedbackNum(string OpenId)
+        {
+            using (var conn = MySqlHelper.GetConnection())
+            {
+                var sql = @"SELECT count(1) as feedbackNum FROM t_feedback a
+                    INNER JOIN t_qq_user b on a.SendId=b.Id
+                    WHERE DATE_FORMAT(a.CreateOn,'%y-%m-%d')=DATE_FORMAT(NOW(),'%y-%m-%d')
+                    and b.OpenId=@OpenId";
+                return conn.Query<int>(sql, new { OpenId }).FirstOrDefault();
+            }
+        }
     }
 }

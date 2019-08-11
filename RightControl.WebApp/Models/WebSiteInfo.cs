@@ -8,6 +8,8 @@ namespace RightControl.WebApp.Models
         {
             return new WebSiteModel
             {
+                MaxCommentNum = Configs.GetValue("MaxCommentNum"),
+                MaxFeedbackNum = Configs.GetValue("MaxFeedbackNum"),
                 OpenComment = Configs.GetValue("OpenComment"),
                 OpenFeedback = Configs.GetValue("OpenFeedback"),
                 SiteName = Configs.GetValue("SiteName"),

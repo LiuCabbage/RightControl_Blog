@@ -1,0 +1,45 @@
+﻿@model RightControl.Model.FeedbackModel
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutDetail.cshtml";
+}
+
+<div class="layui-col-md12">
+    <table class="layui-table" lay-skin="line">
+        <tbody>
+            <tr>
+                <td>ID：</td>
+                <td>@Model.Id</td>
+            </tr>
+            <tr>
+                <td>发送人：</td>
+                <td>@Model.SendNickName</td>
+            </tr>
+            <tr>
+                <td>接收人：</td>
+                <td>@Model.AcceptNickName</td>
+            </tr>
+            <tr>
+                <td>内容：</td>
+                <td>@Model.Content</td>
+            </tr>
+            <tr>
+                <td>父ID：</td>
+                <td>@Model.ParentId</td>
+            </tr>
+            <tr>
+                <td>城市：</td>
+                <td>@Model.City</td>
+            </tr>
+            <tr>
+                <td>设备：</td>
+                <td>@Model.Equip</td>
+            </tr>
+            <tr>
+                <td>创建时间：</td>
+                <td>@Model.CreateOn</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

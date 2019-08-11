@@ -21,5 +21,10 @@ namespace RightControl.Service
             pageInfo.returnFields = string.Format("{0}*,b.NickName as SendNickName,c.NickName as AcceptNickName,d.Title as ArticleTitle", pageInfo.prefix);
             return GetPageUnite(baseRepository, pageInfo, _where, filter);
         }
+
+        public int GetTodayCommentNum(string OpenId)
+        {
+            return repository.GetTodayCommentNum(OpenId);
+        }
     }
 }

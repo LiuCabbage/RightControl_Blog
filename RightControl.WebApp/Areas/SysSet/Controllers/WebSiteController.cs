@@ -17,6 +17,8 @@ namespace RightControl.WebApp.Areas.SysSet.Controllers
         {
             try
             {
+                Configs.SetValue("MaxCommentNum", model.MaxCommentNum);
+                Configs.SetValue("MaxFeedbackNum", model.MaxFeedbackNum);
                 Configs.SetValue("OpenComment", model.OpenComment == "on" ? "true" : "false");
                 Configs.SetValue("OpenFeedback", model.OpenFeedback == "on" ? "true" : "false");
                 Configs.SetValue("SiteName", model.SiteName);

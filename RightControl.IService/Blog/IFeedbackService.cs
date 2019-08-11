@@ -6,5 +6,6 @@ namespace RightControl.IService
     {
         FeedbackModel GetDetail(int Id);
         string GetFlowFeedback(int page, int pagesize);
+        int GetTodayFeedbackNum(string OpenId);
     }
 }

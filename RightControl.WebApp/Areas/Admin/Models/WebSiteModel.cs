@@ -5,6 +5,8 @@
     /// </summary>
     public class WebSiteModel
     {
+        public string MaxCommentNum { get; set; }
+        public string MaxFeedbackNum { get; set; }
         public string OpenComment { get; set; }
         public string OpenFeedback { get; set; }
         public string SiteName { get; set; }

@@ -1,0 +1,92 @@
+﻿@using RightControl.Model;
+@{
+    ViewBag.Title = "Liu_Cabbage-文章列表";
+    int num = 1;
+}
+@section css{
+    <link rel="stylesheet" href="~/Content/css/blog.css" />
+}
+<div class="doc-container" id="doc-container">
+    <div class="container-fixed">
+        <input type="hidden" value="0" id="blogtypeid" />
+        <div class="col-content">
+            <div class="inner">
+                <article class="article-list bloglist" id="LAY_bloglist" data-count="@ViewBag.Count" data-pagesize="@ViewBag.PageSize" data-pagecount="@ViewBag.PageCount" data-type="@ViewBag.ClassId">
+                    @*记录数，每页条数，页数，分类id*@
+
+                </article>
+            </div>
+    </div>
+    <div class="col-other">
+        <div class="inner">
+            <div class="other-item" id="categoryandsearch">
+                <div class="search">
+                    <label class="search-wrap">
+                        <input type="text" id="searchtxt" placeholder="输入关键字搜索" />
+                        <span class="search-icon">
+                            <i class="fa fa-search"></i>
+                        </span>
+                    </label>
+                    <ul class="search-result"></ul>
+                </div>
+                <ul class="category mt20" id="category">
+                    <li data-index="0" class="slider"></li>
+                    <li data-index="1"><a href="/Article/Index">全部文章</a></li>
+                    @foreach (ArticleClassModel item in ViewBag.ClassList)
+                    {
+                        <li data-index="@{num++;}@num"><a href="/Article/Index/@item.Id">@item.Name</a></li>
+                    }
+                </ul>
+            </div>
+            <!--右边悬浮 平板或手机设备显示-->
+            <div class="category-toggle"><i class="layui-icon">&#xe603;</i></div>
+            <div class="article-category">
+                <div class="article-category-title">分类导航</div>
+                @foreach (ArticleClassModel item in ViewBag.ClassList)
+                {
+                    <a href="/Article/Index/@item.Id">@item.Name</a>
+                }
+                <div class="f-cb"></div>
+            </div>
+            <!--遮罩-->
+            <div class="blog-mask animated layui-hide"></div>
+            <div class="other-item">
+                <h5 class="other-item-title">热门文章</h5>
+                <div class="inner">
+                    <ul class="hot-list-article">
+                        @foreach (ArticleModel item in ViewBag.HotList)
+                        {
+                            <li> <a href="/Article/Detail/@item.Id">@item.Title</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="other-item">
+                <h5 class="other-item-title">置顶推荐</h5>
+                <div class="inner">
+                    <ul class="hot-list-article">
+                        @foreach (ArticleModel item in ViewBag.DingList)
+                        {
+                            <li> <a href="/Article/Detail/@item.Id">@item.Title</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="other-item">
+                <h5 class="other-item-title">最近访客</h5>
+                <div class="inner">
+                    <dl class="vistor">
+                        @foreach (QQUserModel item in ViewBag.UserList)
+                        {
+                            <dd><a href="javasript:;"><img src="@item.HeadShot"><cite>@item.NickName</cite></a></dd>
+                        }
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+@section js{
+    <script src="~/Content/js/yss/article.js"></script>
+}

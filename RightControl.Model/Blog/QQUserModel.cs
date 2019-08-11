@@ -33,6 +33,10 @@ namespace RightControl.Model
         /// </summary>
         public string Email { get; set; }
         /// <summary>
+        /// 状态
+        /// </summary>
+        public bool? Status { get; set; }
+        /// <summary>
         /// 最后一次登录时间
         /// </summary>
         [Display(Name = "最后一次登录时间")]
