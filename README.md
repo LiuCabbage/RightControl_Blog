@@ -17,6 +17,7 @@
 3. 接入QQ互联，一键登录，降低注册门槛。
 4. 网站设置使用XML配置，新增开启评论，开启留言开关。
 5. 关于Layui流加载文章列表，评论，留言都是后台拼接，且每页显示数量在对应控制器里可修改。
+6. 新增今日评论，留言最大数量配置，每日提交超过后台设置的数量将自动锁定QQ用户。
 
 
 #### 项目的其他想法
@@ -30,4 +31,4 @@
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/0730/001705_92a610e2_1130037.png "1.png")
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/0730/001712_84d46d7f_1130037.png "2.png")
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/0730/001500_cb7484df_1130037.png "3.png")
-![输入图片说明](https://images.gitee.com/uploads/images/2019/0730/001508_6f04a175_1130037.png "4.png")
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0811/193113_6d361d70_1130037.jpeg "1.jpg")
