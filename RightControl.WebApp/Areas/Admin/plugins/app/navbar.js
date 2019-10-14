@@ -1,4 +1,4 @@
-﻿/** navbar.js By Beginner Emain:zheng_jinfan@126.com HomePage:http://www.zhengjinfan.cn */
+/** navbar.js By Beginner Emain:zheng_jinfan@126.com HomePage:http://www.zhengjinfan.cn */
 layui.define(['element', 'common'], function (exports) {
     "use strict";
     var $ = layui.jquery,
@@ -222,7 +222,7 @@ layui.define(['element', 'common'], function (exports) {
             } else {
                 ulHtml += '<li class="layui-nav-item">';
             }
-            if (data[i].children !== undefined && data[i].children.length > 0) {
+            if (data[i].children !== undefined && data[i].children !== null && data[i].children.length > 0) {
                 ulHtml += '<a href="javascript:;">';
                 if (data[i].icon !== undefined && data[i].icon !== '') {
                     if (data[i].icon.indexOf('icon-') == -1) {
