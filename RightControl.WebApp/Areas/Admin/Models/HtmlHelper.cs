@@ -27,20 +27,20 @@ namespace RightControl.WebApp
                 foreach (ArticleModel y in year)
                 {
                     var query = from u in list
-                                where u.CreateOn.ToString("yyyy")==y.Year
+                                where u.CreateOn.ToString("yyyy") == y.Year
                                 select u;
                     var articleCount = query.ToList().Count;
                     sb.AppendFormat(@"<div class='post-archives-list'>
                                     <h3>{0} 年<sup>「 {1} 」</sup></h3>
-                                    <ul>",y.Year, articleCount);
+                                    <ul>", y.Year, articleCount);
                     foreach (ArticleModel item in list)
                     {
-                        if (y.Year==item.CreateOn.ToString("yyyy"))
+                        if (y.Year == item.CreateOn.ToString("yyyy"))
                         {
                             sb.AppendFormat(@"<li>
                                                 <a href='/Article/Detail/{0}' class=''>{1}</a>
                                                 <time class='mo-text-hint'>({2})</time>
-                                            </li>",item.Id,item.Title,item.CreateOn.ToString("yyyy-MM-dd HH:mm:ss"));
+                                            </li>", item.Id, item.Title, item.CreateOn.ToString("yyyy-MM-dd HH:mm:ss"));
                         }
                     }
                     sb.Append(@"</ul>
@@ -56,19 +56,27 @@ namespace RightControl.WebApp
         /// <param name="_year"></param>
         /// <param name="_list"></param>
         /// <returns></returns>
-        public static HtmlString DiarysHtml(this HtmlHelper helper, dynamic _year=null, dynamic _list=null)
+        public static HtmlString DiarysHtml(this HtmlHelper helper, dynamic _year = null, dynamic _list = null)
         {
             StringBuilder sb = new StringBuilder();
             var year = _year as List<DiarysModel>;
             var list = _list as List<DiarysModel>;
-            if (year!=null && list!=null)
+            if (year != null && list != null)
             {
+                bool isFirst = true;
                 foreach (DiarysModel y in year)
                 {
+                    //默认展开第一个
+                    string downOrRightClss = isFirst ? "fa-caret-down" : "fa-caret-right";
+                    string isHideStr = isFirst ? "" : "style='display: none;'";
+
                     sb.AppendFormat(@"<div class='timeline-year'>
-                                  <h2><a class='yearToggle'>{0} 年</a><i class='fa fa-caret-down fa-fw'></i></h2>
-                                  <div class='timeline-month'>
-                                      <ul>",y.Year);
+                                  <h2><a class='yearToggle'>{0} 年</a><i class='fa fa-fw {1}'></i></h2>
+                                  <div class='timeline-month' {2}>
+                                      <ul>", y.Year, downOrRightClss, isHideStr);
+
+                    isFirst = false;
+
                     foreach (DiarysModel item in list)
                     {
                         if (y.Year == item.CreateOn.ToString("yyyy"))

@@ -93,6 +93,9 @@
     background: #484348;
     color: #fff
 }
+    .content a {
+        color: #fff;
+    }
     /*.content img {
 	width:100%
 }
