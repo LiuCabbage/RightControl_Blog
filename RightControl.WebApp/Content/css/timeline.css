@@ -126,8 +126,12 @@
     margin: 10px 0
 }
 
-@media(min-width:768px) {
-    .timeline-box {
+    .timeline-year h2 {
+        cursor: pointer;
+    }
+
+    @media(min-width:768px) {
+        .timeline-box {
         background: #fff;
         padding: 15px;
         position: relative;
