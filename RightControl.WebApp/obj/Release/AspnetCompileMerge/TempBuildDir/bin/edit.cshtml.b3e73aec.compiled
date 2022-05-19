@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/Permissions/Views/User/Edit.cshtml" hash="ffffffffb1ac842a" filehash="93e16899f30" flags="110000" assembly="App_Web_vbgak3qa" type="ASP._Page_Areas_Permissions_Views_User_Edit_cshtml">
-    <filedeps>
-        <filedep name="/Areas/Permissions/Views/User/Edit.cshtml" />
-    </filedeps>
-</preserve>

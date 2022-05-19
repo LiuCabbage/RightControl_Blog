@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/Permissions/Views/Action/Add.cshtml" hash="ffffffffb1ac842a" filehash="ffffe2fec4f111dd" flags="110000" assembly="App_Web_jeq2huzs" type="ASP._Page_Areas_Permissions_Views_Action_Add_cshtml">
-    <filedeps>
-        <filedep name="/Areas/Permissions/Views/Action/Add.cshtml" />
-    </filedeps>
-</preserve>

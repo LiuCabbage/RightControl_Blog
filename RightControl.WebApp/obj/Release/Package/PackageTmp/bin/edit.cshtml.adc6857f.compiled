@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/Blog/Views/ArticleType/Edit.cshtml" hash="ffffffffb1ac842a" filehash="ffffe7312dca40d2" flags="110000" assembly="App_Web_i5ygresz" type="ASP._Page_Areas_Blog_Views_ArticleType_Edit_cshtml">
-    <filedeps>
-        <filedep name="/Areas/Blog/Views/ArticleType/Edit.cshtml" />
-    </filedeps>
-</preserve>

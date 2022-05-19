@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/Blog/Views/Comment/Index.cshtml" hash="ffffffffb1ac842a" filehash="13a92f236c8e" flags="110000" assembly="App_Web_kucnx2fl" type="ASP._Page_Areas_Blog_Views_Comment_Index_cshtml">
-    <filedeps>
-        <filedep name="/Areas/Blog/Views/Comment/Index.cshtml" />
-    </filedeps>
-</preserve>

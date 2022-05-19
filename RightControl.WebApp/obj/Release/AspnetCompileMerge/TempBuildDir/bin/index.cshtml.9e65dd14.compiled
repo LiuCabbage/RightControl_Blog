@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/Permissions/Views/Role/Index.cshtml" hash="ffffffffb1ac842a" filehash="4252fac5c34d" flags="110000" assembly="App_Web_reqsqrbp" type="ASP._Page_Areas_Permissions_Views_Role_Index_cshtml">
-    <filedeps>
-        <filedep name="/Areas/Permissions/Views/Role/Index.cshtml" />
-    </filedeps>
-</preserve>
