@@ -34,3 +34,14 @@ C:\Users\Liu_Cabbage\source\repos\RightControl_Blog_MyBlog\RightControl.Common\o
 C:\Users\Liu_Cabbage\source\repos\RightControl_Blog_MyBlog\RightControl.Common\obj\Debug\RightControl.Common.csproj.CopyComplete
 C:\Users\Liu_Cabbage\source\repos\RightControl_Blog_MyBlog\RightControl.Common\obj\Debug\RightControl.Common.dll
 C:\Users\Liu_Cabbage\source\repos\RightControl_Blog_MyBlog\RightControl.Common\obj\Debug\RightControl.Common.pdb
+E:\Repos\RightControl_Blog\RightControl.Common\bin\Debug\RightControl.Common.dll
+E:\Repos\RightControl_Blog\RightControl.Common\bin\Debug\RightControl.Common.pdb
+E:\Repos\RightControl_Blog\RightControl.Common\bin\Debug\Newtonsoft.Json.dll
+E:\Repos\RightControl_Blog\RightControl.Common\bin\Debug\System.Web.Mvc.dll
+E:\Repos\RightControl_Blog\RightControl.Common\bin\Debug\Newtonsoft.Json.xml
+E:\Repos\RightControl_Blog\RightControl.Common\bin\Debug\System.Web.Mvc.xml
+E:\Repos\RightControl_Blog\RightControl.Common\bin\Debug\zh-Hans\System.Web.Mvc.resources.dll
+E:\Repos\RightControl_Blog\RightControl.Common\obj\Debug\RightControl.Common.csproj.CoreCompileInputs.cache
+E:\Repos\RightControl_Blog\RightControl.Common\obj\Debug\RightControl.Common.csproj.CopyComplete
+E:\Repos\RightControl_Blog\RightControl.Common\obj\Debug\RightControl.Common.dll
+E:\Repos\RightControl_Blog\RightControl.Common\obj\Debug\RightControl.Common.pdb

@@ -25,3 +25,11 @@ C:\Users\Liu_Cabbage\source\repos\RightControl_Blog_MyBlog\DapperExtensions\obj\
 C:\Users\Liu_Cabbage\source\repos\RightControl_Blog_MyBlog\DapperExtensions\obj\Debug\DapperExtensions.csproj.CopyComplete
 C:\Users\Liu_Cabbage\source\repos\RightControl_Blog_MyBlog\DapperExtensions\obj\Debug\DapperExtensions.dll
 C:\Users\Liu_Cabbage\source\repos\RightControl_Blog_MyBlog\DapperExtensions\obj\Debug\DapperExtensions.pdb
+E:\Repos\RightControl_Blog\DapperExtensions\bin\Debug\DapperExtensions.dll
+E:\Repos\RightControl_Blog\DapperExtensions\bin\Debug\DapperExtensions.pdb
+E:\Repos\RightControl_Blog\DapperExtensions\bin\Debug\Dapper.dll
+E:\Repos\RightControl_Blog\DapperExtensions\bin\Debug\Dapper.xml
+E:\Repos\RightControl_Blog\DapperExtensions\obj\Debug\DapperExtensions.csproj.CoreCompileInputs.cache
+E:\Repos\RightControl_Blog\DapperExtensions\obj\Debug\DapperExtensions.csproj.CopyComplete
+E:\Repos\RightControl_Blog\DapperExtensions\obj\Debug\DapperExtensions.dll
+E:\Repos\RightControl_Blog\DapperExtensions\obj\Debug\DapperExtensions.pdb

@@ -31,3 +31,14 @@ C:\Users\Liu_Cabbage\source\repos\RightControl_Blog_MyBlog\RightControl.Model\ob
 C:\Users\Liu_Cabbage\source\repos\RightControl_Blog_MyBlog\RightControl.Model\obj\Debug\RightControl.Model.csproj.CopyComplete
 C:\Users\Liu_Cabbage\source\repos\RightControl_Blog_MyBlog\RightControl.Model\obj\Debug\RightControl.Model.dll
 C:\Users\Liu_Cabbage\source\repos\RightControl_Blog_MyBlog\RightControl.Model\obj\Debug\RightControl.Model.pdb
+E:\Repos\RightControl_Blog\RightControl.Model\bin\Debug\RightControl.Model.dll
+E:\Repos\RightControl_Blog\RightControl.Model\bin\Debug\RightControl.Model.pdb
+E:\Repos\RightControl_Blog\RightControl.Model\bin\Debug\DapperExtensions.dll
+E:\Repos\RightControl_Blog\RightControl.Model\bin\Debug\Dapper.dll
+E:\Repos\RightControl_Blog\RightControl.Model\bin\Debug\DapperExtensions.pdb
+E:\Repos\RightControl_Blog\RightControl.Model\bin\Debug\Dapper.xml
+E:\Repos\RightControl_Blog\RightControl.Model\obj\Debug\RightControl.Model.csproj.AssemblyReference.cache
+E:\Repos\RightControl_Blog\RightControl.Model\obj\Debug\RightControl.Model.csproj.CoreCompileInputs.cache
+E:\Repos\RightControl_Blog\RightControl.Model\obj\Debug\RightControl.Model.csproj.CopyComplete
+E:\Repos\RightControl_Blog\RightControl.Model\obj\Debug\RightControl.Model.dll
+E:\Repos\RightControl_Blog\RightControl.Model\obj\Debug\RightControl.Model.pdb

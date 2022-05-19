@@ -130,6 +130,7 @@
     <Content Include="Areas\Admin\datas\tree.js" />
     <Content Include="Content\css\about.css" />
     <Content Include="Content\css\animate.min.css" />
+    <Content Include="Content\css\APlayer.min.css" />
     <Content Include="Content\css\archives.css" />
     <Content Include="Content\css\blog.css" />
     <Content Include="Content\css\gloable.css" />
@@ -153,7 +154,9 @@
     <Content Include="Content\image\shareicon.png" />
     <Content Include="Content\image\weixin.jpg" />
     <Content Include="Content\image\xlj.jpg" />
+    <Content Include="Content\js\APlayer.min.js" />
     <Content Include="Content\js\index.js" />
+    <Content Include="Content\js\Meting.min.js" />
     <Content Include="Content\js\pagecomment.js" />
     <Content Include="Content\js\pagemessage.js" />
     <Content Include="Content\js\plugins\blogbenoitboucart.min.js" />
@@ -394,6 +397,8 @@
     <Content Include="Areas\Admin\Scripts\jquery-1.10.2.min.js" />
     <Content Include="Areas\Admin\Scripts\modernizr-2.6.2.js" />
     <Content Include="Icon.html" />
+    <Content Include="jay.html" />
+    <Content Include="jay2.html" />
     <Content Include="Upload\img\1.jpg" />
     <Content Include="Upload\img\1260852-20190620144549201-1384742553.jpg" />
     <Content Include="Upload\img\1260852-20190620144549201-1384742553_1.jpg" />
