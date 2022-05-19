@@ -156,6 +156,8 @@
     <Content Include="Content\image\xlj.jpg" />
     <Content Include="Content\js\APlayer.min.js" />
     <Content Include="Content\js\index.js" />
+    <Content Include="Content\js\jquery.cookie.min.js" />
+    <Content Include="Content\js\jquery.min.js" />
     <Content Include="Content\js\Meting.min.js" />
     <Content Include="Content\js\pagecomment.js" />
     <Content Include="Content\js\pagemessage.js" />
@@ -164,6 +166,7 @@
     <Content Include="Content\js\plugins\qrcode.min.js" />
     <Content Include="Content\js\timeline.js" />
     <Content Include="Content\js\wow.min.js" />
+    <Content Include="Content\js\xss.min.js" />
     <Content Include="Content\js\yss\APlayer.min.js" />
     <Content Include="Content\js\yss\article.js" />
     <Content Include="Content\js\yss\gloable.js" />
