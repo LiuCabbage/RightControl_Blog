@@ -7,9 +7,9 @@ namespace RightControl.WebApp.Models
 {
     public class QQLoginHelper
     {
-        public static string appId = "这里换成你的"; //申请QQ登录成功后，分配给应用的appid。
-        public static string appKey = "这里换成你的"; //申请QQ登录成功后，分配给应用的appkey。
-        public static string redirect_uri = "这里换成你的"; //成功授权后的回调地址，必须是注册appid时填写的主域名下的地址。
+        public static string appId = Configs.GetValue("QQAppId");
+        public static string appKey = Configs.GetValue("QQAppKey");
+        public static string redirect_uri = Configs.GetValue("QQRedirect_Url");
         public static string CreateAuthorizeUrl(string state)
         {
             string url = string.Format("{0}?client_id={1}&response_type=code&redirect_uri={2}&state={3}", "https://graph.qq.com/oauth2.0/authorize", appId, redirect_uri, state);
