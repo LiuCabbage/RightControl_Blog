@@ -147,6 +147,7 @@
     <Content Include="Content\font\lg.svg" />
     <Content Include="Content\image\1.jpg" />
     <Content Include="Content\image\2.jpg" />
+    <Content Include="Content\image\beian.png" />
     <Content Include="Content\image\bg.jpg" />
     <Content Include="Content\image\dianzan\1.png" />
     <Content Include="Content\image\dianzan\2.png" />
