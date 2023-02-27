@@ -586,6 +586,7 @@
     <Content Include="Areas\Blog\Views\Article\Edit.cshtml" />
     <Content Include="Areas\SysSet\Views\Log\index.cshtml" />
     <Content Include="Areas\Blog\Views\QQUser\Edit.cshtml" />
+    <Content Include="Content\IPScaner\QQWry.Dat" />
     <None Include="packages.config" />
     <Content Include="Areas\Admin\plugins\layui\font\iconfont.eot" />
     <Content Include="Areas\Admin\plugins\layui\font\iconfont.ttf" />

@@ -59,7 +59,8 @@ namespace RightControl.WebApp.Controllers
                 AcceptId = 0,
                 Content = XSS.FilterXSS(editorContent),
                 ParentId = 0,
-                City = fromcity,
+                //City = fromcity,
+                City = Net.GetLocation(Net.Ip),
                 Equip = browserName,
                 CreateOn = DateTime.Now
             };
@@ -102,7 +103,8 @@ namespace RightControl.WebApp.Controllers
                 AcceptId = Convert.ToInt32(targetUserId),
                 Content = XSS.FilterXSS(editorContent),
                 ParentId = Convert.ToInt32(remarkId),
-                City = fromcity,
+                //City = fromcity,
+                City = Net.GetLocation(Net.Ip),
                 Equip = browserName,
                 CreateOn = DateTime.Now
             };

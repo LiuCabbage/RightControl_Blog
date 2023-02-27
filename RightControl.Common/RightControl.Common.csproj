@@ -65,6 +65,7 @@
     <Compile Include="Json.cs" />
     <Compile Include="Licence.cs" />
     <Compile Include="Net\HttpMethods.cs" />
+    <Compile Include="Net\IPScanerHelper.cs" />
     <Compile Include="Net\Net.cs" />
     <Compile Include="Operator\OperatorModel.cs" />
     <Compile Include="Operator\OperatorProvider.cs" />
