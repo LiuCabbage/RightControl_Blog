@@ -9,7 +9,7 @@ namespace RightControl.WebApp.Controllers
         public ActionResult Index()
         {
             WebSiteInfo siteInfo = new WebSiteInfo();
-            ViewBag.SiteTitle = siteInfo.GetWebSiteInfo().SiteTitle;
+            ViewBag.Site = siteInfo.GetWebSiteInfo();
             return View();
         }
     }

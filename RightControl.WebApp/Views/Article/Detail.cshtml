@@ -1,7 +1,7 @@
 ﻿@model RightControl.Model.ArticleModel
 @using RightControl.Model
 @{
-    ViewBag.Title = "LiuCabbage-" + Model.Title;
+    ViewBag.Title = ViewBag.Site.SiteName + "-" + Model.Title;
 }
 @section css{
     <link rel="stylesheet" href="~/Content/css/blog.css" />

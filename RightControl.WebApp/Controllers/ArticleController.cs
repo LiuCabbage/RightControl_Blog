@@ -14,6 +14,8 @@ namespace RightControl.WebApp.Controllers
         // GET: Article
         public ActionResult Index(int? Id = 0)
         {
+            WebSiteInfo siteInfo = new WebSiteInfo();
+            ViewBag.Site = siteInfo.GetWebSiteInfo();
             ViewBag.ClassList = classService.GetArticleClassList().ToList();
             ViewBag.HotList = service.GetHotArticle(5).ToList();
             ViewBag.DingList = service.GetDingArticle(3).ToList();

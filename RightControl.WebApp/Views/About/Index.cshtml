@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "LiuCabbage-关于";
+    ViewBag.Title = ViewBag.Site.SiteName + "-关于";
 }
 @section css{
     <link rel="stylesheet" href="~/Content/css/about.css" />
@@ -20,7 +20,7 @@
         </header>
         <div class="about-title">
             <h1>关于</h1>
-            <p>@ViewBag.SiteTitle</p>
+            <p>@ViewBag.Site.SiteTitle</p>
         </div>
     </div>
     <div class="container-fixed">

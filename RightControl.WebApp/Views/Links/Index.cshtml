@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<RightControl.Model.LinksModel>
 @using RightControl.Model
 @{
-    ViewBag.Title = "LiuCabbage-友情链接";
+    ViewBag.Title = ViewBag.Site.SiteName + "-友情链接";
 }
 @section css{
     <link rel="stylesheet" href="~/Content/css/about.css" />
@@ -22,7 +22,7 @@
         </header>
         <div class="about-title">
             <h1>友情链接</h1>
-            <p>@ViewBag.SiteTitle</p>
+            <p>@ViewBag.Site.SiteTitle</p>
         </div>
     </div>
     <div class="container-fixed">

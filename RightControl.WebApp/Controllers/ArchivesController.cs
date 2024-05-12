@@ -11,7 +11,7 @@ namespace RightControl.WebApp.Controllers
         public ActionResult Index()
         {
             WebSiteInfo siteInfo = new WebSiteInfo();
-            ViewBag.SiteTitle = siteInfo.GetWebSiteInfo().SiteTitle;
+            ViewBag.Site = siteInfo.GetWebSiteInfo();
             ViewData["Year"] = service.GetYear();
             ViewData["ArticleList"] = service.GetAll();
             return View();
