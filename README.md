@@ -2,13 +2,16 @@
 
 #### 介绍
 前台使用燕十三博客前端模板，后台基于RightControl .NET通用角色权限管理系统搭建，已完成。<br>
-项目地址：http://www.baocaige.top
+项目地址：http://blog.baocaige.top
 
 #### 使用说明
 
 1. 先创建数据库，然后执行sql目录下面的rightcontrol_blog.sql即可。
 2. 账号：admin
 3. 密码：123456
+
+mysql版本建议用解压版mysql-5.7.17
+如果8.0版本 文章详情报错 
 
 #### 项目说明
 
